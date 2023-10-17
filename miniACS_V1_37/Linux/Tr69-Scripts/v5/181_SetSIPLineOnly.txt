@@ -1,0 +1,28 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<soapenv:Header>
+<ns1:ID soapenv:actor="http://schemas.xmlsoap.org/soap/actor/next" soapenv:mustUnderstand="1" xsi:type="xsd:string" xmlns:ns1="urn:dslforum-org:cwmp-1-0">ACS_SetParameterValues_7</ns1:ID>
+</soapenv:Header>
+<soapenv:Body>
+<ns2:SetParameterValues soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:ns2="urn:dslforum-org:cwmp-1-0">
+<ParameterList soapenc:arrayType="ns2:ParameterValueStruct[4]" xsi:type="soapenc:Array" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+<ParameterValueStruct xsi:type="ns2:ParameterValueStruct">
+<Name xsi:type="xsd:string">Device.Services.VoiceService.1.NetworkProfile.1.SIPLine.2.URI</Name>
+<Value xsi:type="xsd:string">sip:004991242611151@tel2.ver.sul.t-online.de</Value>
+</ParameterValueStruct>
+<ParameterValueStruct xsi:type="ns2:ParameterValueStruct">
+<Name xsi:type="xsd:string">Device.Services.VoiceService.1.NetworkProfile.1.SIPLine.2.AuthUserName</Name>
+<Value xsi:type="xsd:string">access-user-tk01@ver.sul.t-online.de</Value>
+</ParameterValueStruct>
+<ParameterValueStruct xsi:type="ns2:ParameterValueStruct">
+<Name xsi:type="xsd:string">Device.Services.VoiceService.1.NetworkProfile.1.SIPLine.2.AuthPassword</Name>
+<Value xsi:type="xsd:string">LkWpeter</Value>
+</ParameterValueStruct>
+<ParameterValueStruct xsi:type="ns2:ParameterValueStruct">
+<Name xsi:type="xsd:string">Device.Services.VoiceService.1.NetworkProfile.1.Line.2.Enable</Name>
+<Value xsi:type="xsd:string">Enabled</Value>
+</ParameterValueStruct>
+</ParameterList>
+<ParameterKey xsi:type="xsd:string">ACS</ParameterKey>
+</ns2:SetParameterValues>
+</soapenv:Body>
+</soapenv:Envelope>

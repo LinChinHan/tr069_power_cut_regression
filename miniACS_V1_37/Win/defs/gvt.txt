@@ -1,0 +1,31 @@
+Device.X_GVT_COM_BR. so r roothst
+AccessClass s rw service02,service04
+WanMode s rw Auto,ADSL,VDSL,FTTH,GPON 
+Device.X_GVT_COM_BR.Hotspot. so r hst
+Enable b rw
+BackupConcentratorAddress s18 rw ip
+ConcentratorAddress s18 rw ip
+MaximumClients i rw
+SBCAddress s18 rw ip
+SIPServerAddress s18 rw ip
+Device.X_GVT_COM_BR.Debug. so r st
+Device.X_GVT_COM_BR.Debug.Dsldiagd. so r 
+Enable b rw
+Device.X_GVT_COM_BR.Debug.Telnet. so r
+Enable b rw
+Device.X_GVT_COM_BR.Debug.SyslogRemote. so r
+Enable b rw
+Host s18 rw ip
+Port i rw
+Severity i rw
+Device.X_GVT_COM_BR.Debug.SIP. so r
+Device.X_GVT_COM_BR.Debug.SIP.Trace. so r
+Enable b rw
+Device.X_GVT_COM_BR.Interfaces. so r s
+InternetService s r
+VoipService s r
+VodService s r
+MulticastService s r
+LAN s r
+Device.X_GVT_COM_BR.Log. so r s
+DeviceLog s r

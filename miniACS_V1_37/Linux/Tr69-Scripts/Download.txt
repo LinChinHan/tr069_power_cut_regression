@@ -1,0 +1,16 @@
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" soap:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:cwmp="urn:dslforum-org:cwmp-1-0">
+<soap:Header>
+<cwmp:ID soap:mustUnderstand="1">2</cwmp:ID>
+</soap:Header>
+<soap:Body>
+<cwmp:Download>
+<CommandKey>Test12345</CommandKey>
+<FileType>1 Firmware</FileType>
+<URL>https://10.118.16.157:8443/sysimg.bin</URL>
+<Username>popeye</Username>
+<Password>popeye</Password>
+<FileSize>0</FileSize>
+<DelaySeconds>1</DelaySeconds>
+</cwmp:Download>
+</soap:Body>
+</soap:Envelope>

@@ -1,0 +1,127 @@
+Device.Services.StorageService. mo r hstriroot
+Enable b rw
+PhysicalMediumNumberOfEntries u r
+//StorageArrayNumberOfEntries u r
+LogicalVolumeNumberOfEntries u r
+UserAccountNumberOfEntries u r
+//UserGroupNumberOfEntries u r
+Device.Services.StorageService.1.Capabilities. so r s
+FTPCapable b r
+SFTPCapable b r
+HTTPCapable b r
+HTTPSCapable b r
+HTTPWritable b r
+SupportedNetworkProtocols s r SMB,NFS,AFP
+SupportedFileSystemTypes s r FAT16,FAT32,NTFS,HFS,HFS+,HSFJ,ext2,ext3,XFS,REISER
+SupportedRaidTypes s r RAID0,RAID1,RAID2,RAID3,RAID4,RAID5,RAID6,RAID10,RAID0+1,RAID30,RAID50,RAID60
+VolumeEncryptionCapable b r
+Device.Services.StorageService.1.NetInfo. so r st
+HostName s64 rw
+DomainName s255 rw
+/*
+Device.Services.StorageService.1.UserGroup. mo rw st
+Enable b rw
+GroupName s64 rw
+*/
+Device.Services.StorageService.1.UserAccount. mo18 rw ost #define#end
+Enable b rw
+Username s64 rw
+Password s64 w
+//UserGroupParticipation s256 rw
+AllowFTPAccess b rw
+AllowHTTPAccess b rw
+Device.Services.StorageService.1.NetworkServer. so r st
+AFPEnable b rw
+NFSEnable b rw
+SMBEnable b rw
+NetworkProtocolAuthReq b rw
+Device.Services.StorageService.1.FTPServer. so r st
+Enable b rw
+Status s r Enabled,Disabled,Error
+MaxNumUsers u rw
+IdleTime u rw
+PortNumber u rw
+Device.Services.StorageService.1.FTPServer.AnonymousUser. so r st
+Enable b rw
+StartingFolder s256 rw
+ReadOnlyAccess b rw
+Device.Services.StorageService.1.SFTPServer. so r st
+Enable b rw
+Status s r Enabled,Disabled,Error
+MaxNumUsers u rw
+IdleTime u rw
+PortNumber u rw
+/*
+Device.Services.StorageService.1.HTTPServer. so r
+Enable b rw
+Status s r Enabled,Disabled,Error
+MaxNumUsers u rw
+IdleTime u rw
+HTTPWritingEnabled b r
+PortNumber u rw
+AuthenticationReq b rw
+Device.Services.StorageService.1.HTTPSServer. so r
+Enable b rw
+Status s r Enabled,Disabled,Error
+MaxNumUsers u rw
+IdleTime u rw
+HTTPWritingEnabled b r
+PortNumber u rw
+AuthenticationReq b rw
+*/
+Device.Services.StorageService.1.PhysicalMedium. mo4 r s #define#end
+Name s64 rw
+Vendor s64 r
+Model s128 r
+SerialNumber s64 r
+FirmwareVersion s64 r
+ConnectionType s r USB 1.1,USB 2.0,IEEE1394,IEEE1394b,IDE,EIDE,ATA/33,ATA/66,ATA/100,ATA/133,SATA/150,SATA/300,SCSI-1,Fast SCSI,Fast-Wide SCSI,Ultra SCSI,Ultra Wide SCSI,Ultra2 SCSI,Ultra2 Wide SCSI,Ultra3 SCSI,Ultra-320 SCSI,Ultra-640 SCSI,SSA,SSA-40,Fibre Channel
+Removable b r
+Capacity u r
+Status s r Online,Standby,Offline
+Uptime u rj
+SMARTCapable b r
+Health s r OK,Failing,Error
+HotSwappable b r
+/*
+Device.Services.StorageService.1.StorageArray. mo rw
+Name s64 rw
+Status s r
+Enable b rw
+RaidType s8 rw
+UsableCapacity u r
+PhysicalMediumReference s256 rw
+*/
+Device.Services.StorageService.1.LogicalVolume. mo8 rw st #define#end
+Name s64 rw
+Status s r Offline,Online,Error
+Enable b rw
+PhysicalReference s256 rw
+FileSystem s9 r
+Capacity u rw
+UsedSpace u rj
+ThresholdLimit u rw
+ThresholdReached b r
+Encrypted b r
+FolderNumberOfEntries u r
+Folder reg r
+Device.Services.StorageService.1.LogicalVolume.1.Folder. mo48 rw ostroot #define
+Name s64 rw
+Enable b rw
+UserAccountAccess u rw
+UserAccessNumberOfEntries u r
+GroupAccessNumberOfEntries u r
+Device.Services.StorageService.1.LogicalVolume.1.Folder.1.UserAccess. mo rw #end
+UserReference s256 rw
+Permissions u rw
+/*
+Device.Services.StorageService.1.LogicalVolume.1.Folder.1.GroupAccess. mo rw
+GroupReference s256 rw
+Permissions u rw
+Device.Services.StorageService.1.LogicalVolume.1.Folder.1.Quota. so r 
+Enable b rw
+Capacity u rw
+UsedSpace u rj
+ThresholdLimit u rw
+ThresholdReached b r
+*/

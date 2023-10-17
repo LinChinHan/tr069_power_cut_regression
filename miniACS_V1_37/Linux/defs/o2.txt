@@ -1,0 +1,4 @@
+InternetGatewayDevice.X_O2_Extension. so r roothst
+CFGEncryption s16 rw aes-256-cbc,aes-256-ecb,rc4
+ComfortNoiseGeneration b rw
+VoiceActivityDetection b rw

@@ -1,0 +1,218 @@
+<soapenv:Envelope
+   xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+   xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <soapenv:Header>
+      <ns1:ID soapenv:actor="http://schemas.xmlsoap.org/soap/actor/next"
+         soapenv:mustUnderstand="1"
+         xmlns:ns1="urn:dslforum-org:cwmp-1-0" xsi:type="xsd:string">ACS_SetParameterValues_7</ns1:ID>
+   </soapenv:Header>
+   <soapenv:Body>
+      <ns2:SetParameterValues
+         soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:ns2="urn:dslforum-org:cwmp-1-0">
+         <ParameterList soapenc:arrayType="ns2:ParameterValueStruct[6]"
+            xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xsi:type="soapenc:Array">
+            <ParameterValueStruct xsi:type="ns2:ParameterValueStruct">
+               <Name xsi:type="xsd:string">InternetGatewayDevice.ManagementServer.PeriodicInformInterval</Name>
+               <Value xsi:type="xsd:unsignedInt">86400</Value>
+            </ParameterValueStruct>
+            <ParameterValueStruct xsi:type="ns2:ParameterValueStruct">
+               <Name xsi:type="xsd:string">InternetGatewayDevice.ManagementServer.ConnectionRequestUsername</Name>
+               <Value xsi:type="xsd:string">popeye</Value>
+            </ParameterValueStruct>
+            <ParameterValueStruct xsi:type="ns2:ParameterValueStruct">
+               <Name xsi:type="xsd:string">InternetGatewayDevice.ManagementServer.ConnectionRequestPassword</Name>
+               <Value xsi:type="xsd:string">popeye</Value>
+            </ParameterValueStruct>
+            <ParameterValueStruct xsi:type="ns2:ParameterValueStruct">
+               <Name xsi:type="xsd:string">InternetGatewayDevice.ManagementServer.X_ARCOR_NET_RetryDelayInitial</Name>
+               <Value xsi:type="xsd:unsignedInt">10</Value>
+            </ParameterValueStruct>
+            <ParameterValueStruct xsi:type="ns2:ParameterValueStruct">
+               <Name xsi:type="xsd:string">InternetGatewayDevice.ManagementServer.X_ARCOR_NET_RetryDelayIncrementFactor</Name>
+               <Value xsi:type="xsd:unsignedInt">3</Value>
+            </ParameterValueStruct>
+            <ParameterValueStruct xsi:type="ns2:ParameterValueStruct">
+               <Name xsi:type="xsd:string">InternetGatewayDevice.ManagementServer.X_ARCOR_NET_RetryDelayMaxIncrement</Name>
+               <Value xsi:type="xsd:unsignedInt">6</Value>
+            </ParameterValueStruct>
+         </ParameterList>
+         <ParameterKey xsi:type="xsd:string">ACS</ParameterKey>
+      </ns2:SetParameterValues>
+   </soapenv:Body>
+</soapenv:Envelope>
+<soapenv:Envelope
+   xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+   xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <soapenv:Header>
+      <ns1:ID soapenv:actor="http://schemas.xmlsoap.org/soap/actor/next"
+         soapenv:mustUnderstand="1"
+         xmlns:ns1="urn:dslforum-org:cwmp-1-0" xsi:type="xsd:string">ACS_SetParameterValues_7</ns1:ID>
+   </soapenv:Header>
+   <soapenv:Body>
+      <ns2:SetParameterValues
+         soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:ns2="urn:dslforum-org:cwmp-1-0">
+         <ParameterList soapenc:arrayType="ns2:ParameterValueStruct[17]"
+            xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xsi:type="soapenc:Array">
+            <ParameterValueStruct xsi:type="ns2:ParameterValueStruct">
+               <Name xsi:type="xsd:string">InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANDSLLinkConfig.Enable</Name>
+               <Value xsi:type="xsd:boolean">1</Value>
+            </ParameterValueStruct>
+            <ParameterValueStruct>
+                <Name xsi:type="xsd:string">InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANDSLLinkConfig.ATMQoS</Name>
+                <Value xsi:type="xsd:string">UBR</Value>
+            </ParameterValueStruct>
+            <ParameterValueStruct>
+                <Name xsi:type="xsd:string">InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANDSLLinkConfig.ATMPeakCellRate</Name>
+                <Value xsi:type="xsd:unsignedInt">4000</Value>
+            </ParameterValueStruct>
+            <ParameterValueStruct>
+                <Name xsi:type="xsd:string">InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANDSLLinkConfig.ATMMaximumBurstSize</Name>
+                <Value xsi:type="xsd:unsignedInt">32</Value>
+            </ParameterValueStruct>
+            <ParameterValueStruct>
+                <Name xsi:type="xsd:string">InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANDSLLinkConfig.ATMSustainableCellRate</Name>
+                <Value xsi:type="xsd:unsignedInt">4000</Value>
+            </ParameterValueStruct>
+            <ParameterValueStruct xsi:type="ns2:ParameterValueStruct">
+               <Name xsi:type="xsd:string">InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANDSLLinkConfig.DestinationAddress</Name>
+               <Value xsi:type="xsd:string">PVC: 1/35</Value>
+            </ParameterValueStruct>
+            <ParameterValueStruct xsi:type="ns2:ParameterValueStruct">
+               <Name xsi:type="xsd:string">InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANDSLLinkConfig.ATMEncapsulation</Name>
+               <Value xsi:type="xsd:string">LLC</Value>
+            </ParameterValueStruct>
+            <ParameterValueStruct xsi:type="ns2:ParameterValueStruct">
+               <Name xsi:type="xsd:string">InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANDSLLinkConfig.LinkType</Name>
+               <Value xsi:type="xsd:string">EoA</Value>
+            </ParameterValueStruct>
+            <ParameterValueStruct xsi:type="ns2:ParameterValueStruct">
+               <Name xsi:type="xsd:string">InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANPPPConnection.1.Enable</Name>
+               <Value xsi:type="xsd:boolean">1</Value>
+            </ParameterValueStruct>
+            <ParameterValueStruct xsi:type="ns2:ParameterValueStruct">
+               <Name xsi:type="xsd:string">InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANPPPConnection.1.ConnectionType</Name>
+               <Value xsi:type="xsd:string">IP_Routed</Value>
+            </ParameterValueStruct>
+            <ParameterValueStruct xsi:type="ns2:ParameterValueStruct">
+               <Name xsi:type="xsd:string">InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANPPPConnection.1.Username</Name>
+               <Value xsi:type="xsd:string">71461764@hinet.net</Value>
+            </ParameterValueStruct>
+            <ParameterValueStruct xsi:type="ns2:ParameterValueStruct">
+               <Name xsi:type="xsd:string">InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANPPPConnection.1.Password</Name>
+               <Value xsi:type="xsd:string">zndpvpvd</Value>
+            </ParameterValueStruct>
+            <ParameterValueStruct xsi:type="ns2:ParameterValueStruct">
+               <Name xsi:type="xsd:string">InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANPPPConnection.1.X_ARCOR_NET_AutoReconnectEnable</Name>
+               <Value xsi:type="xsd:boolean">1</Value>
+            </ParameterValueStruct>            
+            <ParameterValueStruct xsi:type="ns2:ParameterValueStruct">
+               <Name xsi:type="xsd:string">InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANPPPConnection.1.X_ARCOR_NET_AutoReconnectStart</Name>
+               <Value xsi:type="xsd:unsignedInt">180</Value>
+            </ParameterValueStruct>
+            <ParameterValueStruct xsi:type="ns2:ParameterValueStruct">
+               <Name xsi:type="xsd:string">InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANPPPConnection.1.X_ARCOR_NET_AutoReconnectInterval</Name>
+               <Value xsi:type="xsd:unsignedInt">60</Value>
+            </ParameterValueStruct>
+            <ParameterValueStruct>
+                <Name xsi:type="xsd:string">InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANPPPConnection.1.CurrentMRUSize</Name>
+                <Value xsi:type="xsd:unsignedInt">1492</Value>
+            </ParameterValueStruct>
+            <ParameterValueStruct>
+                <Name xsi:type="xsd:string">InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANPPPConnection.1.ConnectionTrigger</Name>
+                <Value xsi:type="xsd:string">AlwaysOn</Value>
+            </ParameterValueStruct>
+         </ParameterList>
+         <ParameterKey xsi:type="xsd:string">ACS</ParameterKey>
+      </ns2:SetParameterValues>
+   </soapenv:Body>
+</soapenv:Envelope>
+<soapenv:Envelope
+   xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+   xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <soapenv:Header>
+      <ns1:ID soapenv:actor="http://schemas.xmlsoap.org/soap/actor/next"
+         soapenv:mustUnderstand="1"
+         xmlns:ns1="urn:dslforum-org:cwmp-1-0" xsi:type="xsd:string">ACS_SetParameterValues_7</ns1:ID>
+   </soapenv:Header>
+   <soapenv:Body>
+      <ns2:SetParameterValues
+         soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:ns2="urn:dslforum-org:cwmp-1-0">
+         <ParameterList soapenc:arrayType="ns2:ParameterValueStruct[18]"
+            xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xsi:type="soapenc:Array">
+            <ParameterValueStruct xsi:type="ns2:ParameterValueStruct">
+               <Name xsi:type="xsd:string">InternetGatewayDevice.Services.VoiceService.1.VoiceProfile.1.Enable</Name>
+               <Value xsi:type="xsd:string">Enabled</Value>
+            </ParameterValueStruct>
+            <ParameterValueStruct xsi:type="ns2:ParameterValueStruct">
+               <Name xsi:type="xsd:string">InternetGatewayDevice.Services.VoiceService.1.VoiceProfile.1.SIP.RegistrarServer</Name>
+               <Value xsi:type="xsd:string">10.118.16.100</Value>
+            </ParameterValueStruct>
+            <ParameterValueStruct xsi:type="ns2:ParameterValueStruct">
+               <Name xsi:type="xsd:string">InternetGatewayDevice.Services.VoiceService.1.VoiceProfile.1.SIP.ProxyServer</Name>
+               <Value xsi:type="xsd:string">10.118.16.100</Value>
+            </ParameterValueStruct>
+            <ParameterValueStruct xsi:type="ns2:ParameterValueStruct">
+               <Name xsi:type="xsd:string">InternetGatewayDevice.Services.VoiceService.1.VoiceProfile.1.SIP.UserAgentDomain</Name>
+               <Value xsi:type="xsd:string">10.118.16.100</Value>
+            </ParameterValueStruct>
+            <ParameterValueStruct xsi:type="ns2:ParameterValueStruct">
+               <Name xsi:type="xsd:string">InternetGatewayDevice.Services.VoiceService.1.VoiceProfile.1.SIP.ProxyServerPort</Name>
+               <Value xsi:type="xsd:unsignedInt">5060</Value>
+            </ParameterValueStruct>
+            <ParameterValueStruct xsi:type="ns2:ParameterValueStruct">
+               <Name xsi:type="xsd:string">InternetGatewayDevice.Services.VoiceService.1.VoiceProfile.1.SIP.RegistrarServerPort</Name>
+               <Value xsi:type="xsd:unsignedInt">5060</Value>
+            </ParameterValueStruct>
+            <ParameterValueStruct xsi:type="ns2:ParameterValueStruct">
+               <Name xsi:type="xsd:string">InternetGatewayDevice.Services.VoiceService.1.VoiceProfile.1.SIP.UserAgentPort</Name>
+               <Value xsi:type="xsd:unsignedInt">5060</Value>
+            </ParameterValueStruct>
+            <ParameterValueStruct xsi:type="ns2:ParameterValueStruct">
+               <Name xsi:type="xsd:string">InternetGatewayDevice.Services.VoiceService.1.VoiceProfile.1.Line.1.Enable</Name>
+               <Value xsi:type="xsd:string">Enabled</Value>
+            </ParameterValueStruct>
+            <ParameterValueStruct xsi:type="ns2:ParameterValueStruct">
+               <Name xsi:type="xsd:string">InternetGatewayDevice.Services.VoiceService.1.VoiceProfile.1.Line.1.SIP.AuthPassword</Name>
+               <Value xsi:type="xsd:string">tester</Value>
+            </ParameterValueStruct>
+           <ParameterValueStruct xsi:type="ns2:ParameterValueStruct">
+               <Name xsi:type="xsd:string">InternetGatewayDevice.Services.VoiceService.1.VoiceProfile.1.Line.1.SIP.AuthUserName</Name>
+               <Value xsi:type="xsd:string">0170607717</Value>
+            </ParameterValueStruct>
+            <ParameterValueStruct xsi:type="ns2:ParameterValueStruct">
+               <Name xsi:type="xsd:string">InternetGatewayDevice.Services.VoiceService.1.VoiceProfile.1.Line.1.SIP.URI</Name>
+               <Value xsi:type="xsd:string">0170607717</Value>
+            </ParameterValueStruct>
+            <ParameterValueStruct xsi:type="ns2:ParameterValueStruct">
+               <Name xsi:type="xsd:string">InternetGatewayDevice.Services.VoiceService.1.VoiceProfile.1.Line.1.PhyReferenceList</Name>
+               <Value xsi:type="xsd:string">2</Value>
+            </ParameterValueStruct>
+            <ParameterValueStruct xsi:type="ns2:ParameterValueStruct">
+               <Name xsi:type="xsd:string">InternetGatewayDevice.Services.VoiceService.1.VoiceProfile.1.Line.1.Codec.List.1.Enable</Name>
+               <Value xsi:type="xsd:boolean">0</Value>
+            </ParameterValueStruct>
+            <ParameterValueStruct xsi:type="ns2:ParameterValueStruct">
+               <Name xsi:type="xsd:string">InternetGatewayDevice.Services.VoiceService.1.VoiceProfile.1.Line.1.Codec.List.3.Enable</Name>
+               <Value xsi:type="xsd:boolean">0</Value>
+            </ParameterValueStruct>
+            <ParameterValueStruct xsi:type="ns2:ParameterValueStruct">
+               <Name xsi:type="xsd:string">InternetGatewayDevice.Services.VoiceService.1.PhyInterface.1.X_ARCOR_NET_OutCallPriorityList</Name>
+               <Value xsi:type="xsd:string">1</Value>
+            </ParameterValueStruct>
+            <ParameterValueStruct xsi:type="ns2:ParameterValueStruct">
+               <Name xsi:type="xsd:string">InternetGatewayDevice.Services.VoiceService.1.PhyInterface.1.X_ARCOR_NET_AnswerAllLines</Name>
+               <Value xsi:type="xsd:boolean">1</Value>
+            </ParameterValueStruct>
+            <ParameterValueStruct xsi:type="ns2:ParameterValueStruct">
+               <Name xsi:type="xsd:string">InternetGatewayDevice.Services.VoiceService.1.PhyInterface.1.X_ARCOR_NET_AnswerLineList</Name>
+               <Value xsi:type="xsd:string">1,PSTN</Value>
+            </ParameterValueStruct>
+            <ParameterValueStruct xsi:type="ns2:ParameterValueStruct">
+               <Name xsi:type="xsd:string">InternetGatewayDevice.DeviceInfo.ProvisioningCode</Name>
+               <Value xsi:type="xsd:string">ACT1</Value>
+            </ParameterValueStruct>
+         </ParameterList>
+         <ParameterKey xsi:type="xsd:string">ACS</ParameterKey>
+      </ns2:SetParameterValues>
+   </soapenv:Body>
+</soapenv:Envelope>

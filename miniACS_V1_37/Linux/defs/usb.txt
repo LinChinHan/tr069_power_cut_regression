@@ -1,0 +1,569 @@
+Device.USB. so r rooth
+//InterfaceNumberOfEntries u r
+PortNumberOfEntries u r
+/*
+Device.USB.Interface. mo r st #define
+Enable b rw
+Status s r Up,Down,Unknown,Dormant,NotPresent,LowerLayerDown,Error
+Alias s64 rwj
+Name s64 r
+LastChange u rj
+LowerLayers s1024 rw
+Upstream b r
+MACAddress s6 r mac
+MaxBitRate u r
+Port s256 r
+Device.USB.Interface.1.Stats. so r #end
+BytesSent ul rj
+BytesReceived ul rj
+PacketsSent ul rj
+PacketsReceived ul rj
+ErrorsSent u rj
+ErrorsReceived u rj
+UnicastPacketsSent ul rj
+UnicastPacketsReceived ul rj
+DiscardPacketsSent u rj
+DiscardPacketsReceived u rj
+MulticastPacketsSent ul rj
+MulticastPacketsReceived ul rj
+BroadcastPacketsSent ul rj
+BroadcastPacketsReceived ul rj
+UnknownProtoPacketsReceived u rj
+*/
+Device.USB.Port. mo2 r s #define#end
+Alias s64 rwj
+Name s64 r
+Standard s4 r
+Type s r Host,Hub,Device
+Receptacle s r Standard-A,Standard-B,Powered-B,Micro-AB,Micro-B
+Rate s r Low,Full,High,Super
+Power s r Self,Bus,Unknown
+Device.USB.USBHosts. so r
+HostNumberOfEntries u r
+Device.USB.USBHosts.Host. mo r st
+Alias s64 rwj
+Enable b rw
+Name s64 r
+Type s r OHCI,EHCI,UHCI,xHCI
+Reset b rw
+PowerManagementEnable b rw
+USBVersion s4 r
+DeviceNumberOfEntries u r
+Device.USB.USBHosts.Host.1.Device. mo5 r s #define
+DeviceNumber u r
+USBVersion s4 r
+DeviceClass h1 r
+DeviceSubClass h1 r
+DeviceVersion u r
+DeviceProtocol h1 r
+ProductID u r
+VendorID u r
+Manufacturer s64 r
+ProductClass s64 r
+SerialNumber s64 r
+Port u r
+USBPort s64 r
+Rate s r Low,Full,High,Super
+Parent s64 r
+MaxChildren u r
+IsSuspended b r
+IsSelfPowered b r
+ConfigurationNumberOfEntries u r
+Device.USB.USBHosts.Host.1.Device.1.Configuration. mo r
+ConfigurationNumber u r
+InterfaceNumberOfEntries u r
+Device.USB.USBHosts.Host.1.Device.1.Configuration.1.Interface. mo2 r #end
+InterfaceNumber u r
+InterfaceClass h1 r
+InterfaceSubClass h1 r
+InterfaceProtocol h1 r
+/*
+Device.HPNA. so r root
+InterfaceNumberOfEntries u r
+Device.HPNA.Interface. mo r st #define
+Enable b rw
+Status s r Up,Down,Unknown,Dormant,NotPresent,LowerLayerDown,Error
+Alias s64 rwj
+Name s64 r
+LastChange u rj
+LowerLayers s1024 rw
+Upstream b r
+MACAddress s6 r mac
+FirmwareVersion s64 r
+NodeID u r
+IsMaster b r
+Synced b r
+TotalSyncTime u rj
+MaxBitRate u r
+NetworkUtilization u r
+PossibleConnectionTypes s r Phone,Coax
+ConnectionType s5 rw Phone,Coax
+PossibleSpectralModes s r A,B,C,D
+SpectralMode s1 rw A,B,C,D
+MTU u rw
+NoiseMargin u rw
+DefaultNonLARQPER u rw
+LARQEnable b rw
+MinMulticastRate u rw
+NegMulticastRate u r
+MasterSelectionMode s13 rw Automatic,ForceEndpoint,ForceMaster
+AssociatedDeviceNumberOfEntries u r
+Device.HPNA.Interface.1.Stats. so r
+BytesSent ul rj
+BytesReceived ul rj
+PacketsSent ul rj
+PacketsReceived ul rj
+ErrorsSent u rj
+ErrorsReceived u rj
+UnicastPacketsSent ul rj
+UnicastPacketsReceived ul rj
+DiscardPacketsSent u rj
+DiscardPacketsReceived u rj
+MulticastPacketsSent ul rj
+MulticastPacketsReceived ul rj
+BroadcastPacketsSent ul rj
+BroadcastPacketsReceived ul rj
+UnknownProtoPacketsReceived u rj
+Device.HPNA.Interface.1.QoS. so r
+FlowSpecNumberOfEntries u r
+Device.HPNA.Interface.1.QoS.FlowSpec. mo rw
+Enable b rw
+Status s r Disabled,Enabled,Error_Misconfigured,Error
+Alias s64 rwj
+TrafficClasses s256 rw
+FlowType s7 rw CBR,VBR,VBR-NRT,BE
+Priority u rw
+Latency u rw
+Jitter u rw
+PacketSize u rw
+MinRate u rw
+AvgRate u rw
+MaxRate u rw
+PER u rw
+Timeout u rw
+Device.HPNA.Interface.1.AssociatedDevice. mo r u #end
+MACAddress s6 r mac
+NodeID u r
+IsMaster b r
+Synced b r
+TotalSyncTime u rj
+MaxBitRate u r
+PHYDiagnosticsEnable b rw
+Active b r
+Device.HPNA.Diagnostics. so r h
+Device.HPNA.Diagnostics.PHYThroughput. so r st
+DiagnosticsState s27 rw None,Requested,Canceled,Complete,Error,Error_FailToEnableCert,Error_CertCmdTimeout,Error_UnknownErr,Error_UnsupportedOpcode,Error_InvalidParam,Error_UnsupportedCmdSegment,Error_UnsupportedDataGen,Error_InvalidSequence,Error_InvalidFrame,Eror_InvalidOpcode
+Interface s256 rw
+NumPacketsInBurst u rw
+BurstInterval u rw
+TestPacketPayloadLength u rw
+PayloadEncoding u rw
+PayloadDataGen u rw
+PayloadType s13 rw Pattern,IncrementByte
+PriorityLevel u rw
+ResultNumberOfEntries u r
+Device.HPNA.Diagnostics.PHYThroughput.Result. mo r
+SrcMACAddress s6 r mac
+DestMACAddress s6 r mac
+PHYRate u r
+BaudRate u r
+SNR u r
+PacketsReceived u r
+Attenuation u r
+Device.HPNA.Diagnostics.PerformanceMonitoring. so r st
+DiagnosticsState s28 rw None,Requested,Canceled,Complete,Error,Error_SampleIntervalTooSmall
+Interface s256 rw
+SampleInterval u rw
+Device.HPNA.Diagnostics.PerformanceMonitoring.Nodes. so r s
+CurrentStart d r
+CurrentEnd d r
+NodeNumberOfEntries u r
+Device.HPNA.Diagnostics.PerformanceMonitoring.Nodes.Node. mo r
+MACAddress s6 r mac
+BytesSent ul r
+BytesReceived ul r
+PacketsSent ul r
+PacketsReceived ul r
+BroadcastPacketsSent ul r
+BroadcastPacketsReceived ul r
+MulticastPacketsSent ul r
+MulticastPacketsReceived ul r
+PacketsCrcErrored u r
+PacketsCrcErroredHost u r
+PacketsShortErrored u r
+PacketsShortErroredHost u r
+RxPacketsDropped u r
+TxPacketsDropped u r
+ControlRequestLocal u r
+ControlReplyLocal u r
+ControlRequestRemote u r
+ControlReplyRemote u r
+PacketsSentWire ul r
+BroadcastPacketsSentWire ul r
+MulticastPacketsSentWire ul r
+PacketsInternalControl u r
+BroadcastPacketsInternalControl u r
+PacketsReceivedQueued u r
+PacketsReceivedForwardUnknown u r
+NodeUtilization u r
+Device.HPNA.Diagnostics.PerformanceMonitoring.Channels. so r s
+TimeStamp d r
+ChannelNumberOfEntries u r
+Device.HPNA.Diagnostics.PerformanceMonitoring.Channels.Channel. mo r
+HostSrcMACAddress s6 r mac
+HostDestMACAddress s6 r mac
+HPNASrcMACAddress s6 r mac
+HPNADestMACAddress s6 r mac
+PHYRate u r
+BaudRate u r
+SNR u r
+PacketsSent u r
+PacketsReceived u r
+LARQPacketsReceived u r
+FlowSpec s256 r
+Device.MoCA. so r root
+InterfaceNumberOfEntries u r
+Device.MoCA.Interface. mo r st
+Enable b rw
+Status s r Up,Down,Unknown,Dormant,NotPresent,LowerLayerDown,Error
+Alias s64 rwj
+Name s64 r
+LastChange u rj
+LowerLayers s1024 rw
+Upstream b r
+MACAddress s6 r mac
+FirmwareVersion s64 r
+MaxBitRate u r
+MaxIngressBW u r
+MaxEgressBW u r
+HighestVersion s64 r
+CurrentVersion s64 r
+NetworkCoordinator u r
+NodeID u r
+MaxNodes b r
+PreferredNC b rw
+BackupNC u r
+PrivacyEnabledSetting b rw
+PrivacyEnabled b r
+FreqCapabilityMask h8 r
+FreqCurrentMaskSetting h8 rw
+FreqCurrentMask h8 r
+CurrentOperFreq u r
+LastOperFreq u r
+KeyPassphrase s17 w
+TxPowerLimit u rw
+PowerCntlPhyTarget u rw
+BeaconPowerLimit u rw
+NetworkTabooMask h8 r
+NodeTabooMask h8 r
+TxBcastRate u r
+TxBcastPowerReduction u r
+QAM256Capable b r
+PacketAggregationCapability u r
+AssociatedDeviceNumberOfEntries u r
+Device.MoCA.Interface.1.Stats. so r
+BytesSent ul rj
+BytesReceived ul rj
+PacketsSent ul rj
+PacketsReceived ul rj
+ErrorsSent u rj
+ErrorsReceived u rj
+UnicastPacketsSent ul rj
+UnicastPacketsReceived ul rj
+DiscardPacketsSent u rj
+DiscardPacketsReceived u rj
+MulticastPacketsSent ul rj
+MulticastPacketsReceived ul rj
+BroadcastPacketsSent ul rj
+BroadcastPacketsReceived ul rj
+UnknownProtoPacketsReceived u rj
+Device.MoCA.Interface.1.QoS. so r
+EgressNumFlows u r
+IngressNumFlows u r
+FlowStatsNumberOfEntries u r
+Device.MoCA.Interface.1.QoS.FlowStats. mo r
+FlowID u r
+PacketDA s6 r mac
+MaxRate u r
+MaxBurstSize u r
+LeaseTime u r
+LeaseTimeLeft u rj
+FlowPackets u rj
+Device.MoCA.Interface.1.AssociatedDevice. mo r u
+MACAddress s6 r mac
+NodeID u r
+PreferredNC b r
+HighestVersion s64 r
+PHYTxRate u r
+PHYRxRate u r
+TxPowerControlReduction u r
+RxPowerLevel u rj
+TxBcastRate u r
+RxBcastPowerLevel u rj
+TxPackets u rj
+RxPackets u rj
+RxErroredAndMissedPackets u r
+QAM256Capable b r
+PacketAggregationCapability u r
+RxSNR u r
+Active b r
+Device.Ghn. so r root
+InterfaceNumberOfEntries u r
+Device.Ghn.Interface. mo r st #define
+Enable b rw
+Status s r Up,Down,Unknown,Dormant,NotPresent,LowerLayerDown,Error
+Alias s64 rw
+Name s64 r
+LastChange u rj
+LowerLayers s1024 rw
+Upstream b r
+MACAddress s6 r mac
+FirmwareVersion s64 r
+ConnectionType s r Powerline,Phone,Coax
+MaxTransmitRate u r
+TargetDomainNames s1024 rw
+DomainName s32 r
+DomainNameIdentifier u r
+DomainId u r
+DeviceId u r
+MaxBitRate u r
+NodeTypeDMCapable b r
+DMRequested b rw
+IsDM b r
+NodeTypeSCCapable b r
+SCRequested b rw
+IsSC b r
+StandardVersions s r
+MaxBandPlan u r
+MediumType s r PowerLineBaseband,PhoneLineBaseband,CoaxBaseband,CoaxRF,PlasticOpticalFiber
+TAIFG u r
+NotchedAmateurRadioBands h2 rw
+PHYThroughputDiagnosticsEnable s rw
+PerformanceMonitoringDiagnosticsEnable s rw
+SMMaskedBandNumberOfEntries u r
+NodeTypeDMConfig b rw
+NodeTypeDMStatus b r
+NodeTypeSCStatus b r
+AssociatedDeviceNumberOfEntries u r
+Device.Ghn.Interface.1.DMInfo. so r
+DomainName h32 rw
+DomainNameIdentifier h2 r
+DomainId u r
+MACCycleDuration u rw
+SCDeviceId u rw
+SCMACAddress s6 rw mac
+ReregistrationTimePeriod u rw
+TopologyPeriodicInterval u rw
+MinSupportedBandplan u rw
+MaxSupportedBandplan u rw
+Device.Ghn.Interface.1.SCInfo. so r
+ModesSupported s r NN,NMK
+ModeEnabled s rw
+MICSize s11 rw 4-byte MIC,8-byte MIC,16-byte MIC
+Location b r
+Device.Ghn.Interface.1.SMMaskedBand. mo rw
+Enable b rw
+BandNumber u rw
+StartSubCarrier u rw
+StopSubCarrier u rw
+Device.Ghn.Interface.1.Stats. so r
+BytesSent ul rj
+BytesReceived ul rj
+PacketsSent ul rj
+PacketsReceived ul rj
+ErrorsSent u rj
+ErrorsReceived u rj
+UnicastPacketsSent ul rj
+UnicastPacketsReceived ul rj
+DiscardPacketsSent u rj
+DiscardPacketsReceived u rj
+MulticastPacketsSent ul rj
+MulticastPacketsReceived ul rj
+BroadcastPacketsSent ul rj
+BroadcastPacketsReceived ul rj
+UnknownProtoPacketsReceived u rj
+MgmtBytesSent ul rj
+MgmtBytesReceived ul rj
+MgmtPacketsSent ul rj
+MgmtPacketsReceived ul rj
+BlocksSent ul rj
+BlocksReceived ul rj
+BlocksResent u rj
+BlocksErrorsReceived u rj
+Device.Ghn.Interface.1.AssociatedDevice. mo r u #end
+MACAddress s6 r mac
+DeviceId u r
+TxPhyRate u rj
+RxPhyRate u rj
+Active b r
+Device.Ghn.Diagnostics. so r
+Device.Ghn.Diagnostics.PHYThroughput. so r
+DiagnosticsState s9 rw None,Requested,Canceled,Complete,Error
+Interface s rw
+DiagnoseMACAddress s6 rw mac
+PHYThroughputResultNumberOfEntries u r
+Device.Ghn.Diagnostics.PHYThroughput.Result. mo r
+DestinationMACAddress s6 r mac
+LinkState s r Direct,NonDirect
+TxPhyRate u rj
+RxPhyRate u rj
+Device.Ghn.Diagnostics.PerformanceMonitoring. so r
+DiagnosticsState s9 rw None,Requested,Canceled,Complete,Error
+Interface s rw
+DiagnoseMACAddress s6 rw mac
+SampleInterval u rw
+SNRGroupLength u rw
+Device.Ghn.Diagnostics.PerformanceMonitoring.Nodes. so r
+CurrentStart d r
+CurrentEnd d r
+NodeNumberOfEntries u r
+Device.Ghn.Diagnostics.PerformanceMonitoring.Nodes.Node. mo r
+DestinationMACAddress s6 r mac
+BytesSent ul rj
+BytesReceived ul rj
+PacketsSent ul rj
+PacketsReceived ul rj
+ErrorsSent u rj
+ErrorsReceived u rj
+UnicastPacketsSent ul rj
+UnicastPacketsReceived ul rj
+DiscardPacketsSent u rj
+DiscardPacketsReceived u rj
+MulticastPacketsSent ul rj
+MulticastPacketsReceived ul rj
+BroadcastPacketsSent ul rj
+BroadcastPacketsReceived ul rj
+UnknownProtoPacketsReceived u rj
+MgmtBytesSent ul rj
+MgmtBytesReceived ul rj
+MgmtPacketsSent ul rj
+MgmtPacketsReceived ul rj
+BlocksSent ul rj
+BlocksReceived ul rj
+BlocksResent u rj
+BlocksErrorsReceived u rj
+Device.Ghn.Diagnostics.PerformanceMonitoring.Channels. so r
+TimeStamp d r
+ChannelNumberOfEntries u r
+Device.Ghn.Diagnostics.PerformanceMonitoring.Channels.Channel. mo r
+DestinationMACAddress s6 r mac
+SNR u r
+Device.HomePlug. so r root
+InterfaceNumberOfEntries u r
+Device.HomePlug.Interface. mo r st #define
+Enable b rw
+Status s r Up,Down,Unknown,Dormant,NotPresent,LowerLayerDown,Error
+Alias s64 rwj
+Name s64 r
+LastChange u rj
+LowerLayers s1024 rw
+Upstream b r
+MACAddress s6 r mac
+LogicalNetwork s64 rw
+Version s16 r
+FirmwareVersion s64 r
+ForceCCo b rw
+NetworkPassword s32 w
+OtherNetworksPresent s64 r
+MaxBitRate u r
+AssociatedDeviceNumberOfEntries u r
+Device.HomePlug.Interface.1.Stats. so r
+BytesSent ul rj
+BytesReceived ul rj
+PacketsSent ul rj
+PacketsReceived ul rj
+ErrorsSent u rj
+ErrorsReceived u rj
+UnicastPacketsSent ul rj
+UnicastPacketsReceived ul rj
+DiscardPacketsSent u rj
+DiscardPacketsReceived u rj
+MulticastPacketsSent ul rj
+MulticastPacketsReceived ul rj
+BroadcastPacketsSent ul rj
+BroadcastPacketsReceived ul rj
+UnknownProtoPacketsReceived u rj
+MPDUTxAck ul r
+MPDUTxCol ul r
+MPDUTxFailed ul r
+MPDURxAck ul r
+MPDURxFailed ul r
+Device.HomePlug.Interface.1.AssociatedDevice. mo r u #end
+MACAddress s6 r mac
+TxPhyRate u r
+RxPhyRate u r
+SNRPerTone s128 r
+AvgAttenuation u r
+EndStationMACs s6 r mac
+Active b r
+Device.UPA. so r root
+InterfaceNumberOfEntries u r
+Device.UPA.Interface. mo r st #define
+Enable b rw
+Status s r Up,Down,Unknown,Dormant,NotPresent,LowerLayerDown,Error
+Alias s64 rwj
+Name s64 r
+LastChange u rj
+LowerLayers s1024 rw
+Upstream b r
+MACAddress s6 r mac
+FirmwareVersion s64 r
+MaxBitRate u r
+NodeType s2 rw AP,EP
+LogicalNetwork s20 rw
+EncryptionMethod s6 rw None,DES,3DES,AES128,AES256
+EncryptionKey s36 rw
+PowerBackoffEnabled b rw
+PowerBackoffMechanismActive b r
+EstApplicationThroughput u r
+ActiveNotchEnable b rw
+ActiveNotchNumberOfEntries u r
+AssociatedDeviceNumberOfEntries u r
+BridgeForNumberOfEntries u r
+Device.UPA.Interface.1.Stats. so r
+BytesSent ul rj
+BytesReceived ul rj
+PacketsSent ul rj
+PacketsReceived ul rj
+ErrorsSent u rj
+ErrorsReceived u rj
+UnicastPacketsSent ul rj
+UnicastPacketsReceived ul rj
+DiscardPacketsSent u rj
+DiscardPacketsReceived u rj
+MulticastPacketsSent ul rj
+MulticastPacketsReceived ul rj
+BroadcastPacketsSent ul rj
+BroadcastPacketsReceived ul rj
+UnknownProtoPacketsReceived u rj
+Device.UPA.Interface.1.AssociatedDevice. mo r u
+MACAddress s6 r mac
+Port u r
+LogicalNetwork s20 r
+PhyTxThroughput u r
+PhyRxThroughput u r
+RealPhyRxThroughput u r
+EstimatedPLR u r
+MeanEstimatedAtt u r
+SmartRouteIntermediatePLCMAC s6 r mac
+DirectRoute b r
+Active b r
+Device.UPA.Interface.1.ActiveNotch. mo rw st
+Enable b rw
+Alias s64 rwj
+StartFreq u rw
+StopFreq u rw
+Depth u rw
+Device.UPA.Interface.1.BridgeFor. mo r st #end
+Alias s64 rwj
+MACAddress s6 r mac
+Port u r
+Device.UPA.Diagnostics. so r h
+Device.UPA.Diagnostics.InterfaceMeasurement. so r st
+DiagnosticsState s17 rw None,Requested,Canceled,Complete,Error,Error_InvalidPort
+Type s3 rw SNR,CFR
+Interface s256 rw
+Port u rw
+Measurements u r
+RxGain i r
+*/

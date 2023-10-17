@@ -1,0 +1,23 @@
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" soap:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:cwmp="urn:dslforum-org:cwmp-1-0">
+<soap:Header>
+<cwmp:ID soap:mustUnderstand="1">2</cwmp:ID>
+</soap:Header>
+<soap:Body>
+<cwmp:ScheduleDownload>
+<CommandKey>Test</CommandKey>
+<FileType>1 Firmware</FileType>
+<URL>http://192.168.2.100/W722VC_fwui-rd_encXXX.bin</URL>
+<Username>ar4wwl</Username>
+<Password>4w$loa$</Password>
+<TimeWindowList soap:arrayType="cwmp:TimeWindowStruct[1]">
+<TimeWindowStruct>
+<WindowStart>30</WindowStart>
+<WindowEnd>31</WindowEnd>
+<WindowMode>1</WindowMode>
+<UserMessage>popeye</UserMessage>
+<MaxRetries>3</MaxRetries>
+</TimeWindowStruct>
+</TimeWindowList>
+</cwmp:ScheduleDownload>
+</soap:Body>
+</soap:Envelope>

@@ -1,0 +1,43 @@
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" soap:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:cwmp="urn:dslforum-org:cwmp-1-0">
+<soap:Header>
+<cwmp:ID soap:mustUnderstand="1">2</cwmp:ID>
+</soap:Header>
+<soap:Body>
+<cwmp:SetParameterValues>
+<ParameterList soap:arrayType="cwmp:ParameterValueStruct[8]">
+<ParameterValueStruct>
+<name>Device.IP.Diagnostics.TraceRoute.DiagnosticsState</name>
+<value>Requested</value>
+</ParameterValueStruct>
+<ParameterValueStruct>
+<name>Device.IP.Diagnostics.TraceRoute.Interface</name>
+<value>Device.IP.Interface.2</value>
+</ParameterValueStruct>
+<ParameterValueStruct>
+<name>Device.IP.Diagnostics.TraceRoute.NumberOfTries</name>
+<value>1</value>
+</ParameterValueStruct>
+<ParameterValueStruct>
+<name>Device.IP.Diagnostics.TraceRoute.Timeout</name>
+<value>3000</value>
+</ParameterValueStruct>
+<ParameterValueStruct>
+<name>Device.IP.Diagnostics.TraceRoute.DataBlockSize</name>
+<value>100</value>
+</ParameterValueStruct>
+<ParameterValueStruct>
+<name>Device.IP.Diagnostics.TraceRoute.DSCP</name>
+<value>1</value>
+</ParameterValueStruct>
+<ParameterValueStruct>
+<name>Device.IP.Diagnostics.TraceRoute.MaxHopCount</name>
+<value>30</value>
+</ParameterValueStruct>
+<ParameterValueStruct>
+<name>Device.IP.Diagnostics.TraceRoute.Host</name>
+<value>www.google.com</value>
+</ParameterValueStruct>
+</ParameterList>
+</cwmp:SetParameterValues>
+</soap:Body>
+</soap:Envelope>

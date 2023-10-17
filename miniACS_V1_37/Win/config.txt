@@ -1,0 +1,8 @@
+password = popeye123
+username = popeye
+AuthName = popeye
+AuthPassword = 12345
+OUI = 001A2A
+ProductClass = Whatever
+Manufacturer = Arcadyan
+ModelName = Whatever

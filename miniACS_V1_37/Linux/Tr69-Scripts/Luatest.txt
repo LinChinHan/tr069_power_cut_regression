@@ -1,0 +1,114 @@
+<---
+	function GetDSLStats()
+		acs.GetParameterAttributes("Device.DSL.Channel.1.Stats.");
+		para = acs.GetParameterValues("Device.DSL.Channel.1.Stats.");
+		outfile = io.open("DSLstats.log", "a");
+		if outfile == nil then
+			outfile = io.open("DSLstats.log", "w");
+		end
+		logtimes = acs.GetVar("logtimes");
+		if logtimes == nil then
+			logtimes = 0;
+		end
+		logtimes = logtimes + 1;
+		acs.SetVar("logtimes", logtimes);
+		print("logtimes = " .. logtimes);
+		acs.SaveVars("MyVars");
+
+		if outfile then
+			outfile:write(acs.GetTime() .. "\n");
+			for key, value in pairs(para) do
+				outfile:write(key .. "=" .. value .. "\n");
+			end			
+			outfile:write("\n\n");
+			outfile:flush();
+			outfile:close();
+		end
+	end
+
+	MF, OUI, PD, SN = acs.GetDeviceInfo()
+	print (MF .. " " .. OUI .. " " .. PD .. " " .. SN)
+
+	e = acs.GetEvent();
+
+	for key, value in pairs(e) do
+		print ("Key = " .. key);
+		print ("Evnet = " .. value);
+	end
+
+	acs.SetVar("silent", 1);
+	print ("event 1 = " .. e[1]);
+--[[
+	if e[1] == "0 BOOTSTRAP" then
+		d = {}
+		d["CommandKey"] = "testDownload";
+		d["URL"] = "http://10.118.16.157:8080/sysimg.bin";
+		d["Username"] = "Popeye";
+		d["Password"] = "12345678";
+		d["DelaySeconds"] = 3;
+
+		error = acs.Download(d);
+		if error ~= "0" then
+			print("Error = " .. error);
+		end
+		GetDSLStats();
+	elseif e[1] == "1 BOOT" then
+		acs.SetVar("username", "popeye");
+		acs.SetVar("password", "popeye123");
+		acs.SetVar("connreq", 1);
+		acs.SaveVars("MyVars");
+	elseif e[1] == "4 VALUE CHANGE" or e[1] == "6 CONNECTION REQUEST" then
+		acs.LoadVars("MyVars");
+		acs.GetParameterValues("Device.PPP.Interface.1.Username");
+		GetDSLStats();
+		return;
+	elseif e[1] == "7 TRANSFER COMPLETE" then
+		print ("Error = " .. acs.GetError());
+		acs.FactoryReset();
+		return;
+	elseif e[3] == "7 TRANSFER COMPLETE" then
+		acs.FactoryReset();
+		GetDSLStats();
+		return;
+	end		
+]]
+	a = {}
+	a["Device.Time.Enable"] = 1;
+	a["Device.Time.NTPServer1"] = "popeye.com";
+	a["Device.Time.NTPServer2"] = "popeye2.com";
+	error = acs.SetParameterValues(a);
+	if  error ~= "0" then
+		print("Error = " .. error);
+	else
+		acs.GetParameterValues("Device.Time.");
+		acs.execute();
+		Parameter = acs.GetValue("Device.Time.");
+		for name, value in pairs(Parameter) do
+			print("Name = " .. name .. "\n" .. "Value = " .. value)
+		end
+		Time1 = acs.GetValue("Device.Time.NTPServer1");
+		print("Time1 = " .. Time1);
+	end
+
+	acs.GetParameterNames("Device.Timex.", "false");
+	error = acs.GetError();
+	if error ~= "0" then
+		print(error .. " Not found");
+	end
+
+--[[
+	d = {}
+	d["CommandKey"] = "testDownload";
+	d["URL"] = "http://192.168.137.137:8080/xxx";
+	d["Password"] = "12345678";
+	d["Username"] = "Popeye";
+	d["DelaySeconds"] = 3;
+
+	error = acs.Download(d);
+	if error ~= "0" then
+		print("Error = " .. error);
+	end
+]]
+
+	
+--->

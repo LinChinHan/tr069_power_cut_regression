@@ -1,0 +1,121 @@
+Device.Bridging. so r root sh
+BridgeNumberOfEntries u r
+FilterNumberOfEntries u r
+MaxBridgeEntries u r
+MaxDBridgeEntries u r
+MaxQBridgeEntries u r
+MaxVLANEntries u r
+MaxFilterEntries u rj
+ProviderBridgeNumberOfEntries u r
+Device.Bridging.Bridge. mo2 rw st #define
+Enable b rw
+Status s r Disabled,Enabled,Error
+Alias s64 rwj
+Standard s11 rw 802.1D-2004,802.1Q-2005,802.1Q-2011
+PortNumberOfEntries u r
+VLANNumberOfEntries u r
+VLANPortNumberOfEntries u r
+Device.Bridging.Bridge.1.Port. mo7 rw st
+Enable b rw
+Status s r Up,Down,Unknown,Dormant,NotPresent,LowerLayerDown,Error
+Alias s64 rwj
+Name s64 r
+LastChange u rj
+LowerLayers s1024 rw
+ManagementPort b rw
+Type s19 rw ProviderNetworkPort,CustomerNetworkPort,CustomerEdgePort,CustomerVLANPort,VLANUnawarePort
+DefaultUserPriority u rw
+PriorityRegeneration s24 rw
+PortState s r Disabled,Blocking,Listening,Learning,Forwarding,Broken
+PVID i rw
+TPID u rw
+AcceptableFrameTypes s21 rw AdmitAll,AdmitOnlyVLANTagged,AdmitOnlyPrioUntagged
+IngressFiltering b rw
+ServiceAccessPrioritySelection b rw
+ServiceAccessPriorityTranslation s32 rw
+PriorityTagging b rw
+Device.Bridging.Bridge.1.Port.1.PriorityCodePoint. so r
+PCPSelection u rw
+UseDEI b rw
+RequireDropEncoding b rw
+PCPEncoding s64 rw
+PCPDecoding s64 rw
+Device.Bridging.Bridge.1.Port.1.Stats. so r
+BytesSent ul rj
+BytesReceived ul rj
+PacketsSent ul rj
+PacketsReceived ul rj
+ErrorsSent u rj
+ErrorsReceived u rj
+UnicastPacketsSent ul rj
+UnicastPacketsReceived ul rj
+DiscardPacketsSent u rj
+DiscardPacketsReceived u rj
+MulticastPacketsSent ul rj
+MulticastPacketsReceived ul rj
+BroadcastPacketsSent ul rj
+BroadcastPacketsReceived ul rj
+UnknownProtoPacketsReceived u rj
+Device.Bridging.Bridge.1.VLAN. mo4 rw st
+Enable b rw
+Alias s64 rwj
+Name s64 rw
+VLANID i rw
+Device.Bridging.Bridge.1.VLANPort. mo4 rw st #end
+Enable b rw
+Alias s64 rwj
+VLAN s256 rw
+Port s256 rw
+Untagged b rw
+Device.Bridging.Filter. mo rw st
+Enable b rw
+Alias s64 rwj
+Status s r Disabled,Enabled,Error_Misconfigured,Error
+Bridge s256 rw
+Order u rw
+Interface s256 rw
+DHCPType s6 rw DHCPv4,DHCPv6
+VLANIDFilter u rw
+EthertypeFilterList s256 rw
+EthertypeFilterExclude b rw
+SourceMACAddressFilterList s512 rw
+SourceMACAddressFilterExclude b rw
+DestMACAddressFilterList s512 rw
+DestMACAddressFilterExclude b rw
+SourceMACFromVendorClassIDFilter s255 rw
+SourceMACFromVendorClassIDFilterv6 h1024 rw
+SourceMACFromVendorClassIDFilterExclude b rw
+SourceMACFromVendorClassIDMode s9 rw Exact,Prefix,Suffix,Substring
+DestMACFromVendorClassIDFilter s255 rw
+DestMACFromVendorClassIDFilterv6 h1024 rw
+DestMACFromVendorClassIDFilterExclude b rw
+DestMACFromVendorClassIDMode s9 rw Exact,Prefix,Suffix,Substring
+SourceMACFromClientIDFilter h1024 rw
+SourceMACFromClientIDFilterExclude b rw
+DestMACFromClientIDFilter h1024 rw
+DestMACFromClientIDFilterExclude b rw
+SourceMACFromUserClassIDFilter h1024 rw
+SourceMACFromUserClassIDFilterExclude b rw
+DestMACFromUserClassIDFilter h1024 rw
+DestMACFromUserClassIDFilterExclude b rw
+DestIP s48 rw ip
+DestMask s49 rw
+DestIPExclude b rw
+SourceIP s48 rw ip
+SourceMask s49 rw
+SourceIPExclude b rw
+Protocol i rw
+ProtocolExclude b rw
+DestPort i rw
+DestPortRangeMax i rw
+DestPortExclude b rw
+SourcePort i rw
+SourcePortRangeMax i rw
+SourcePortExclude b rw
+Device.Bridging.ProviderBridge. mo rw
+Enable b rw
+Status s r Disabled,Enabled,Error_Misconfigured,Error
+Alias s64 rw
+Type s6 rw S-VLAN,PE
+SVLANComponent s256 rw
+CVLANComponents s256 rw

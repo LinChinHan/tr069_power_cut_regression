@@ -1,0 +1,274 @@
+Device.WiFi. so r rooth
+RadioNumberOfEntries u r
+SSIDNumberOfEntries u r
+AccessPointNumberOfEntries u r
+EndPointNumberOfEntries u r
+Device.WiFi.Radio. mo2 r st #define
+Enable b rw
+Status s r Up,Down,Unknown,Dormant,NotPresent,LowerLayerDown,Error
+Alias s64 rwj
+Name s64 r
+LastChange u rj
+LowerLayers s1024 rw
+Upstream b r
+MaxBitRate u r
+SupportedFrequencyBands s r 2.4GHz,5GHz
+OperatingFrequencyBand s6 rw 2.4GHz,5GHz
+SupportedStandards s r a,b,g,n,ac
+OperatingStandards s16 rw
+PossibleChannels s256 r
+ChannelsInUse s256 rj
+Channel u rw
+AutoChannelSupported b r
+AutoChannelEnable b rw
+AutoChannelRefreshPeriod u rw
+OperatingChannelBandwidth s6 rw 20MHz,40MHz,80MHz,160MHz,Auto
+CurrentOperatingChannelBandwidth s r 20MHz,40MHz,80MHz,160MHz
+ExtensionChannel s19 rw AboveControlChannel,BelowControlChannel,Auto
+GuardInterval s7 rw 400nsec,800nsec,Auto
+MCS i rw
+TransmitPowerSupported s64 r
+TransmitPower i rw
+IEEE80211hSupported b r
+IEEE80211hEnabled b rw
+RegulatoryDomain s3 rw
+RetryLimit u rw
+CCARequest h11 rw
+CCAReport h12 r
+RPIHistogramRequest h11 rw
+RPIHistogramReport h19 r
+FragmentationThreshold u rw
+RTSThreshold u rw
+LongRetryLimit u rw
+BeaconPeriod u rw
+DTIMPeriod u rw
+PacketAggregationEnable b rw
+PreambleType s5 rw short,long,auto
+BasicDataTransmitRates s16 rw
+OperationalDataTransmitRates s32 rw
+SupportedDataTransmitRates s r
+InitialChannelEnable b rw
+Device.WiFi.Radio.1.Stats. so r #end
+BytesSent ul rj
+BytesReceived ul rj
+PacketsSent ul rj
+PacketsReceived ul rj
+ErrorsSent u rj
+ErrorsReceived u rj
+DiscardPacketsSent u rj
+DiscardPacketsReceived u rj
+PLCPErrorCount u r
+FCSErrorCount u r
+InvalidMACCount u r
+PacketsOtherReceived u r
+Noise i r
+/*
+Device.WiFi.NeighboringWiFiDiagnostic. so r
+DiagnosticsState s9 rw None,Requested,Canceled,Complete,Error,Completed
+ResultNumberOfEntries u r
+Device.WiFi.NeighboringWiFiDiagnostic.Result. mo r
+Radio s r
+SSID s32 r
+BSSID s6 r mac
+Mode s r AdHoc,Infrastructure
+Channel u r
+SignalStrength i r
+SecurityModeEnabled s r None,WEP,WPA,WPA2,WPA-WPA2,WPA-Enterprise,WPA2-Enterprise,WPA-WPA2-Enterprise
+EncryptionMode s r TKIP,AES
+OperatingFrequencyBand s r 2.4GHz,5GHz
+SupportedStandards s r a,b,g,n,ac
+OperatingStandards s r
+OperatingChannelBandwidth s r 20MHz,40MHz,80MHz,160MHz,Auto
+BeaconPeriod u r
+Noise i r
+BasicDataTransferRates s256 r
+SupportedDataTransferRates s256 r
+DTIMPeriod u r
+*/
+Device.WiFi.SSID. mo4 rw st #define
+Enable b rw
+Status s r Up,Down,Unknown,Dormant,NotPresent,LowerLayerDown,Error
+Alias s64 rwj
+Name s64 r
+LastChange u rj
+LowerLayers s1024 rw
+BSSID s6 r mac
+MACAddress s6 r mac
+SSID s32 rw
+Device.WiFi.SSID.1.Stats. so r #end
+BytesSent ul rj
+BytesReceived ul rj
+PacketsSent ul rj
+PacketsReceived ul rj
+ErrorsSent u r
+RetransCount u r
+FailedRetransCount u r
+RetryCount u r
+MultipleRetryCount u r
+ACKFailureCount u r
+AggregatedPacketCount u r
+ErrorsReceived u rj
+UnicastPacketsSent ul rj
+UnicastPacketsReceived ul rj
+DiscardPacketsSent u rj
+DiscardPacketsReceived u rj
+MulticastPacketsSent ul rj
+MulticastPacketsReceived ul rj
+BroadcastPacketsSent ul rj
+BroadcastPacketsReceived ul rj
+UnknownProtoPacketsReceived u rj
+Device.WiFi.AccessPoint. mo2 rw st #define
+Enable b rw
+Status s r Disabled,Enabled,Error_Misconfigured,Error
+Alias s64 rwj
+SerialNumber s64 r
+MACAddress s6 r mac
+IPAddress s18 r ip
+LEDColor s6 r
+SignalStrength i r 
+LastDataLinkRate u r
+ParentAccessPoint s128 r
+BSSID2GHz s6 r mac
+BSSID5GHz s6 r mac
+SSIDReference s256 rw
+SSIDAdvertisementEnabled b rw
+RetryLimit u rw
+WMMCapability b r
+UAPSDCapability b r
+WMMEnable b rw
+UAPSDEnable b rw
+AssociatedDeviceNumberOfEntries u r
+MaxAssociatedDevices u rw
+IsolationEnable b rw
+MACAddressControlEnabled b rw
+AllowedMACAddress s512 rw
+Device.WiFi.AccessPoint.1.Security. so r st
+Reset b rw
+ModesSupported s r None,WEP-64,WEP-128,WPA-Personal,WPA2-Personal,WPA-WPA2-Personal,WPA-Enterprise,WPA2-Enterprise,WPA-WPA2-Enterprise
+ModeEnabled s20 rw None,WEP-64,WEP-128,WPA-Personal,WPA2-Personal,WPA-WPA2-Personal,WPA-Enterprise,WPA2-Enterprise,WPA-WPA2-Enterprise
+WEPKey h13 w
+PreSharedKey h32 w
+KeyPassphrase s63 w
+RekeyingInterval u rw
+RadiusServerIPAddr s48 rw ip
+SecondaryRadiusServerIPAddr  s48 rw ip
+RadiusServerPort u rw
+SecondaryRadiusServerPort u rw
+RadiusSecret s64 rw
+SecondaryRadiusSecret s64 w
+MFPConfig s8 rw Disabled,Optional,Required
+Device.WiFi.AccessPoint.1.Accounting. so r
+Enable b rw
+ServerIPAddr s48 rw ip
+SecondaryServerIPAddr s48 rw ip
+ServerPort u rw
+SecondaryServerPort u rw
+Secret s64 w
+SecondarySecret s64 w
+InterimInterval u rw
+Device.WiFi.AccessPoint.1.WPS. so r st
+Enable b rw
+ConfigMethodsSupported s r USBFlashDrive,Ethernet,Label,Display,ExternalNFCToken,IntegratedNFCToken,NFCInterface,PushButton,PIN,PhysicalPushButton,PhysicalDisplay,VirtualPushButton,VirtualDisplay
+ConfigMethodsEnabled s128 rw USBFlashDrive,Ethernet,Label,Display,ExternalNFCToken,IntegratedNFCToken,NFCInterface,PushButton,PIN,PhysicalPushButton,PhysicalDisplay,VirtualPushButton,VirtualDisplay
+Status s r Disabled,Error,Unconfigured,Configured,SetupLocked
+Version s r
+PIN s8 w
+Device.WiFi.AccessPoint.1.AssociatedDevice. mo32 r u #end
+MACAddress s6 rj mac
+OperatingStandard s r a,b,g,n,ac
+AuthenticationState b rj
+LastDataDownlinkRate u rj
+LastDataUplinkRate u rj
+SignalStrength i r
+Retransmissions u r
+Active b r
+Device.WiFi.AccessPoint.1.AssociatedDevice.1.Stats. so r #end
+BytesSent ul r
+BytesReceived ul r
+PacketsSent ul r
+PacketsReceived ul r
+ErrorsSent u r
+RetransCount u r
+FailedRetransCount u r
+RetryCount u r
+MultipleRetryCount u r
+/*
+Device.WiFi.AccessPoint.1.AC. mo r
+AccessCategory s r BE,BK,VI,VO
+Alias s64 rw
+AIFSN u rw
+ECWMin u rw
+ECWMax u rw
+TxOpMax u rw
+AckPolicy b rw
+OutQLenHistogramIntervals s rw
+OutQLenHistogramSampleInterval u rw
+Device.WiFi.AccessPoint.1.AC.1.Stats. so r
+BytesSent ul r
+BytesReceived ul r
+PacketsSent ul r
+PacketsReceived ul r
+ErrorsSent u r
+ErrorsReceived u r
+DiscardPacketsSent u r
+DiscardPacketsReceived u r
+RetransCount u r
+OutQLenHistogram s r
+*/
+/*
+Device.WiFi.EndPoint. mo rw st #define
+Enable b rw
+Status s r Disabled,Enabled,Error_Misconfigured,Error
+Alias s64 rwj
+ProfileReference s256 rw
+SSIDReference s256 r
+ProfileNumberOfEntries u r
+Device.WiFi.EndPoint.1.Stats. so r
+LastDataDownlinkRate u rj
+LastDataUplinkRate u rj
+SignalStrength i r
+Retransmissions u r
+Device.WiFi.EndPoint.1.Security. so r
+ModesSupported s r None,WEP-64,WEP-128,WPA-Personal,WPA2-Personal,WPA-WPA2-Personal,WPA-Enterprise,WPA2-Enterprise,WPA-WPA2-Enterprise
+Device.WiFi.EndPoint.1.Profile. mo rw
+Enable b rw
+Status s r Active,Available,Error,Disabled
+Alias s64 rwj
+SSID s32 rw
+Location s64 rw
+Priority u rw
+Device.WiFi.EndPoint.1.Profile.1.Security. so r
+ModeEnabled s20 rw
+WEPKey h13 w
+PreSharedKey h32 w
+KeyPassphrase s63 w
+MFPConfig s8 rw Disabled,Optional,Required
+Device.WiFi.EndPoint.1.WPS. so r #end
+Enable b rw
+ConfigMethodsSupported s r USBFlashDrive,Ethernet,Label,Display,ExternalNFCToken,IntegratedNFCToken,NFCInterface,PushButton,PIN,PhysicalPushButton,PhysicalDisplay,VirtualPushButton,VirtualDisplay
+ConfigMethodsEnabled s rw USBFlashDrive,Ethernet,Label,Display,ExternalNFCToken,IntegratedNFCToken,NFCInterface,PushButton,PIN,PhysicalPushButton,PhysicalDisplay,VirtualPushButton,VirtualDisplay
+Status s r Disabled,Error,Unconfigured,Configured
+Version s r
+PIN u w
+Device.WiFi.EndPoint.1.AC. mo r
+AccessCategory s r BE,BK,VI,VO
+Alias s64 rw
+AIFSN u rw
+ECWMin u rw
+ECWMax u rw
+TxOpMax u rw
+AckPolicy b rw
+OutQLenHistogramIntervals s rw
+OutQLenHistogramSampleInterval u rw
+Device.WiFi.EndPoint.1.AC.1.Stats. so r
+BytesSent ul r
+BytesReceived ul r
+PacketsSent ul r
+PacketsReceived ul r
+ErrorsSent u r
+ErrorsReceived u r
+DiscardPacketsSent u r
+DiscardPacketsReceived u r
+RetransCount u r
+OutQLenHistogram s r
+*/

@@ -1,0 +1,839 @@
+Device.Services.VoiceService. mo r rootst
+EntryID u r
+DefaultLanguage s2 r
+X_T-ONLINE-DE_IpOnly b rw
+NetworkProfileNumberOfEntries u r
+PhyInterfaceNumberOfEntries u r
+ExtensionProfileNumberOfEntries u r
+CodecListNumberOfEntries u r
+Device.Services.VoiceService.1.Capabilities. so r s
+MaxNetworkProfileCount u rj
+MaxExtensionProfileCount u rj
+MaxLineCount u rj
+MaxSessionsPerLine u rj
+MaxSessionsPerExtension u rj
+MaxCallLogNumberOfEntries u rj
+MaxSessionCount u rj
+NetworkSignalingProtocols s rj
+ExtensionSignalingProtocols s rj
+CallForwarding b rj
+Voicemail b rj
+CodecsNumberOfEntries u rj
+Regions s rj
+RTCP b rj
+SRTP b rj
+SRTPKeyingMethods s rj Null,Static,SDP,IKE
+SRTPEncryptionKeySizes u rj
+RTPRedundancy b rj
+DSCPCoupled b rj
+EthernetTaggingCoupled b rj
+PSTNSoftSwitchOver b rj
+FaxT38 b rj
+FaxPassThrough b rj
+ModemPassThrough b rj
+ToneGeneration b rj
+ToneDescriptionsEditable b rj
+PatternBasedToneGeneration b rj
+FileBasedToneGeneration b rj
+ToneFileFormats s rj G.711MuLaw,G.711ALaw,G.729,MP3,WAV,AMR
+RingGeneration b rj
+RingDescriptionsEditable b rj
+PatternBasedRingGeneration b rj
+RingPatternEditable b rj
+FileBasedRingGeneration b rj
+RingFileFormats s rj MIDI,SMAF,RTTTL,MP3,WAV,AMR
+DigitMap b rj
+NumberingPlan b rj
+ButtonMap b rj
+VoicePortTests b rj
+FacilityActions s rj AA_REGISTER,AA_ERASE,AA_INTERROGATE,CLIR_INVOKE,CCBS_ACTIVATE,CCBS_DEACTIVATE,CCBS_INTERROGATE,CCNR_ACTIVATE,CCNR_DEACTIVATE,CCNR_INTERROGATE,CFU_REGISTER,CFU_ACTIVATE,CFU_DEACTIVATE,CFU_ERASE,CFU_INTERROGATE,CFB_REGISTER,CFB_ACTIVATE,CFB_DEACTIVATE,CFB_ERASE,CFB_INTERROGATE,CFNR_REGISTER,CFNR_ACTIVATE,CFNR_DEACTIVATE,CFNR_ERASE,CFNR_INTERROGATE,CFNR_TIMER,CFT_ACTIVATE,CFT_DEACTIVATE,CFT_INTERROGATE,CLIR_ACTIVATE,CLIR_DEACTIVATE,CLIR_INTERROGATE,CW_ACTIVATE,CW_DEACTIVATE,CW_INVOKE,OCB_ACTIVATE,OCB_DEACTIVATE,OCB_INTERROGATE,SCF_ACTIVATE,SCF_DEACTIVATE,SCF_INTERROGATE,SCREJ_ACTIVATE,SCREJ_DEACTIVATE,SCREJ_INTERROGATE,SR_ACTIVATE,SR_DEACTIVATE,SR_INTERROGATE,DND_ACTIVATE,DND_DEACTIVATE,DND_INTERROGATE,PW_SET,CP_INVOKE,LINE_INVOKE,EXT_INVOKE
+Device.Services.VoiceService.1.Capabilities.SIP. so r
+Role s rj UserAgent,BackToBackUserAgents,OutboundProxy
+Extensions s rj
+Transports s rj UDP,TCP,TLS,SCTP
+URISchemes s rj
+EventSubscription b rj
+EventTypes s rj certificate,credential,conference,consent-pending-additions,dialog,http-monitor,kpml,message-summary,poc-settings,presence,reg,refer,session-spec-policy,vq-rtcpxr,winfo,xcap-diff
+ResponseMap b rj
+TLSAuthenticationProtocols s rj Null,MD5,SHA-1
+TLSAuthenticationKeySizes u rj
+TLSEncryptionProtocols s rj Null,RC4,RC2,DES,3DES
+TLSEncryptionKeySizes u rj
+TLSKeyExchangeProtocols s rj RSA,DSS
+/*
+Device.Services.VoiceService.1.Capabilities.MGCP. so r
+Extensions s rj
+Device.Services.VoiceService.1.Capabilities.H323. so r
+FastStart b rj
+H235AuthenticationMethods s rj dhExch,pwdSymEnc,pwdHash,certSign,ipsec,tls
+*/
+/*
+Device.Services.VoiceService.1.Capabilities.ISDN. so r
+MSN b r
+DDI b r
+MCID b r
+MWI b r
+AoC b r
+ECT b r
+*/
+Device.Services.VoiceService.1.Capabilities.Codec. mo8 r s #define#end
+EntryID u rj
+Codec s64 rj G.711MuLaw,G.711ALaw,G.726,G.729,G.729a,G.729e,G.728,G.723.1,G.722,G.722.1,G.722.2,GSM-FR,GSM-HR,GSM-EFR,iLBC
+BitRate u rj
+PacketizationPeriod s64 rj
+SilenceSuppression b rj
+Device.Services.VoiceService.1.Capabilities.QualityIndicator. so r s
+QIModelsSupported s r
+BufferProcessing b r
+MaxQIValues u r
+MaxSessionReports u r
+MaxWorstQIValues u r
+Device.Services.VoiceService.1.PhyInterface. mo2 r sth #define
+InterfaceID u r
+Description s32 r
+Direction s r NORTHBOUND,SOUTHBOUND,BOTH
+ClockSource s8 rw aal1,aal2,free_run,uplink,bri,pri,syncE
+ClockSourceMaster s5 rw syncE
+/*
+Device.Services.VoiceService.1.PhyInterface.1.ISDN. so r st
+State b rw
+ApplicationInterface s5 rw VoIP,VoATM,Data
+Operator s11 rw EuroISDN,EuroNumeris
+ProtocolEmulation s2 rw TE,NT
+Layer2Emulation s2 rw TE,NT
+PermanentLayer2 b rw
+Device.Services.VoiceService.1.PhyInterface.1.ISDN.BRI. so r
+Layer1Emulation s2 rw TE,NT
+PermanentLayer1 b rw
+LapdDisconnectionTimeout b rw
+TEINegociation s7 rw Static,Dynamic
+StaticTEI u rw
+LifeLineHold b rw
+PowerSourceOne b rw
+MaxNumBChannels u rw
+MSN s32 rw
+Device.Services.VoiceService.1.PhyInterface.1.ISDN.PRI. so r
+Linecode s4 rw ami,hdb3,b8zs
+ESF s10 rw None,DF,MF,EMF,SF,ESF,AutoDetect
+PhysicalInterfaceType s2 rw T1,E1
+MaxNumBChannels u rw
+Device.Services.VoiceService.1.PhyInterface.1.ISDN.DiagTests. so r st
+TestState s22 rw None,Requested,Complete,Error_TestNotSupported
+TestSelector s64 rw CHIP_VENDOR_TEST1,CHIP_VENDOR_TEST2
+TestResult s r
+*/
+Device.Services.VoiceService.1.PhyInterface.1.FXO. so r st
+SecondStepDialing b rw
+TimeoutBeforeDialing u rw
+RingingTimeout u rw
+RingNumber u rw
+OnHookMinDuration u rw
+Device.Services.VoiceService.1.PhyInterface.1.FXO.DiagTests. so r st
+TestState s22 rw None,Requested,Complete,Error_TestNotSupported
+TestSelector s64 rw PhoneConnectivityTest
+PhoneConnectivity b r
+Device.Services.VoiceService.1.PhyInterface.1.FXS. so r s
+Active b r
+Device.Services.VoiceService.1.PhyInterface.1.FXS.DiagTests. so r st #end
+TestState s22 rw None,Requested,Complete,Error_TestNotSupported
+TestSelector s16 rw HAZARD_POTENTIAL,FOREIGN_VOLTAGE,RESISTIVE_FAULTS,OFFHOOK,REN
+TestResult s r
+Device.Services.VoiceService.1.CodecList. mo8 r st #define#end
+EntryID u r
+Codec s r
+BitRate u r
+PacketizationPeriod s64 rw
+SilenceSuppression b rw
+Enable b rw
+Priority u rw
+Device.Services.VoiceService.1.NetworkProfile. mo10 rw ohstri #define
+Enable s9 rw Disabled,Quiescent,Enabled
+Reset b rw
+NumberOfLines u r
+SIPNumberOfLines u r
+//H323NumberOfLines u r
+//TrunkNumberOfEntries u r
+//SIPTrunkNumberOfEntries u r
+//ISDNTrunkNumberOfEntries u r
+Name s64 rw
+SignalingProtocol s16 rw
+MaxSessions u rw
+DTMFMethod s7 rw InBand,RFC4733,SIPInfo
+DTMFMethodG711 s7 rw InBand,RFC4733,SIPInfo
+Region s3 rw
+STUNEnable b rw
+STUNServer s256 rw
+NonVoiceBandwidthReservedUpstream u rw
+NonVoiceBandwidthReservedDownstream u rw
+PSTNFailOver b rw
+FaxPassThrough s7 rw Disable,Auto,Force
+ModemPassThrough s7 rw Disable,Auto,Force
+QIModelUsed s16 rw MOS-LTQ
+QICalculationInterval u rw
+NumberOfWorstQIValues u rw
+NumberingPlanRef u rw
+CodecListRef s64 rw
+Device.Services.VoiceService.1.NetworkProfile.1.ServiceProviderInfo. so r
+Name s256 rw
+URL s256 rw
+ContactPhoneNumber s32 rw
+EmailAddress s256 rw
+Device.Services.VoiceService.1.NetworkProfile.1.SIP. so r st
+ProxyServer s256 rw
+ProxyServerPort u rw
+ProxyServerTransport s3 rw
+RegistrarServer s256 rw
+RegistrarServerPort u rw
+RegistrarServerTransport s3 rw
+UserAgentDomain s256 rw
+UserAgentPort u rw
+UserAgentTransport s3 rw
+OutboundProxy s256 rw
+OutboundProxyResolvedAddress s256 r
+OutboundProxyPort u rw
+Organization s256 rw
+RegistrationPeriod u rw
+Realm s64 rw
+TimerT1 u rw
+TimerT2 u rw
+TimerT4 u rw
+TimerA u rw
+TimerB u rw
+TimerC u rw
+TimerD u rw
+TimerE u rw
+TimerF u rw
+TimerG u rw
+TimerH u rw
+TimerI u rw
+TimerJ u rw
+TimerK u rw
+InviteExpires u rw
+ReInviteExpires u rw
+RegisterExpires u rw
+RegisterRetryInterval u rw
+InboundAuth s6 rw None,Digest
+InboundAuthUsername s256 rw
+InboundAuthPassword s256 w
+UseCodecPriorityInSDPResponse b rw
+DSCPMark u rw
+VLANIDMark i rw
+EthernetPriorityMark i rw
+ConferenceCallDomain s256 rw
+TimerLoginRejected u rw
+NoLoginRetry b rw
+TimerRegistrationFailed u rw
+TimerSubscriptionFailed u rw
+SIPEventSubscribeNumberOfElements u r
+SIPResponseMapNumberOfElements u r
+/*
+Device.Services.VoiceService.1.NetworkProfile.1.SIP.EventSubscribe. mo rw
+EntryID u rw
+Enable b rw
+Event s32 rw
+Notifier s256 rw
+NotifierPort u rw
+NotifierTransport s3 rw
+ExpireTime u rw
+Device.Services.VoiceService.1.NetworkProfile.1.SIP.ResponseMap. mo rw
+SIPResponseNumber u rw
+Enable b rw
+TextMessage s64 rw
+Tone u rw
+*/
+/*
+Device.Services.VoiceService.1.NetworkProfile.1.MGCP. so r
+CallAgent1 s256 rw
+CallAgentPort1 u rw
+CallAgent2 s256 rw
+CallAgentPort2 u rw
+RetranIntervalTimer u rw
+MaxRetranCount u rw
+RegisterMode s10 rw Wildcard,Individual
+LocalPort u rw
+Domain s256 rw
+User s64 rw
+DSCPMark u rw
+VLANIDMark i rw
+EthernetPriorityMark i rw
+AllowPiggybackEvents b rw
+SendRSIPImmediately b rw
+Device.Services.VoiceService.1.NetworkProfile.1.H323. so r
+Gatekeeper s rw
+GatekeeperPort u rw
+GatekeeperID s rw
+TimeToLive u rw
+H235Authentication b rw
+AuthPassword s rw
+SendersID s rw
+DSCPMark u rw
+VLANIDMark i rw
+EthernetPriorityMark i rw
+*/
+Device.Services.VoiceService.1.NetworkProfile.1.FXO. so r st
+PhyInterfaceRef u rw
+DTMFDialoutInterval u rw
+CallerIdDetectionEnable b rw
+/*
+Device.Services.VoiceService.1.NetworkProfile.1.ISDN. so r st
+PhyInterfaceRef u rw
+Device.Services.VoiceService.1.NetworkProfile.1.MobileG. so r
+*/
+Device.Services.VoiceService.1.NetworkProfile.1.RTP. so r st
+LocalPortMin u rw
+LocalPortMax u rw
+DSCPMark u rw
+VLANIDMark i rw
+EthernetPriorityMark i rw
+TelephoneEventPayloadType u rw
+JitterBufferType s7 rw Static,Dynamic
+JitterBufferMaxSize u rw
+JitterBufferMinSize u rw
+JitterBufferActualSize u rw
+Device.Services.VoiceService.1.NetworkProfile.1.RTP.RTCP. so r
+Enable b rw
+TxRepeatInterval u rw
+LocalCName s64 rw
+Device.Services.VoiceService.1.NetworkProfile.1.RTP.SRTP. so r
+Enable b rw
+KeyingMethods s256 rw
+EncryptionKeySizes s256 rw
+Device.Services.VoiceService.1.NetworkProfile.1.RTP.Redundancy. so r
+Enable b rw
+PayloadType u rw
+BlockPayloadType u r
+FaxAndModemRedundancy i rw
+ModemRedundancy i rw
+DTMFRedundancy i rw
+VoiceRedundancy i rw
+MaxSessionsUsingRedundancy u rw
+Device.Services.VoiceService.1.NetworkProfile.1.FaxT38. so r st
+Enable b rw
+BitRate u rw
+HighSpeedPacketRate u rw
+HighSpeedRedundancy u rw
+LowSpeedRedundancy u rw
+TCFMethod s7 rw Local,Network
+/*
+Device.Services.VoiceService.1.NetworkProfile.1.SIPTrunk. mo r
+EntryID u rw
+RegisterMode s7 rw STATIC,RFC4160,TISPAN
+TrunkGroupName s128 r
+Transport s3 rw
+PeerServer s128 rw
+FromDomain s128 rw
+FromUser s128 rw
+InSecure s4 rw Port,Very,No
+MaxChannels u rw
+CodecPriority s128 rw
+AuthUsername s128 rw
+AuthPassword s128 w
+AuthStatus s r Registered,Unregistered
+*/
+/*
+Device.Services.VoiceService.1.NetworkProfile.1.ISDNTrunk. mo r st
+EntryID u rw
+PhyInterfaceRef u rw
+OutboundOnlyBChannels s rw
+InboundOnlyBChannels s rw
+BidirectionalOnlyBChannels s rw
+*/
+Device.Services.VoiceService.1.NetworkProfile.1.SIPLine. mo20 r ost
+EntryID u rw
+AuthUserName s128 rw
+AuthPassword s128 w
+URI s128 rw
+SIPEventSubscribeNumberOfElements u r
+/*
+Device.Services.VoiceService.1.NetworkProfile.1.SIPLine.1.EventSubscribe. mo rw
+EntryID u rw
+Enable b rw
+Event s32 r
+AuthUserName s128 rw
+AuthPassword s128 w
+*/
+/*
+Device.Services.VoiceService.1.NetworkProfile.1.H323Line. mo r
+EntryID u rw
+H323ID s32 rw
+*/
+Device.Services.VoiceService.1.NetworkProfile.1.Line. regMulti20 rw #end
+Device.Services.VoiceService.1.NetworkProfile.1.Line. regMultiRoot20 rw ost #define
+Enable s9 rw Disabled,Quiescent,Enabled
+DirectoryNumber s32 rw
+ShortNumber s6 rw
+Status s r Up,Initializing,Registering,Unregistering,Error,Testing,Quiescent,Disabled
+SIPRef u rw
+//H323Ref u rw
+Device.Services.VoiceService.1.NetworkProfile.1.Line.1.Stats. so r st
+ResetStatistics b rw
+PacketsSent u rj
+PacketsReceived u rj
+BytesSent u rj
+BytesReceived u rj
+PacketsLost u rj
+Overruns u rj
+Underruns u rj
+IncomingCallsReceived u rj
+IncomingCallsAnswered u rj
+IncomingCallsConnected u rj
+IncomingCallsFailed u rj
+OutgoingCallsAttempted u rj
+OutgoingCallsAnswered u rj
+OutgoingCallsConnected u rj
+OutgoingCallsFailed u rj
+CallsDropped u rj
+TotalCallTime u rj
+ServerDownTime u rj
+ReceivePacketLossRate u rj
+FarEndPacketLossRate u rj
+ReceiveInterarrivalJitter u rj
+FarEndInterarrivalJitter u rj
+AverageReceiveInterarrivalJitter u rj
+AverageFarEndInterarrivalJitter u rj
+RoundTripDelay u rj
+AverageRoundTripDelay u rj
+Device.Services.VoiceService.1.NetworkProfile.1.Line.1.CallingFeatures. so r st #end
+CallerIDEnable b rw
+CallerIDNameEnable b rw
+CallWaitingEnable b rw
+CallWaitingStatus s r Disabled,Idle,SecondaryRinging,SecondaryConnecting,SecondaryConnected
+MaxSessions u rw
+ConferenceCallingStatus s r Disabled,Idle,SecondaryCalling,SecondaryConnecting,SecondaryConnected,InConferenceCall
+ConferenceCallingSessionCount u r
+CallForwardUnconditionalEnable b rw
+CallForwardUnconditionalNumber s32 rw
+CallForwardOnBusyEnable b rw
+CallForwardOnBusyNumber s32 rw
+CallForwardOnBusyRingTimeout u rw
+CallForwardOnNoAnswerEnable b rw
+CallForwardOnNoAnswerNumber s32 rw
+CallForwardOnNoAnswerRingTimeout u rw
+CallTransferEnable b rw
+MWIEnable b rw
+VMWIEnable b rw
+LineMessagesWaiting u r
+AnonymousCallRejectionEnable b rw
+AnonymousCallEnable b rw
+DoNotDisturbEnable b rw
+RepeatDialEnable b rw
+VoiceMailEnable b rw
+CallPickUpEnable b rw
+CCBSEnable b rw
+IIFCEnable b rw
+BlockForwardEnable b rw
+SecretForwarderEnable b rw
+FollowMeEnable b rw
+VoiceMailAssociated u rw
+CFTNumberOfEntries u r
+SCFNumberOfEntries u r
+SCREJNumberOfEntries u r
+FollowMeNumberOfEntries u r
+/*
+Device.Services.VoiceService.1.NetworkProfile.1.Trunk. mo rw
+Name s64 rw
+Enable b rw
+Status s r Up,Initializing,Registering,Unregistering,Error,Testing,Quiescent,Disabled
+DDIRange s1024 rw
+MaxOutboundChannelCount u rw
+MaxInboundChannelCount u rw
+SIPRef u rw
+ISDNRef u rw
+*/
+Device.Services.VoiceService.1.ExtensionProfile. mo2 rw hst #define
+//Alias s64 rw
+Enable s9 rw Disabled,Quiescent,Enabled
+Reset b rw
+ExtensionNumberOfEntries u r
+MaxExtensionNumberOfEntries u rw
+FXSExtNumberOfEntries u r
+DECTPortablePartExtNumberOfEntries u r
+SIPExtNumberOfEntries u r
+//MGCPExtNumberOfEntries u r
+VirtualExtNumberOfEntries u r
+Name s64 rw
+SignalingProtocol s16 rw
+MaxSessions u rw
+DTMFMethod s7 rw InBand,RFC4733,SIPInfo
+DTMFMethodG711 s64 rw InBand,RFC4733,SIPInfo
+Region s3 rw
+DigitMap s256 rw
+DigitMapEnable b rw
+FaxPassThrough s7 rw Disable,Auto,Force
+ModemPassThrough s7 rw Disable,Auto,Force
+QIModelUsed s16 rw MOS-LTQ
+QICalculationInterval u rw
+NumberOfWorstQIValues u rw
+FXSRef u rw
+DECTRef u rw
+SIPRef u rw
+//MGCPRef u rw
+VirtualRef u rw
+/*
+Device.Services.VoiceService.1.ExtensionProfile.1.Tone. so r
+EventNumberOfEntries u r
+DescriptionNumberOfEntries u r
+PatternNumberOfEntries u r
+Device.Services.VoiceService.1.ExtensionProfile.1.Tone.Event. mo r
+Function s64 r Busy,Confirmation,Dial,LineMessagesWaiting,OffHookWarning,RingBack,ReOrder,Stutterdial,CallWaiting1,CallWaiting2,CallWaiting3,CallWaiting4,AlertingSignal,SpecialDial,SpecialInfo,Release,Congestion,UserDefined1,UserDefined2,UserDefined3,UserDefined4
+ToneID u rw
+Device.Services.VoiceService.1.ExtensionProfile.1.Tone.Description. mo rw
+EntryID u r
+ToneEnable b rw
+ToneName s64 rw
+TonePattern u rw
+ToneFile s256 rw
+ToneRepetitions u rw
+ToneText s64 rw
+Device.Services.VoiceService.1.ExtensionProfile.1.Tone.Pattern. mo rw
+EntryID u rw
+Enable b rw
+ToneOn b rw
+Frequency1 u rw
+Power1 i rw
+Frequency2 u rw
+Power2 i rw
+Frequency3 u rw
+Power3 i rw
+Frequency4 u rw
+Power4 i rw
+ModulationFrequency u rw
+ModulationPower i rw
+Duration u rw
+NextEntryID u rw
+Device.Services.VoiceService.1.ExtensionProfile.1.ISDN. so r
+State b rw
+ApplicationInterface s5 rw VoIP,VoATM,Data
+Operator s11 rw EuroISDN,EuroNumeris
+ProtocolEmulation s2 rw TE,NT
+Layer2Emulation s2 rw TE,NT
+PermanentLayer2 b rw
+Device.Services.VoiceService.1.ExtensionProfile.1.ISDN.BRI. so r
+Layer1Emulation s2 rw TE,NT
+PermanentLayer1 b rw
+LapdDisconnectionTimeout b rw
+TEINegociation s7 rw Static,Dynamic
+StaticTEI u rw
+LifeLineHold b rw
+PowerSourceOne b rw
+MaxNumBChannels  u rw
+MSN s32 rw
+*/
+Device.Services.VoiceService.1.ExtensionProfile.1.DECTFixedPart. so r st
+Enable b rw
+Status s r On,Off,Error
+Standard s r GAP,CAT-iq 1.0,CAT-iq 2.0,CAT-iq 2.1,CAT-iq 3.0,CAT-iq 4.0
+RFPI h5 r
+MaxSupportedPP u rw
+PIN h8 rw
+RepeaterSupportEnabled b r
+NEMOEnable b rw
+SubscriptionEnable b rw
+CipheringEnable b rw
+EncryptionType s r
+RFPowerControl s7 rw Normal,Reduced
+FirmwareVersion s20 r
+EepromVersion s20 r
+HardwareVersion s20 r
+Device.Services.VoiceService.1.ExtensionProfile.1.DECTFixedPart.stats. so r
+Reset b rw
+Handovers u r
+HandoverFailures u r
+ControlFieldErrors u r
+PayloadFieldErrors u r
+SyncFailures u r
+Device.Services.VoiceService.1.ExtensionProfile.1.FXS. so r st
+Region s3 rw
+Device.Services.VoiceService.1.ExtensionProfile.1.FXSExt. mo2 r st
+EntryID u r
+CallWaitingTimer u rw
+Device.Services.VoiceService.1.ExtensionProfile.1.DECTPortablePartExt. mo5 r st
+EntryID u r
+Name s16 r
+Status s r In reach,Not in reach
+InternationalPortableUserIdentity h5 r
+InternationalPortableEquipementIdentity h5 r
+PortableAccessRightsKey h5 r
+RFPIAttachedTo h5 r
+HandsetType s64 r GAP,CAT-iq 1.0,CAT-iq 2.0,CAT-iq 2.1,CAT-iq 3.0,CAT-iq 4.0
+SubscriptionTime d r
+Control s32 rw
+HardwareVersion s20 r
+SoftwareVersion s20 r
+SoftwareUpgrade b r
+LastUpdateDateTime d r
+OperatorsName s64 rw
+/*
+Device.Services.VoiceService.1.ExtensionProfile.1.SIPExt. mo r
+EntryID u r
+Status s r Registered,Unregistered
+AuthUserName s128 rw
+AuthPassword s128 w
+ContactNumberOfEntries u r
+Device.Services.VoiceService.1.ExtensionProfile.1.SIPExt.1.Contact. mo r
+EntryID u r
+IP s128 r
+ExpireTime s389 r
+Model s16 r
+ModelVersion s16 r
+*/
+/*
+Device.Services.VoiceService.1.ExtensionProfile.1.MGCPExt. mo r
+EntryID u rw
+LineName s32 rw
+Device.Services.VoiceService.1.ExtensionProfile.1.VirtualExt. mo r
+EntryID u rw
+Device.Services.VoiceService.1.ExtensionProfile.1.VirtualExt.1.VoiceMail. so r
+NumberOfEntries u r
+Device.Services.VoiceService.1.ExtensionProfile.1.VirtualExt.1.VoiceMail.Mailbox. mo rw
+EntryID u rw
+Enable b rw
+ExtensionRef u rw
+MaxMsg u rw
+MaxMessageTime u rw
+MinSize u rw
+SMTPServer s rw
+SMTPLogin s rw
+SMTPPassword s rw
+SMTPFrom s rw
+*/
+Device.Services.VoiceService.1.ExtensionProfile.1.Extension. regMulti5 rw #end
+Device.Services.VoiceService.1.ExtensionProfile.1.Extension. regMultiRoot7 rw st #define
+Name s256 rw
+ExtensionNumber u rw
+Enable s9 rw Disabled,Quiescent,Enabled
+Status s r Up,Initializing,Registering,Unregistering,Error,Testing,Quiescent,Disabled
+NumberingPlanRef u rw
+PhyInterfaceRef s16 rw
+CodecListRef s64 rw
+Device.Services.VoiceService.1.ExtensionProfile.1.Extension.1.CallingFeatures. so r st
+CallerIDEnable b rw
+CallerIDNameEnable b rw
+CallWaitingEnable b rw
+CallWaitingStatus s r Disabled,Idle,SecondaryRinging,SecondaryConnecting,SecondaryConnected
+MaxSessions u rw
+ConferenceCallingStatus s r Disabled,Idle,SecondaryCalling,SecondaryConnecting,SecondaryConnected,InConferenceCall
+ConferenceCallingSessionCount u r
+CallForwardUnconditionalEnable b rw
+CallForwardUnconditionalNumber s32 rw
+CallForwardOnBusyEnable b rw
+CallForwardOnBusyNumber s32 rw
+CallForwardOnBusyRingTimeout u rw
+CallForwardOnNoAnswerEnable b rw
+CallForwardOnNoAnswerNumber s32 rw
+CallForwardOnNoAnswerRingTimeout u rw
+CallTransferEnable b rw
+MWIEnable b rw
+VMWIEnable b rw
+LineMessagesWaiting u r
+AnonymousCallRejectionEnable b rw
+AnonymousCallEnable b rw
+DoNotDisturbEnable b rw
+RepeatDialEnable b rw
+VoiceMailEnable b rw
+CallPickUpEnable b rw
+CCBSEnable b rw
+IIFCEnable b rw
+BlockForwardEnable b rw
+SecretForwarderEnable b rw
+FollowMeEnable b rw
+VoiceMailAssociated u rw
+CFTNumberOfEntries u r
+SCFNumberOfEntries u r
+SCREJNumberOfEntries u r
+FollowMeNumberOfEntries u r
+Device.Services.VoiceService.1.ExtensionProfile.1.Extension.1.CallingFeatures.CFT. mo r
+ScheduleID u r
+Enable b rw
+Day s9 rw Monday,Tuesday,Wednesday,Thursday,Friday,Saturday,Sunday,All
+StartTime s5 rw
+EndTime s5 rw
+ForwardedToNumber s32 rw
+Device.Services.VoiceService.1.ExtensionProfile.1.Extension.1.CallingFeatures.SCF. mo r
+ForwardID u r
+CallingNumber s32 rw
+ForwardedToNumber s32 rw
+Device.Services.VoiceService.1.ExtensionProfile.1.Extension.1.CallingFeatures.SCREJ. mo r
+RejectID u r
+CallingNumber s32 rw
+Device.Services.VoiceService.1.ExtensionProfile.1.Extension.1.CallingFeatures.FollowMe. mo r
+FollowMeID u r
+Delay u rw
+Number s32 rw
+Device.Services.VoiceService.1.ExtensionProfile.1.Extension.1.CallingFeatures.Voice2Mail. so r
+Notify b rw
+Attach b rw
+KeepLocal b rw
+EMailAddress s256 rw
+Device.Services.VoiceService.1.ExtensionProfile.1.Extension.1.VoiceProcessing. so r
+TransmitGain i rw
+ReceiveGain i rw
+EchoCancellationEnable b rw
+EchoCancellationInUse b r
+EchoCancellationTail u r
+/*
+Device.Services.VoiceService.1.ExtensionProfile.1.Extension.1.Ringer. so r
+EventNumberOfEntries u r
+DescriptionNumberOfEntries u r
+PatternNumberOfEntries u r
+Device.Services.VoiceService.1.ExtensionProfile.1.Extension.1.Ringer.Event. mo r
+Function s64 r Default,RingSplash
+RingID u rw
+Device.Services.VoiceService.1.ExtensionProfile.1.Extension.1.Ringer.Description. mo rw
+EntryID u r
+RingEnable b rw
+RingName s64 rw
+RingPattern u rw
+RingFile s256 rw
+Device.Services.VoiceService.1.ExtensionProfile.1.Extension.1.Ringer.Pattern. mo rw
+EntryID u rw
+Enable b rw
+RingerOn b rw
+Duration u rw
+NextEntryID u rw
+Device.Services.VoiceService.1.ExtensionProfile.1.Extension.1.ButtonMap. so r
+NumberOfButtons u r
+Device.Services.VoiceService.1.ExtensionProfile.1.Extension.1.ButtonMap.Button. mo r
+ButtonName s16 r
+FacilityAction s64 rw
+FacilityActionArgument s256 rw
+QuickDialNumber s40 rw
+ButtonMessage s64 rw
+UserAccess b rw
+*/
+Device.Services.VoiceService.1.ExtensionProfile.1.Extension.1.Stats. so r s
+EMC h4 r
+PSN h5 r
+Device.Services.VoiceService.1.ExtensionProfile.1.Extension.1.DiagTests. so r hst #end
+TestState s22 rw None,Requested,Complete,Error_TestNotSupported
+TestSelector s64 rw RingingTest
+PhoneRinging b r
+Device.Services.VoiceService.1.CallControl. so r st
+IncomingMapNumberOfEntries u r
+OutgoingMapNumberOfEntries u r
+NumberingPlanNumberOfEntries u r
+CallLogNumberOfEntries u r
+InterDigitTimerStd u rw
+InterDigitTimerOpen u rw
+TerminationDigit s1 rw
+Device.Services.VoiceService.1.CallControl.IncomingMap. mo128 rw ost #define#end
+EntryID u rw
+Enable b rw
+LineRef s256 rw
+ExtensionRef s256 rw
+Order u rw
+Timeout u rw
+VoiceMailRef u rw
+Device.Services.VoiceService.1.CallControl.OutgoingMap. mo32 rw ost #define#end
+EntryID u rw
+Enable b rw
+CLIPNoScreeningNumber s20 rw
+ExtensionRef s256 rw
+LineRef s256 rw
+Order u rw
+Device.Services.VoiceService.1.CallControl.NumberingPlan. mo r st
+EntryID u rw
+MinimumNumberOfDigits u rw
+MaximumNumberOfDigits u rw
+InvalidNumberTone u rw
+PrefixInfoMaxEntries u r
+PrefixInfoNumberOfEntries u r
+/*
+Device.Services.VoiceService.1.CallControl.NumberingPlan.1.PrefixInfo. mo rw
+EntryID u rw
+Enable b rw
+PrefixRange s42 rw
+PrefixMinNumberOfDigits u rw
+PrefixMaxNumberOfDigits u rw
+NumberOfDigitsToRemove u rw
+PosOfDigitsToRemove u rw
+DialTone u rw
+FacilityAction s64 rw
+FacilityActionArgument s256 rw
+*/
+Device.Services.VoiceService.1.CallControl.CallLog. mo32 r s #define
+//Device.Services.VoiceService.1.CallControl.CallLog. mo32 r s #define#end
+CallID s64 r
+CallingPartyNumber s64 r
+CalledPartyNumber s64 r
+CallingPartyPath s256 r
+CalledPartyPath s256 r
+RemoteParty s32 r
+UsedLine s32 r
+UsedExtensions s128 r
+Direction s r Incoming,Outgoing
+Start d r
+Duration u r
+CurrentCallStatus s r Idle,Dialing,Delivered,Connected,Alerting,Disconnected
+CallTerminationCause s r NoExtensionsMapped,NoExtensionsAvailable,AnonymousCallRejection,CallWaitingRejected,CallForwardingUnconditional,CallForwardingBusy,CallForwardingNoReply,LocalDisconnect,LocalForbidden,LocalTimeout,LocalMediaError.,LocalPriority.,LocalReject,LocalTransfer,LocalInternalError,RemoteDisconnect,RemoteBadRequest,RemoteForbidden,RemoteNotFound,RemoteReject,RemoteNotAllowed,RemoteNotAcceptable,RemoteTimeout,RemoteUnavailable,RemoteBusy,RemoteNotSupported,RemoteNetworkFailure
+TerminalUsedRef u r
+ReceiveInterarrivalJitter u rj
+FarEndInterarrivalJitter u rj
+AverageReceiveInterarrivalJitter u rj
+AverageFarEndInterarrivalJitter u rj
+RoundTripDelay u rj
+AverageRoundTripDelay u rj
+SessionNumberOfEntries u r
+/*
+Device.Services.VoiceService.1.CallControl.CallLog.1.H323. so r
+Device.Services.VoiceService.1.CallControl.CallLog.1.H323.SignallingPerformance. so r
+CallSetupDelay u rj
+OutgoingMediaEstablishDelay i rj
+IncomingMediaEstablishDelay i rj
+*/
+Device.Services.VoiceService.1.CallControl.CallLog.1.SIP. so r
+Device.Services.VoiceService.1.CallControl.CallLog.1.SIP.SignallingPerformance. so r
+CallSetupDelay u rj
+OutgoingMediaEstablishDelay i rj
+IncomingMediaEstablishDelay i rj
+Device.Services.VoiceService.1.CallControl.CallLog.1.Session. mo r
+StreamType s rj Audio,Video,Fax,Modem
+Start d rj
+Duration i rj
+FarEndIPAddress s48 rj ipv6
+FarEndUDPPort u rj
+LocalUDPPort u rj
+SessionID s11 r
+Device.Services.VoiceService.1.CallControl.CallLog.1.Session.1.Codec. so r
+TransmitCodec s r
+ReceiveCodec s r
+TransmitBitRate u r
+ReceiveBitRate u r
+TransmitSilenceSuppression b r
+ReceiveSilenceSuppression b r
+TransmitPacketizationPeriod u r
+Device.Services.VoiceService.1.CallControl.CallLog.1.Session.1.FaxT38. so r
+Device.Services.VoiceService.1.CallControl.CallLog.1.Session.1.RTP. so r
+PacketDelayVariation u rj
+BufferDelay u rj
+BurstNumber u rj
+BufferLost u rj
+PacketsReceived u rj
+PacketsLost u rj
+Overruns u rj
+Underruns u rj
+AverageRoundTripDelay u rj
+X_T-ONLINE-DE_Echo u r
+X_T-ONLINE-DE_RQI s64 r
+Device.Services.VoiceService.1.CallControl.CallLog.1.Session.1.VoiceQuality. so r #end
+VoIPQualityIndicator s280 rj
+WorstVoIPQualityIndicatorsValues s30 rj
+WorstVoIPQualityIndicatorTimestamps s48 rj
+/*
+Device.Services.VoiceService.1.TrunkSwitching. so r
+MapNumberOfEntries u r
+Device.Services.VoiceService.1.TrunkSwitching.Map. mo r
+EntryID u r
+NetworkRef s64 rw
+ExtensionRef u rw
+Priority u rw
+*/
+Device.Services.VoiceService.1.DECTHandsetUpgrade. so r
+State s8 rw Enabled,Disabled
+URLNumberOfEntries u r
+Device.Services.VoiceService.1.DECTHandsetUpgrade.URL. mo5 r st #define#end
+EntryID u r
+URL s256 rw
+EMC s4 rw
+SoftwareVersion s20 rw
+HardwareVersion s20 rw

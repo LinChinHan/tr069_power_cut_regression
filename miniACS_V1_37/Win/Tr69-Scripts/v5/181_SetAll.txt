@@ -1,0 +1,140 @@
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" soap:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:cwmp="urn:dslforum-org:cwmp-1-0">
+<soap:Header>
+<cwmp:ID soap:mustUnderstand="1">2</cwmp:ID>
+</soap:Header>
+<soap:Body>
+<cwmp:SetParameterValues>
+<ParameterList soap:arrayType="cwmp:ParameterValueStruct[5]">
+<ParameterValueStruct>
+<name>Device.PPP.Interface.1.Reset</name>
+<value xsi:type="xsd:boolean">1</value>
+</ParameterValueStruct>
+<ParameterValueStruct>
+<name>Device.PPP.Interface.1.Username</name>
+<value xsi:type="xsd:string">0027476430255502031694160001@t-online.de</value>
+</ParameterValueStruct>
+<ParameterValueStruct>
+<name>Device.PPP.Interface.1.Password</name>
+<value xsi:type="xsd:string">65576213</value>
+</ParameterValueStruct>
+<ParameterValueStruct>
+<name>Device.PPP.Interface.1.ConnectionTrigger</name>
+<value xsi:type="xsd:string">AlwaysOn</value>
+</ParameterValueStruct>
+<ParameterValueStruct>
+<name>Device.PPP.Interface.1.IdleDisconnectTime</name>
+<value xsi:type="xsd:unsignedInt">0</value>
+</ParameterValueStruct>
+</ParameterList>
+</cwmp:SetParameterValues>
+</soap:Body>
+</soap:Envelope>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" soap:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:cwmp="urn:dslforum-org:cwmp-1-0">
+<soap:Header>
+<cwmp:ID soap:mustUnderstand="1">2</cwmp:ID>
+</soap:Header>
+<soap:Body>
+<AddObject xmlns="urn:dslforum-org:cwmp-1-0">
+<ObjectName xsi:type="xsd:string">
+<string>Device.Services.VoiceService.1.NetworkProfile.</string>
+</ObjectName>
+<ParameterKey xsi:type="xsd:string">
+<string>GoodForTest</string>
+</ParameterKey>
+</AddObject>
+</soap:Body>
+</soap:Envelope>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" soap:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:cwmp="urn:dslforum-org:cwmp-1-0">
+<soap:Header>
+<cwmp:ID soap:mustUnderstand="1">2</cwmp:ID>
+</soap:Header>
+<soap:Body>
+<AddObject xmlns="urn:dslforum-org:cwmp-1-0">
+<ObjectName xsi:type="xsd:string">
+<string>Device.Services.VoiceService.1.NetworkProfile.1.Line.</string>
+</ObjectName>
+<ParameterKey xsi:type="xsd:string">
+<string>GoodForTest</string>
+</ParameterKey>
+</AddObject>
+</soap:Body>
+</soap:Envelope>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" soap:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:cwmp="urn:dslforum-org:cwmp-1-0">
+<soap:Header>
+<cwmp:ID soap:mustUnderstand="1">2</cwmp:ID>
+</soap:Header>
+<soap:Body>
+<AddObject xmlns="urn:dslforum-org:cwmp-1-0">
+<ObjectName xsi:type="xsd:string">
+<string>Device.Services.VoiceService.1.NetworkProfile.1.Line.</string>
+</ObjectName>
+<ParameterKey xsi:type="xsd:string">
+<string>GoodForTest</string>
+</ParameterKey>
+</AddObject>
+</soap:Body>
+</soap:Envelope>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" soap:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:cwmp="urn:dslforum-org:cwmp-1-0">
+<soap:Header>
+<cwmp:ID soap:mustUnderstand="1">2</cwmp:ID>
+</soap:Header>
+<soap:Body>
+<cwmp:GetParameterValues>
+<ParameterNames soap:arrayType="xsd:string(256)[1]">
+<string>Device.Services.VoiceService.1.NetworkProfile.1.Line.</string>
+</ParameterNames>
+</cwmp:GetParameterValues>
+</soap:Body>
+</soap:Envelope>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<soapenv:Header>
+<ns1:ID soapenv:actor="http://schemas.xmlsoap.org/soap/actor/next" soapenv:mustUnderstand="1" xsi:type="xsd:string" xmlns:ns1="urn:dslforum-org:cwmp-1-0">ACS_SetParameterValues_7</ns1:ID>
+</soapenv:Header>
+<soapenv:Body>
+<ns2:SetParameterValues soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:ns2="urn:dslforum-org:cwmp-1-0">
+<ParameterList soapenc:arrayType="ns2:ParameterValueStruct[10]" xsi:type="soapenc:Array" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+<ParameterValueStruct xsi:type="ns2:ParameterValueStruct">
+<Name xsi:type="xsd:string">Device.Services.VoiceService.1.NetworkProfile.1.SIPLine.1.URI</Name>
+<Value xsi:type="xsd:string">061969693952</Value>
+</ParameterValueStruct>
+<ParameterValueStruct xsi:type="ns2:ParameterValueStruct">
+<Name xsi:type="xsd:string">Device.Services.VoiceService.1.NetworkProfile.1.SIPLine.1.AuthUserName</Name>
+<Value xsi:type="xsd:string">arcvoip_de@t-online.de</Value>
+</ParameterValueStruct>
+<ParameterValueStruct xsi:type="ns2:ParameterValueStruct">
+<Name xsi:type="xsd:string">Device.Services.VoiceService.1.NetworkProfile.1.SIPLine.1.AuthPassword</Name>
+<Value xsi:type="xsd:string">LkWpeter</Value>
+</ParameterValueStruct>
+<ParameterValueStruct xsi:type="ns2:ParameterValueStruct">
+<Name xsi:type="xsd:string">Device.Services.VoiceService.1.NetworkProfile.1.SIPLine.2.URI</Name>
+<Value xsi:type="xsd:string">061969693953</Value>
+</ParameterValueStruct>
+<ParameterValueStruct xsi:type="ns2:ParameterValueStruct">
+<Name xsi:type="xsd:string">Device.Services.VoiceService.1.NetworkProfile.1.SIPLine.2.AuthUserName</Name>
+<Value xsi:type="xsd:string">arcvoip_de@t-online.de</Value>
+</ParameterValueStruct>
+<ParameterValueStruct xsi:type="ns2:ParameterValueStruct">
+<Name xsi:type="xsd:string">Device.Services.VoiceService.1.NetworkProfile.1.SIPLine.2.AuthPassword</Name>
+<Value xsi:type="xsd:string">LkWpeter</Value>
+</ParameterValueStruct>
+<ParameterValueStruct xsi:type="ns2:ParameterValueStruct">
+<Name xsi:type="xsd:string">Device.Services.VoiceService.1.NetworkProfile.1.SIP.ProxyServer</Name>
+<Value xsi:type="xsd:string">tel.t-online.de</Value>
+</ParameterValueStruct>
+<ParameterValueStruct xsi:type="ns2:ParameterValueStruct">
+<Name xsi:type="xsd:string">Device.Services.VoiceService.1.NetworkProfile.1.SIP.ProxyServerPort</Name>
+<Value>5071</Value>
+</ParameterValueStruct>
+<ParameterValueStruct xsi:type="ns2:ParameterValueStruct">
+<Name xsi:type="xsd:string">Device.Services.VoiceService.1.NetworkProfile.1.STUNServer</Name>
+<Value xsi:type="xsd:string">stun.t-online.de</Value>
+</ParameterValueStruct>
+<ParameterValueStruct xsi:type="ns2:ParameterValueStruct">
+<Name xsi:type="xsd:string">Device.Services.VoiceService.1.NetworkProfile.1.Enable</Name>
+<Value xsi:type="xsd:string">Enabled</Value>
+</ParameterValueStruct>
+</ParameterList>
+<ParameterKey xsi:type="xsd:string">ACS</ParameterKey>
+</ns2:SetParameterValues>
+</soapenv:Body>
+</soapenv:Envelope>

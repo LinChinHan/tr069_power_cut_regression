@@ -1,0 +1,164 @@
+InternetGatewayDevice.LANDevice. mo r root
+LANEthernetInterfaceNumberOfEntries u r
+LANUSBInterfaceNumberOfEntries u r
+LANWLANConfigurationNumberOfEntries u r
+InternetGatewayDevice.LANDevice.1.LANHostConfigManagement. so r hst
+MACAddress s6 r mac
+DHCPServerConfigurable b rw
+DHCPServerEnable b rw
+DHCPRelay b r
+MinAddress s18 rw ip
+MaxAddress s18 rw ip
+ReservedAddresses s256 rw
+SubnetMask s18 rw mask
+DNSServers s64 rw
+DomainName s64 rw
+IPRouters s64 rw
+DHCPLeaseTime i rw
+#UseAllocatedWAN s rw off
+#AssociatedConnection s rw off
+PassthroughLease u rw off
+PassthroughMACAddress s6 rw mac
+AllowedMACAddresses s512 rw
+IPInterfaceNumberOfEntries u r
+DHCPStaticAddressNumberOfEntries u r
+#DHCPOptionNumberOfEntries u r off
+#DHCPConditionalPoolNumberOfEntries u r off
+InternetGatewayDevice.LANDevice.1.LANHostConfigManagement.IPInterface. mo rw
+Enable b rw
+IPInterfaceIPAddress s18 rw ip
+IPInterfaceSubnetMask s18 rw mask
+IPInterfaceAddressingType s8 rw DHCP,Static,AutoIP
+InternetGatewayDevice.LANDevice.1.LANHostConfigManagement.DHCPStaticAddress. mo10 rw st #define#end
+Enable b rw
+Chaddr s6 rw mac
+Yiaddr s18 rw ip
+InternetGatewayDevice.LANDevice.1.LANEthernetInterfaceConfig. mo4 r st #define
+Enable b rw
+Status s r
+Name s16 r
+MACAddress s6 r mac
+MACAddressControlEnabled b rw
+MaxBitRate s8 rw 10,100,1000,10000,Auto
+DuplexMode s8 rw Half,Full,Auto
+InternetGatewayDevice.LANDevice.1.LANEthernetInterfaceConfig.1.Stats. so r #end
+BytesSent u r
+BytesReceived u r
+PacketsSent u r
+PacketsReceived u r
+ErrorsSent u r
+ErrorsReceived u r
+UnicastPacketsSent u r
+UnicastPacketsReceived u r
+DiscardPacketsSent u r
+DiscardPacketsReceived u r
+MulticastPacketsSent u r
+MulticastPacketsReceived u r
+BroadcastPacketsSent u r
+BroadcastPacketsReceived u r
+UnknownProtoPacketsReceived u r
+InternetGatewayDevice.LANDevice.1.WLANConfiguration. mo r hst
+Enable b rw
+Status s r
+Name s16 r
+BSSID s6 r mac
+MaxBitRate s r
+Channel u rw
+AutoChannelEnable b rw
+SSID s32 rw
+BeaconType s9 rw None,Basic,WPA,11i,WPAand11i
+MACAddressControlEnabled b rw
+Standard s8 r
+WEPKeyIndex u rw
+KeyPassphrase s64 w
+WEPEncryptionLevel s r
+BasicEncryptionModes s16 rw None,WEPEncryption
+BasicAuthenticationMode s22 rw None,EAPAuthentication,SharedAuthentication
+WPAEncryptionModes s22 rw TKIPEncryption,AESEncryption,TKIPandAESEncryption
+WPAAuthenticationMode s20 rw PSKAuthentication,EAPAuthentication
+IEEE11iEncryptionModes s22 rw TKIPEncryption,AESEncryption,TKIPandAESEncryption
+IEEE11iAuthenticationMode s23 rw PSKAuthentication,EAPAuthentication,EAPandPSKAuthentication
+PossibleChannels s r
+BasicDataTransmitRates s r
+OperationalDataTransmitRates s r
+PossibleDataTransmitRates s r
+InsecureOOBAccessEnabled b rw off
+BeaconAdvertisementEnabled b rw
+SSIDAdvertisementEnabled b rw
+RadioEnabled b rw
+TransmitPowerSupported s r
+TransmitPower u rw
+AutoRateFallBackEnabled b rw
+LocationDescription s r off
+RegulatoryDomain s3 rw
+TotalPSKFailures u r
+TotalIntegrityFailures u r
+ChannelsInUse s r
+DeviceOperationMode s r
+DistanceFromRoot u rw off
+PeerBSSID s6 rw off
+AuthenticationServiceMode s20 rw None,LinkAuthentication,RadiusClient
+WMMSupported b rw
+UAPSDSupported b r
+WMMEnable b rw
+UAPSDEnable b rw
+TotalBytesSent u r
+TotalBytesReceived u r
+TotalPacketsSent u r
+TotalPacketsReceived u r
+TotalAssociations u r
+InternetGatewayDevice.LANDevice.1.WLANConfiguration.1.Stats. so r
+ErrorsSent u r
+ErrorsReceived u r
+UnicastPacketsSent u r
+UnicastPacketsReceived u r
+DiscardPacketsSent u r
+DiscardPacketsReceived u r
+MulticastPacketsSent u r
+MulticastPacketsReceived u r
+BroadcastPacketsSent u r
+BroadcastPacketsReceived u r
+UnknownProtoPacketsReceived u r
+InternetGatewayDevice.LANDevice.1.WLANConfiguration.1.AssociatedDevice. mo20 rw u
+AssociatedDeviceMACAddress s6 r mac
+AssociatedDeviceIPAddress s18 r ip
+AssociatedDeviceAuthenticationState b r
+InternetGatewayDevice.LANDevice.1.WLANConfiguration.1.WEPKey. mo4 r
+WEPKey s32 w
+InternetGatewayDevice.LANDevice.1.WLANConfiguration.1.PreSharedKey. mo r
+PreSharedKey s64 w
+KeyPassphrase s63 w
+#AssociatedDeviceMACAddress s rw off
+InternetGatewayDevice.LANDevice.1.WLANConfiguration.1.WPS. so r st
+Enable b rw
+DeviceName s32 r
+DevicePassword u rw
+UUID s36 r
+Version u r
+ConfigMethodsSupported s r
+ConfigMethodsEnabled s 128 rw
+SetupLockedState s r
+SetupLock b rw
+ConfigurationState s r
+LastConfigurationError s r
+RegistrarNumberOfEntries u r
+RegistrarEstablished b r
+InternetGatewayDevice.LANDevice.1.WLANConfiguration.1.WPS.Registrar. mo r st
+Enable b rw
+UUID s36 r
+DeviceName s32 r
+InternetGatewayDevice.LANDevice.1.Hosts. so rw
+HostNumberOfEntries u r
+InternetGatewayDevice.LANDevice.1.Hosts.Host. mo20 rw u
+IPAddress s18 r ip
+AddressSource s8 r
+LeaseTimeRemaining i r
+MACAddress s6 r mac
+Layer2Interface s256 r
+VendorClassID s r off
+ClientID s64 r
+UserClassID s r off
+HostName s64 r
+InterfaceType s r
+Active b r
+

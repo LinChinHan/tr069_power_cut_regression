@@ -1,0 +1,15 @@
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" soap:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:cwmp="urn:dslforum-org:cwmp-1-0">
+<soap:Header>
+<cwmp:ID soap:mustUnderstand="1">2</cwmp:ID>
+</soap:Header>
+<soap:Body>
+<DeleteObject xmlns="urn:dslforum-org:cwmp-1-0">
+<ObjectName xsi:type="xsd:string">
+<string>Device.Services.VoiceService.1.NetworkProfile.3.</string>
+</ObjectName>
+<ParameterKey xsi:type="xsd:string">
+<string>GoodForTest</string>
+</ParameterKey>
+</DeleteObject>
+</soap:Body>
+</soap:Envelope>

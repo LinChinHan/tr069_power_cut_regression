@@ -1,0 +1,1177 @@
+InternetGatewayDevice. so r
+LANDeviceNumberOfEntries u r
+WANDeviceNumberOfEntries u r
+DeviceSummary s1024 ri
+InternetGatewayDevice.DeviceInfo. so r
+Manufacturer s64 r
+ManufacturerOUI s6 r
+ModelName s64 r
+Description s256 r
+ProductClass s64 r
+SerialNumber s64 r
+HardwareVersion s64 r
+SoftwareVersion s64 r
+ModemFirmwareVersion s64 r
+EnabledOptions s r
+AdditionalHardwareVersion s r
+AdditionalSoftwareVersion s r
+SpecVersion s16 r
+ProvisioningCode s64 rw
+UpTime u r
+FirstUseDate d r
+DeviceLog s32768 r
+VendorConfigFileNumberOfEntries u r
+InternetGatewayDevice.DeviceInfo.VendorConfigFile. mo r
+Alias s64 rwj
+Name s64 r
+Version s16 r
+Date d r
+Description s256 r
+InternetGatewayDevice.DeviceConfig. so r
+PersistentData s256 rw
+ConfigFile s32768 rw
+InternetGatewayDevice.ManagementServer. so r
+URL s256 rw
+Username s256 rw
+Password s256 rw
+PeriodicInformEnable b rw
+PeriodicInformInterval u rw
+PeriodicInformTime d rw
+ParameterKey s32 r
+ConnectionRequestURL s256 r
+ConnectionRequestUsername s256 rw
+ConnectionRequestPassword s256 rw
+UpgradesManaged b rw
+KickURL s256 r
+DownloadProgressURL s256 r
+UDPConnectionRequestAddress s256 r
+UDPConnectionRequestAddressNotificationLimit u rw
+STUNEnable b rw
+STUNServerAddress s256 rw
+STUNServerPort u rw
+STUNUsername s256 rw
+STUNPassword s256 rw
+STUNMaximumKeepAlivePeriod i rw
+STUNMinimumKeepAlivePeriod u rw
+NATDetected b r
+ManageableDeviceNumberOfEntries u r
+ManageableDeviceNotificationLimit u rw
+EnableCWMP b rw
+DefaultActiveNotificationThrottle u rw
+AliasBasedAddressing b ri
+InstanceMode s14 rw InstanceNumber,InstanceAlias
+AutoCreateInstances b rw
+CWMPRetryMinimumWaitInterval u rw
+CWMPRetryIntervalMultiplier u rw
+InternetGatewayDevice.ManagementServer.ManageableDevice. mo r
+ManufacturerOUI s6 rj
+SerialNumber s64 rj
+ProductClass s64 rj
+Host s r
+InternetGatewayDevice.Time. so r
+NTPServer1 s64 rw
+NTPServer2 s64 rw
+NTPServer3 s64 rw
+NTPServer4 s64 rw
+NTPServer5 s64 rw
+CurrentLocalTime d r
+LocalTimeZone s6 rw
+LocalTimeZoneName s64 rw
+DaylightSavingsUsed b rw
+DaylightSavingsStart d rw
+DaylightSavingsEnd d rw
+Enable b rw
+Status s r Disabled,Unsynchronized,Synchronized,Error_FailedToSynchronize,Error
+InternetGatewayDevice.UserInterface. so r
+PasswordRequired b rw
+PasswordUserSelectable b rw
+UpgradeAvailable b rw
+WarrantyDate d rw
+ISPName s64 rw
+ISPHelpDesk s32 rw
+ISPHomePage s256 rw
+ISPHelpPage s256 rw
+ISPLogo 64 rw
+ISPLogoSize u rw
+ISPMailServer s256 rw
+ISPNewsServer s256 rw
+TextColor s6 rw
+BackgroundColor s6 rw
+ButtonColor s6 rw
+ButtonTextColor s6 rw
+AutoUpdateServer s256 rw
+UserUpdateServer s256 rw
+ExampleLogin s40 rw
+ExamplePassword s30 rw
+UserDatabaseSupported b r
+SharedPassword b rw
+AvailableLanguages s r
+CurrentLanguage s16 rw
+InternetGatewayDevice.CaptivePortal. so r
+Enable b rw
+Status s r Disabled,Enabled,Error_URLEmpty,Error
+AllowedList s rw
+CaptivePortalURL s2000 rw
+InternetGatewayDevice.Layer3Forwarding. so r
+DefaultConnectionService s256 rw
+ForwardNumberOfEntries u r
+InternetGatewayDevice.Layer3Forwarding.Forwarding. mo rw
+Alias s64 rwj
+Enable b rw
+Status s r Disabled,Enabled,Error
+Type s7 rw Default,Network,Host
+DestIPAddress s48 rw ip
+DestSubnetMask s48 rw mask
+SourceIPAddress s48 rw ip
+SourceSubnetMask s48 rw mask
+GatewayIPAddress s48 rw ip
+Interface s rw
+ForwardingMetric i rw
+MTU u rw
+ForwardingPolicy i rw
+StaticRoute b r
+InternetGatewayDevice.Layer2Bridging. so r
+MaxBridgeEntries u rj
+MaxFilterEntries u rj
+MaxMarkingEntries u rj
+BridgeNumberOfEntries u r
+FilterNumberOfEntries u r
+MarkingNumberOfEntries u r
+AvailableInterfaceNumberOfEntries u r
+MaxDBridgeEntries u r
+MaxQBridgeEntries u r
+MaxVLANEntries u r
+InternetGatewayDevice.Layer2Bridging.Bridge. mo rw
+Alias s64 rwj
+BridgeKey u r
+BridgeEnable b rw
+BridgeStatus s r Disabled,Enabled,Error
+BridgeName s64 rw
+VLANID u rw
+BridgeStandard s6 rw 802.1D,802.1Q
+PortNumberOfEntries u r
+VLANNumberOfEntries u r
+InternetGatewayDevice.Layer2Bridging.Bridge.1.Port. mo rw
+Alias s64 rwj
+PortEnable b rw
+PortInterface s16 rw
+PortState s r Disabled,Blocking,Listening,Learning,Forwarding,Broken
+PVID i rw
+AcceptableFrameTypes s21 rw AdmitAll,AdmitOnlyVLANTagged,AdmitOnlyPrioUntagged
+IngressFiltering b rw
+InternetGatewayDevice.Layer2Bridging.Bridge.1.VLAN. mo rw
+Alias s64 rwj
+VLANEnable b rw
+VLANName s64 rw
+VLANID i rw
+InternetGatewayDevice.Layer2Bridging.Filter. mo rw
+Alias s64 rwj
+FilterKey u r
+FilterEnable b rw
+FilterStatus s r Disabled,Enabled,Error
+FilterBridgeReference i rw
+ExclusivityOrder u rw
+FilterInterface s rw
+VLANIDFilter i rw
+AdmitOnlyVLANTagged b rw
+EthertypeFilterList u rw
+EthertypeFilterExclude b rw
+SourceMACAddressFilterList s rw
+SourceMACAddressFilterExclude b rw
+DestMACAddressFilterList s rw
+DestMACAddressFilterExclude b rw
+SourceMACFromVendorClassIDFilter s256 rw
+SourceMACFromVendorClassIDFilterExclude b rw
+DestMACFromVendorClassIDFilter s256 rw
+DestMACFromVendorClassIDFilterExclude b rw
+SourceMACFromClientIDFilter s256 rw
+SourceMACFromClientIDFilterExclude b rw
+DestMACFromClientIDFilter s256 rw
+DestMACFromClientIDFilterExclude b rw
+SourceMACFromUserClassIDFilter s256 rw
+SourceMACFromUserClassIDFilterExclude b rw
+DestMACFromUserClassIDFilter s256 rw
+DestMACFromUserClassIDFilterExclude b rw
+SourceMACFromVendorClassIDMode s9 rw Exact,Prefix,Suffix,Substring
+DestMACFromVendorClassIDMode s9 rw Exact,Prefix,Suffix,Substring
+InternetGatewayDevice.Layer2Bridging.Marking. mo rw
+Alias s64 rwj
+MarkingKey u r
+MarkingEnable b rw
+MarkingStatus s r Disabled,Enabled,Error
+MarkingBridgeReference i rw
+MarkingInterface s rw
+VLANIDUntag b rw
+VLANIDMark i rw
+EthernetPriorityMark i rw
+EthernetPriorityOverride b rw
+VLANIDMarkOverride b rw
+InternetGatewayDevice.Layer2Bridging.AvailableInterface. mo r
+Alias s64 rwj
+AvailableInterfaceKey u rj
+InterfaceType s rj LANInterface,WANInterface,LANRouterConnection,WANRouterConnection
+InterfaceReference s256 rj
+InternetGatewayDevice.QueueManagement. so r
+Enable b rw
+MaxQueues u rj
+MaxClassificationEntries u rj
+ClassificationNumberOfEntries u r
+MaxAppEntries u rj
+AppNumberOfEntries u r
+MaxFlowEntries u rj
+FlowNumberOfEntries u r
+MaxPolicerEntries u rj
+PolicerNumberOfEntries u r
+MaxQueueEntries u rj
+QueueNumberOfEntries u r
+DefaultForwardingPolicy u rw
+DefaultPolicer i rw
+DefaultQueue u rw
+DefaultDSCPMark i rw
+DefaultEthernetPriorityMark i rw
+AvailableAppList s r
+QueueStatsNumberOfEntries u r
+DefaultTrafficClass i rw
+InternetGatewayDevice.QueueManagement.Classification. mo rw
+Alias s64 rwj
+ClassificationKey u r
+ClassificationEnable b rw
+ClassificationStatus s r Disabled,Enabled,Error
+ClassificationOrder u rw
+ClassInterface s256 rw
+DestIP s48 rw ip
+DestMask s48 rw mask
+DestIPExclude b rw
+SourceIP s48 rw ip
+SourceMask s48 rw mask
+SourceIPExclude b rw
+Protocol i rw
+ProtocolExclude b rw
+DestPort i rw
+DestPortRangeMax i rw
+DestPortExclude b rw
+SourcePort i rw
+SourcePortRangeMax i rw
+SourcePortExclude b rw
+SourceMACAddress s6 rw mac
+SourceMACMask s48 rw mask
+SourceMACExclude b rw
+DestMACAddress s6 rw mac
+DestMACMask s48 rw mask
+DestMACExclude b rw
+Ethertype i rw
+EthertypeExclude b rw
+SSAP i rw
+SSAPExclude b rw
+DSAP i rw
+DSAPExclude b rw
+LLCControl i rw
+LLCControlExclude b rw
+SNAPOUI i rw
+SNAPOUIExclude b rw
+SourceVendorClassID s256 rw
+SourceVendorClassIDExclude b rw
+DestVendorClassID s256 rw
+DestVendorClassIDExclude b rw
+SourceClientID s256 rw
+SourceClientIDExclude b rw
+DestClientID s256 rw
+DestClientIDExclude b rw
+SourceUserClassID s256 rw
+SourceUserClassIDExclude b rw
+DestUserClassID s256 rw
+DestUserClassIDExclude b rw
+TCPACK b rw
+TCPACKExclude b rw
+IPLengthMin u rw
+IPLengthMax u rw
+IPLengthExclude b rw
+DSCPCheck i rw
+DSCPExclude b rw
+DSCPMark i rw
+EthernetPriorityCheck i rw
+EthernetPriorityExclude b rw
+EthernetPriorityMark i rw
+VLANIDCheck i rw
+VLANIDExclude b rw
+ForwardingPolicy u rw
+ClassPolicer i rw
+ClassQueue i rw
+ClassApp i rw
+SourceVendorClassIDMode s9 rw Exact,Prefix,Suffix,Substring
+DestVendorClassIDMode s9 rw Exact,Prefix,Suffix,Substring
+SourceVendorSpecificInfo s256 rw
+SourceVendorSpecificInfoExclude b rw
+SourceVendorSpecificInfoEnterprise u rw
+SourceVendorSpecificInfoSubOption i rw
+SourceVendorSpecificInfoMode s9 rw Exact,Prefix,Suffix,Substring
+DestVendorSpecificInfo s256 rw
+DestVendorSpecificInfoExclude b rw
+DestVendorSpecificInfoEnterprise u rw
+DestVendorSpecificInfoSubOption i rw
+DestVendorSpecificInfoMode s9 rw Exact,Prefix,Suffix,Substring
+OutOfBandInfo i rw
+TrafficClass i rw
+InternetGatewayDevice.QueueManagement.App. mo rw
+Alias s64 rwj
+AppKey u r
+AppEnable b rw
+AppStatus s r Disabled,Enabled,Error
+ProtocolIdentifier s256 rw
+AppName s64 rw
+AppDefaultForwardingPolicy u rw
+AppDefaultPolicer i rw
+AppDefaultQueue i rw
+AppDefaultDSCPMark i rw
+AppDefaultEthernetPriorityMark i rw
+AppDefaultTrafficClass i rw
+InternetGatewayDevice.QueueManagement.Flow. mo rw
+Alias s64 rwj
+FlowKey u r
+FlowEnable b rw
+FlowStatus s r Disabled,Enabled,Error
+FlowType s256 rw
+FlowTypeParameters s256 rw
+FlowName s64 rw
+AppIdentifier i rw
+FlowForwardingPolicy u rw
+FlowPolicer i rw
+FlowQueue i rw
+FlowDSCPMark i rw
+FlowEthernetPriorityMark i rw
+FlowTrafficClass i rw
+InternetGatewayDevice.QueueManagement.Policer. mo rw
+Alias s64 rwj
+PolicerKey u r
+PolicerEnable b rw
+PolicerStatus s r Disabled,Enabled,Error
+CommittedRate u rw
+CommittedBurstSize u rw
+ExcessBurstSize u rw
+PeakRate u rw
+PeakBurstSize u rw
+MeterType s20 rw SimpleTokenBucket,SingleRateThreeColor,TwoRateThreeColor
+PossibleMeterTypes s rj SimpleTokenBucket,SingleRateThreeColor,TwoRateThreeColor
+ConformingAction s rw
+PartialConformingAction s rw
+NonConformingAction s rw
+CountedPackets u rj
+CountedBytes u rj
+TotalCountedPackets u rj
+TotalCountedBytes u rj
+ConformingCountedPackets u rj
+ConformingCountedBytes u rj
+PartiallyConformingCountedPackets u rj
+PartiallyConformingCountedBytes u rj
+NonConformingCountedPackets u rj
+NonConformingCountedBytes u rj
+InternetGatewayDevice.QueueManagement.Queue. mo rw
+Alias s64 rwj
+QueueKey u r
+QueueEnable b rw
+QueueStatus s r Disabled,Enabled,Error
+QueueInterface s256 rw
+QueueBufferLength u r
+QueueWeight u rw
+QueuePrecedence u rw
+REDThreshold u rw
+REDPercentage u rw
+DropAlgorithm s4 rw RED,DT,WRED,BLUE
+SchedulerAlgorithm s3 rw WFQ,WRR,SP
+ShapingRate i rw
+ShapingBurstSize u rw
+TrafficClasses u rw
+InternetGatewayDevice.QueueManagement.QueueStats. mo rw
+Alias s64 rwj
+Enable b rw
+Status s r Disabled,Enabled,Error
+Queue u rw
+Interface s256 rw
+OutputPackets u rj
+OutputBytes u rj
+DroppedPackets u rj
+DroppedBytes u rj
+QueueOccupancyPackets u rj
+QueueOccupancyPercentage u rj
+InternetGatewayDevice.LANConfigSecurity. so r
+ConfigPassword s64 rw
+InternetGatewayDevice.IPPingDiagnostics. so r
+DiagnosticsState s27 rw None,Requested,Complete,Error_CannotResolveHostName
+Interface s256 rw
+Host s256 rw
+NumberOfRepetitions u rw
+Timeout u rw
+DataBlockSize u rw
+DSCP u rw
+SuccessCount u r
+FailureCount u r
+AverageResponseTime u r
+MinimumResponseTime u rj
+MaximumResponseTime u r
+InternetGatewayDevice.TraceRouteDiagnostics. so r
+DiagnosticsState s27 rwj None,Requested,Complete,Error_CannotResolveHostName,Error_MaxHopCountExceeded
+Interface s256 rw
+Host s256 rw
+NumberOfTries u rw
+Timeout u rw
+DataBlockSize u rw
+DSCP u rw
+MaxHopCount u rw
+ResponseTime u rj
+RouteHopsNumberOfEntries u rj
+InternetGatewayDevice.TraceRouteDiagnostics.RouteHops. mo r
+HopHost s256 rj
+HopHostAddress s rj
+HopErrorCode u rj
+HopRTTimes u rj
+InternetGatewayDevice.DownloadDiagnostics. so r
+InternetGatewayDevice.UploadDiagnostics. so r
+InternetGatewayDevice.LANDevice. mo rw
+Alias s64 rwj
+LANEthernetInterfaceNumberOfEntries u r
+LANUSBInterfaceNumberOfEntries u r
+LANWLANConfigurationNumberOfEntries u r
+InternetGatewayDevice.LANDevice.1.LANHostConfigManagement. so r
+DHCPServerConfigurable b rw
+DHCPServerEnable b rw
+DHCPRelay b r
+MinAddress s48 rw ip
+MaxAddress s48 rw ip
+ReservedAddresses s48 rw ip
+SubnetMask s48 rw mask
+DNSServers s48 rw ip
+DomainName s64 rw
+IPRouters s48 rw ip
+DHCPLeaseTime i rw
+UseAllocatedWAN s18 rw Normal,UseAllocatedSubnet,Passthrough
+AssociatedConnection s256 rw
+PassthroughLease u rw
+PassthroughMACAddress s6 rw mac
+AllowedMACAddresses s6 rw mac
+IPInterfaceNumberOfEntries u r
+MACAddress s6 r mac
+DHCPStaticAddressNumberOfEntries u r
+DHCPOptionNumberOfEntries u r
+DHCPConditionalPoolNumberOfEntries u r
+InternetGatewayDevice.LANDevice.1.LANHostConfigManagement.IPInterface. mo rw
+Alias s64 rwj
+Enable b rw
+IPInterfaceIPAddress s48 rw ip
+IPInterfaceSubnetMask s48 rw mask
+IPInterfaceAddressingType s6 rw DHCP,Static,AutoIP
+InternetGatewayDevice.LANDevice.1.LANHostConfigManagement.DHCPStaticAddress. mo rw
+Alias s64 rwj
+Enable b rw
+Chaddr s6 rw mac
+Yiaddr s48 rw ip
+InternetGatewayDevice.LANDevice.1.LANHostConfigManagement.DHCPOption. mo rw
+Alias s64 rwj
+Enable b rw
+Tag u rw
+Value 64 rw
+InternetGatewayDevice.LANDevice.1.LANHostConfigManagement.DHCPConditionalServingPool. mo rw
+Alias s64 rwj
+Enable b rw
+PoolOrder u rw
+SourceInterface s rw
+VendorClassID s256 rw
+VendorClassIDExclude b rw
+VendorClassIDMode s9 rw Exact,Prefix,Suffix,Substring
+ClientID s256 rw
+ClientIDExclude b rw
+UserClassID s256 rw
+UserClassIDExclude b rw
+Chaddr s6 rw mac
+ChaddrMask s6 rw mac
+ChaddrExclude b rw
+LocallyServed b rw
+MinAddress s48 rw ip
+MaxAddress s48 rw ip
+ReservedAddresses s48 rw ip
+SubnetMask s48 rw mask
+DNSServers s48 rw ip
+DomainName s64 rw
+IPRouters s48 rw ip
+DHCPLeaseTime i rw
+UseAllocatedWAN s11 rw Normal,Passthrough
+AssociatedConnection s256 rw
+DHCPServerIPAddress s48 rw ip
+DHCPStaticAddressNumberOfEntries u r
+DHCPOptionNumberOfEntries u r
+InternetGatewayDevice.LANDevice.1.LANHostConfigManagement.DHCPConditionalServingPool.1.DHCPStaticAddress. mo rw
+Alias s64 rwj
+Enable b rw
+Chaddr s6 rw mac
+Yiaddr s48 rw ip
+InternetGatewayDevice.LANDevice.1.LANHostConfigManagement.DHCPConditionalServingPool.1.DHCPOption. mo rw
+Alias s64 rwj
+Enable b rw
+Tag u rw
+Value 64 rw
+InternetGatewayDevice.LANDevice.1.LANEthernetInterfaceConfig. mo r
+Alias s64 rwj
+Enable b rw
+Status s r Up,NoLink,Error,Disabled
+MACAddress s6 r mac
+MACAddressControlEnabled b rw
+MaxBitRate s4 rw 10,100,1000,Auto
+DuplexMode s4 rw Half,Full,Auto
+Name s16 r
+InternetGatewayDevice.LANDevice.1.LANEthernetInterfaceConfig.1.Stats. so r
+BytesSent u r
+BytesReceived u r
+PacketsSent u r
+PacketsReceived u r
+ErrorsSent u rj
+ErrorsReceived u rj
+UnicastPacketsSent u rj
+UnicastPacketsReceived u rj
+DiscardPacketsSent u rj
+DiscardPacketsReceived u rj
+MulticastPacketsSent u rj
+MulticastPacketsReceived u rj
+BroadcastPacketsSent u rj
+BroadcastPacketsReceived u rj
+UnknownProtoPacketsReceived u rj
+InternetGatewayDevice.LANDevice.1.LANUSBInterfaceConfig. mo r
+Alias s64 rwj
+Enable b rw
+Status s r Up,NoLink,Error,Disabled
+MACAddress s6 r mac
+MACAddressControlEnabled b rw
+Standard s6 r
+Type s r Host,Hub,Device
+Rate s r Low,Full,High
+Power s r Self,Bus,Unknown
+Name s16 r
+InternetGatewayDevice.LANDevice.1.LANUSBInterfaceConfig.1.Stats. so r
+BytesSent u r
+BytesReceived u r
+CellsSent u r
+CellsReceived u r
+ErrorsSent u rj
+ErrorsReceived u rj
+UnicastPacketsSent u rj
+UnicastPacketsReceived u rj
+DiscardPacketsSent u rj
+DiscardPacketsReceived u rj
+MulticastPacketsSent u rj
+MulticastPacketsReceived u rj
+BroadcastPacketsSent u rj
+BroadcastPacketsReceived u rj
+UnknownProtoPacketsReceived u rj
+InternetGatewayDevice.LANDevice.1.WLANConfiguration. mo r
+Alias s64 rwj
+Enable b rw
+Status s r Up,Error,Disabled
+BSSID s r
+MaxBitRate s4 rw
+Channel u rw
+SSID s32 rw
+BeaconType s17 rw None,Basic,WPA,11i,BasicandWPA,Basicand11i,WPAand11i,BasicandWPAand11i
+MACAddressControlEnabled b rw
+Standard s r a,b,g
+WEPKeyIndex u rw
+KeyPassphrase s63 rw
+WEPEncryptionLevel s r Disabled,40-bit,104-bit
+BasicEncryptionModes s31 rw None,WEPEncryption
+BasicAuthenticationMode s31 rw None,EAPAuthentication
+WPAEncryptionModes s31 rw WEPEncryption,TKIPEncryption,WEPandTKIPEncryption,AESEncryption,WEPandAESEncryption,TKIPandAESEncryption,WEPandTKIPandAESEncryption
+WPAAuthenticationMode s31 rw PSKAuthentication,EAPAuthentication
+IEEE11iEncryptionModes s31 rw WEPEncryption,TKIPEncryption,WEPandTKIPEncryption,AESEncryption,WEPandAESEncryption,TKIPandAESEncryption,WEPandTKIPandAESEncryption
+IEEE11iAuthenticationMode s31 rw PSKAuthentication,EAPAuthentication,EAPandPSKAuthentication
+PossibleChannels s r
+BasicDataTransmitRates s rw
+OperationalDataTransmitRates s rw
+PossibleDataTransmitRates s r
+InsecureOOBAccessEnabled b rw
+BeaconAdvertisementEnabled b rw
+RadioEnabled b rw
+AutoRateFallBackEnabled b rw
+LocationDescription s4096 rw
+RegulatoryDomain s3 rw
+TotalPSKFailures u r
+TotalIntegrityFailures u r
+ChannelsInUse s r
+DeviceOperationMode s31 rw InfrastructureAccessPoint,WirelessBridge,WirelessRepeater,WirelessStation
+DistanceFromRoot u rw
+PeerBSSID s rw
+AuthenticationServiceMode s18 rw None,LinkAuthentication,RadiusClient
+TotalBytesSent u r
+TotalBytesReceived u r
+TotalPacketsSent u r
+TotalPacketsReceived u r
+TotalAssociations u r
+Name s16 r
+AutoChannelEnable b rw
+SSIDAdvertisementEnabled b rw
+TransmitPowerSupported u r
+TransmitPower u rw
+WMMSupported b r
+UAPSDSupported b r
+WMMEnable b rw
+UAPSDEnable b rw
+InternetGatewayDevice.LANDevice.1.WLANConfiguration.1.Stats. so r
+ErrorsSent u rj
+ErrorsReceived u rj
+UnicastPacketsSent u rj
+UnicastPacketsReceived u rj
+DiscardPacketsSent u rj
+DiscardPacketsReceived u rj
+MulticastPacketsSent u rj
+MulticastPacketsReceived u rj
+BroadcastPacketsSent u rj
+BroadcastPacketsReceived u rj
+UnknownProtoPacketsReceived u rj
+InternetGatewayDevice.LANDevice.1.WLANConfiguration.1.WPS. so r
+Enable b rw
+DeviceName s32 r
+DevicePassword u rw
+UUID s36 r
+Version u r
+ConfigMethodsSupported s r USBFlashDrive,Ethernet,Label,Display,ExternalNFCToken,IntegratedNFCToken,NFCInterface,PushButton,Keypad
+ConfigMethodsEnabled s rw
+SetupLockedState s r Unlocked,LockedByLocalManagement,LockedByRemoteManagement,PINRetryLimitReached
+SetupLock b rw
+ConfigurationState s r Not configured,Configured
+LastConfigurationError s r NoError,DecryptionCRCFailure,SignalTooWeak,CouldntConnectToRegistrar,RogueActivitySuspected,DeviceBusy,SetupLocked,MessageTimeout,RegistrationSessionTimeout,DevicePasswordAuthFailure
+RegistrarNumberOfEntries u r
+RegistrarEstablished b r
+InternetGatewayDevice.LANDevice.1.WLANConfiguration.1.WPS.Registrar. mo r
+Alias s64 rwj
+Enable b rw
+UUID s36 r
+DeviceName s32 r
+InternetGatewayDevice.LANDevice.1.WLANConfiguration.1.AssociatedDevice. mo r
+AssociatedDeviceMACAddress s6 r mac
+AssociatedDeviceIPAddress s64 r
+AssociatedDeviceAuthenticationState b r
+LastRequestedUnicastCipher s256 r
+LastRequestedMulticastCipher s256 r
+LastPMKId s256 r
+LastDataTransmitRate s4 rj
+InternetGatewayDevice.LANDevice.1.WLANConfiguration.1.WEPKey. mo r
+Alias s64 rwj
+WEPKey s128 rw
+InternetGatewayDevice.LANDevice.1.WLANConfiguration.1.PreSharedKey. mo r
+Alias s64 rwj
+PreSharedKey s64 rw
+KeyPassphrase s63 rw
+AssociatedDeviceMACAddress s6 rw mac
+InternetGatewayDevice.LANDevice.1.WLANConfiguration.1.APWMMParameter. mo r
+Alias s64 rwj
+AIFSN u rw
+ECWMin u rw
+ECWMax u rw
+TXOP u rw
+AckPolicy b rw
+InternetGatewayDevice.LANDevice.1.WLANConfiguration.1.STAWMMParameter. mo r
+Alias s64 rwj
+AIFSN u rw
+ECWMin u rw
+ECWMax u rw
+TXOP u rw
+AckPolicy b rw
+InternetGatewayDevice.LANDevice.1.Hosts. so r
+HostNumberOfEntries u r
+InternetGatewayDevice.LANDevice.1.Hosts.Host. mo r
+Alias s64 rwj
+IPAddress s48 r ip
+AddressSource s r DHCP,Static,AutoIP
+LeaseTimeRemaining i r
+MACAddress s6 r mac
+HostName s64 r
+InterfaceType s r Ethernet,USB,802.11,HomePNA,HomePlug,Other
+Active b r
+Layer2Interface s256 r
+VendorClassID s256 r
+ClientID s256 r
+UserClassID s256 r
+InternetGatewayDevice.LANInterfaces. so r
+LANEthernetInterfaceNumberOfEntries u r
+LANUSBInterfaceNumberOfEntries u r
+LANWLANConfigurationNumberOfEntries u r
+InternetGatewayDevice.LANInterfaces.LANEthernetInterfaceConfig. mo r
+InternetGatewayDevice.LANInterfaces.LANUSBInterfaceConfig. mo r
+InternetGatewayDevice.LANInterfaces.WLANConfiguration. mo r
+InternetGatewayDevice.WANDevice. mo r
+Alias s64 rwj
+WANConnectionNumberOfEntries u r
+InternetGatewayDevice.WANDevice.1.WANCommonInterfaceConfig. so r
+EnabledForInternet b rw
+WANAccessType s r DSL,Ethernet,POTS
+Layer1UpstreamMaxBitRate u r
+Layer1DownstreamMaxBitRate u r
+PhysicalLinkStatus s r Up,Down,Initializing,Unavailable
+WANAccessProvider s256 r
+TotalBytesSent u r
+TotalBytesReceived u r
+TotalPacketsSent u r
+TotalPacketsReceived u r
+MaximumActiveConnections u r
+NumberOfActiveConnections u r
+InternetGatewayDevice.WANDevice.1.WANCommonInterfaceConfig.Connection. mo r
+Alias s64 rwj
+ActiveConnectionDeviceContainer s256 r
+ActiveConnectionServiceID s256 r
+InternetGatewayDevice.WANDevice.1.WANDSLInterfaceConfig. so r
+Enable b rw
+Status s r Up,Initializing,EstablishingLink,NoSignal,Error,Disabled
+ModulationType s r ADSL_G.dmt,ADSL_G.lite,ADSL_G.dmt.bis,ADSL_re-adsl,ADSL_2plus,ADLS_four,ADSL_ANSI_T1.413,G.shdsl,IDSL,HDSL,SDSL,VDSL
+LineEncoding s r DMT,CAP,2B1Q,43BT,PAM,QAM
+DataPath s r Interleaved,Fast
+InterleaveDepth u r
+LineNumber i r
+UpstreamCurrRate u r
+DownstreamCurrRate u r
+UpstreamMaxRate u r
+DownstreamMaxRate u r
+UpstreamNoiseMargin i r
+DownstreamNoiseMargin i r
+UpstreamAttenuation i r
+DownstreamAttenuation i r
+UpstreamPower i r
+DownstreamPower i r
+ATURVendor s8 r
+ATURCountry u r
+ATURANSIStd u r
+ATURANSIRev u r
+ATUCVendor s8 r
+ATUCCountry u r
+ATUCANSIStd u r
+ATUCANSIRev u r
+TotalStart u r
+ShowtimeStart u r
+LastShowtimeStart u r
+CurrentDayStart u r
+QuarterHourStart u r
+LinkEncapsulationSupported s r G.992.3_Annex_K_ATM,G.992.3_Annex_K_PTM,G.993.2_Annex_K_ATM,G.993.2_Annex_K_PTM,G.994.1
+LinkEncapsulationRequested s rw
+LinkEncapsulationUsed s r G.992.3_Annex_K_ATM,G.992.3_Annex_K_PTM,G.993.2_Annex_K_ATM,G.993.2_Annex_K_PTM
+StandardsSupported s r G.992.1_Annex_A,G.992.1_Annex_B,G.992.1_Annex_C,T1.413,T1.413i2,ETSI_101_388,G.992.2,G.992.3_Annex_A,G.992.3_Annex_B,G.992.3_Annex_C,G.992.3_Annex_I,G.992.3_Annex_J,G.992.3_Annex_L,G.992.3_Annex_M,G.992.4,G.992.5_Annex_A,G.992.5_Annex_B,G.992.5_Annex_C,G.992.5_Annex_I,G.992.5_Annex_J,G.992.5_Annex_M,G.993.1,G.993.1_Annex_A,G.993.2_Annex_A,G.993.2_Annex_B,G.993.2_Annex_C
+StandardUsed s r
+AllowedProfiles s r 8a,8b,8c,8d,12a,12b,17a,17b,30a
+CurrentProfile s r
+PowerManagementState s r L0,L1,L3,L4
+SuccessFailureCause u r
+LastStateTransmittedDownstream u r
+LastStateTransmittedUpstream u r
+UPBOKLE u r
+MREFPSDds 64 r
+MREFPSDus 64 r
+LIMITMASK u r
+US0MASK u r
+LPATH u r
+INTLVDEPTH i r
+INTLVBLOCK i r
+ActualInterleavingDelay u r
+ACTINP i r
+INPREPORT b r
+NFEC i r
+RFEC i r
+LSYMB i r
+TRELLISds i r
+TRELLISus i r
+ACTSNRMODEds u r
+ACTSNRMODEus u r
+VirtualNoisePSDds 64 r
+VirtualNoisePSDus 64 r
+ACTUALCE u r
+SNRMpbus s r
+SNRMpbds s r
+INMIATOds u r
+INMIATSds u r
+INMCCds u r
+INMINPEQMODEds u r
+InternetGatewayDevice.WANDevice.1.WANDSLInterfaceConfig.TestParams. so r
+HLOGGds u rj
+HLOGGus u rj
+HLOGpsds s rj
+HLOGpsus s rj
+HLOGMTds u rj
+HLOGMTus u rj
+QLNGds u rj
+QLNGus u rj
+QLNpsds i rj
+QLNpsus s rj
+QLNMTds u rj
+QLNMTus u rj
+SNRGds u rj
+SNRGus u rj
+SNRpsds i rj
+SNRpsus s rj
+SNRMTds u rj
+SNRMTus u rj
+LATNds s rj
+LATNus s rj
+SATNds s rj
+SATNus s rj
+InternetGatewayDevice.WANDevice.1.WANDSLInterfaceConfig.Stats. so r
+InternetGatewayDevice.WANDevice.1.WANDSLInterfaceConfig.Stats.Total. so r
+ReceiveBlocks u r
+TransmitBlocks u r
+CellDelin u r
+LinkRetrain u r
+InitErrors u r
+InitTimeouts u r
+LossOfFraming u r
+ErroredSecs u r
+SeverelyErroredSecs u r
+FECErrors u r
+ATUCFECErrors u r
+HECErrors u r
+ATUCHECErrors u r
+CRCErrors u r
+ATUCCRCErrors u r
+LInit b rj
+LOF b rj
+ATUCErroredSecs u rj
+ATUCSeverelyErroredSecs u rj
+InternetGatewayDevice.WANDevice.1.WANDSLInterfaceConfig.Stats.Showtime. so r
+ReceiveBlocks u r
+TransmitBlocks u r
+CellDelin u r
+LinkRetrain u r
+InitErrors u r
+InitTimeouts u r
+LossOfFraming u r
+ErroredSecs u r
+SeverelyErroredSecs u r
+FECErrors u r
+ATUCFECErrors u r
+HECErrors u r
+ATUCHECErrors u r
+CRCErrors u r
+ATUCCRCErrors u r
+LInit b rj
+LOF b rj
+ATUCErroredSecs u rj
+ATUCSeverelyErroredSecs u rj
+InternetGatewayDevice.WANDevice.1.WANDSLInterfaceConfig.Stats.LastShowtime. so r
+ReceiveBlocks u r
+TransmitBlocks u r
+CellDelin u r
+LinkRetrain u r
+InitErrors u r
+InitTimeouts u r
+LossOfFraming u r
+ErroredSecs u r
+SeverelyErroredSecs u r
+FECErrors u r
+ATUCFECErrors u r
+HECErrors u r
+ATUCHECErrors u r
+CRCErrors u r
+ATUCCRCErrors u r
+LInit b rj
+LOF b rj
+ATUCErroredSecs u rj
+ATUCSeverelyErroredSecs u rj
+InternetGatewayDevice.WANDevice.1.WANDSLInterfaceConfig.Stats.CurrentDay. so r
+ReceiveBlocks u r
+TransmitBlocks u r
+CellDelin u r
+LinkRetrain u r
+InitErrors u r
+InitTimeouts u r
+LossOfFraming u r
+ErroredSecs u r
+SeverelyErroredSecs u r
+FECErrors u r
+ATUCFECErrors u r
+HECErrors u r
+ATUCHECErrors u r
+CRCErrors u r
+ATUCCRCErrors u r
+LInit b rj
+LOF b rj
+ATUCErroredSecs u rj
+ATUCSeverelyErroredSecs u rj
+InternetGatewayDevice.WANDevice.1.WANDSLInterfaceConfig.Stats.QuarterHour. so r
+ReceiveBlocks u r
+TransmitBlocks u r
+CellDelin u r
+LinkRetrain u r
+InitErrors u r
+InitTimeouts u r
+LossOfFraming u r
+ErroredSecs u r
+SeverelyErroredSecs u r
+FECErrors u r
+ATUCFECErrors u r
+HECErrors u r
+ATUCHECErrors u r
+CRCErrors u r
+ATUCCRCErrors u r
+LInit b rj
+LOF b rj
+ATUCErroredSecs u rj
+ATUCSeverelyErroredSecs u rj
+InternetGatewayDevice.WANDevice.1.WANEthernetInterfaceConfig. so r
+Enable b rw
+Status s r Up,NoLink,Error,Disabled
+MACAddress s6 r mac
+MaxBitRate s4 rw 10,100,Auto
+DuplexMode s4 rw Half,Full,Auto
+ShapingRate i rw
+ShapingBurstSize u rw
+InternetGatewayDevice.WANDevice.1.WANEthernetInterfaceConfig.Stats. so r
+BytesSent u r
+BytesReceived u r
+PacketsSent u r
+PacketsReceived u r
+InternetGatewayDevice.WANDevice.1.WANDSLConnectionManagement. so r
+ConnectionServiceNumberOfEntries u r
+InternetGatewayDevice.WANDevice.1.WANDSLConnectionManagement.ConnectionService. mo r
+WANConnectionDevice s256 r
+WANConnectionService s256 r
+DestinationAddress s256 r
+LinkType s r
+ConnectionType s r
+Name s32 r
+InternetGatewayDevice.WANDevice.1.WANDSLDiagnostics. so r
+LoopDiagnosticsState s9 rw None,Requested,Complete
+ACTPSDds i r
+ACTPSDus i r
+ACTATPds i r
+ACTATPus i r
+HLINSCds i r
+HLINpsds i r
+QLNpsds i r
+SNRpsds i r
+BITSpsds i r
+GAINSpsds i r
+HLINSCus i rj
+HLINGds u rj
+HLINGus u rj
+HLOGGds u rj
+HLOGGus u rj
+HLOGpsds s rj
+HLOGpsus s rj
+HLOGMTds u rj
+HLOGMTus u rj
+LATNpbds s rj
+LATNpbus s rj
+SATNds s rj
+SATNus s rj
+HLINpsus s rj
+QLNGds u rj
+QLNGus u rj
+QLNpsus s rj
+QLNMTds u rj
+QLNMTus u rj
+SNRGds u rj
+SNRGus u rj
+SNRpsus s rj
+SNRMTds u rj
+SNRMTus u rj
+BITSpsus s rj
+InternetGatewayDevice.WANDevice.1.WANConnectionDevice. mo rw
+Alias s64 rwj
+WANIPConnectionNumberOfEntries u r
+WANPPPConnectionNumberOfEntries u r
+InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANDSLLinkConfig. so r
+Enable b rw
+LinkStatus s r Up,Down,Initializing,Unavailable
+LinkType s12 rw EoA,IPoA,PPPoA,PPPoE,CIP,Unconfigured
+AutoConfig b r
+ModulationType s r ADSL_G.dmt,ADSL_G.lite,ADSL_G.dmt.bis,ADSL_re-adsl,ADSL_2plus,ADLS_four,ADSL_ANSI_T1.413,G.shdsl,IDSL,HDSL,SDSL,VDSL
+DestinationAddress s256 rw
+ATMEncapsulation s5 rw LLC,VCMUX
+FCSPreserved b rw
+VCSearchList s rw
+ATMAAL s r AAL1,AAL2,AAL3,AAL4,AAL5
+ATMTransmittedBlocks u r
+ATMReceivedBlocks u r
+ATMQoS s7 rw UBR,CBR,GFR,VBR-nrt,VBR-rt,UBR+,ABR
+ATMPeakCellRate u rw
+ATMMaximumBurstSize u rw
+ATMSustainableCellRate u rw
+AAL5CRCErrors u r
+ATMCRCErrors u r
+ATMHECErrors u r
+InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANATMF5LoopbackDiagnostics. so r
+DiagnosticsState s9 rw None,Requested,Complete
+NumberOfRepetitions u rw
+Timeout u rw
+SuccessCount u r
+FailureCount u r
+AverageResponseTime u r
+MinimumResponseTime u r
+MaximumResponseTime u r
+InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANEthernetLinkConfig. so r
+EthernetLinkStatus s r Up,Down,Unavailable
+InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANPOTSLinkConfig. so r
+Enable b rw
+LinkStatus s r Up,Down,Dialing,Connecting,Unavailable
+ISPPhoneNumber s64 rw
+ISPInfo s64 rw
+LinkType s10 rw PPP_Dialup
+NumberOfRetries u rw
+DelayBetweenRetries u rw
+Fclass s r 0,1,2,2.0,8,80
+DataModulationSupported s r V92,V90,V34,V32bis,V32
+DataProtocol s r V42_LAPM,V42_MNP4,V14,V80
+DataCompression s r V42bis,MNP5
+PlusVTRCommandSupported b r
+InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANPTMLinkConfig. so r
+Enable b rw
+LinkStatus s r Up,Down,Initializing,Unavailable
+MACAddress s6 r mac
+InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANPTMLinkConfig.Stats. so r
+BytesSent u rj
+BytesReceived u rj
+FramesSent u rj
+FramesReceived u rj
+OOSNearEnd b r
+OOSFarEnd b r
+ErrorsSent u rj
+ErrorsReceived u rj
+UnicastPacketsSent u rj
+UnicastPacketsReceived u rj
+DiscardPacketsSent u rj
+DiscardPacketsReceived u rj
+MulticastPacketsSent u rj
+MulticastPacketsReceived u rj
+BroadcastPacketsSent u rj
+BroadcastPacketsReceived u rj
+UnknownProtoPacketsReceived u rj
+InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANIPConnection. mo rw
+Alias s64 rwj
+Enable b rw
+ConnectionStatus s r Unconfigured,Connecting,Connected,PendingDisconnect,Disconneting,Disconnected
+PossibleConnectionTypes s r Unconfigured,IP_Routed,IP_Bridged
+ConnectionType s12 rw Unconfigured,IP_Routed,IP_Bridged
+Name s256 rw
+Uptime u r
+LastConnectionError s r ERROR_NONE,ERROR_COMMAND_ABORTED,ERROR_NOT_ENABLED_FOR_INTERNET,ERROR_USER_DISCONNECT,ERROR_ISP_DISCONNECT,ERROR_IDLE_DISCONNECT,ERROR_FORCED_DISCONNECT,ERROR_NO_CARRIER,ERROR_IP_CONFIGURATION,ERROR_UNKNOWN
+AutoDisconnectTime u rw
+IdleDisconnectTime u rw
+WarnDisconnectDelay u rw
+RSIPAvailable b r
+NATEnabled b rw
+AddressingType s6 rw DHCP,Static
+ExternalIPAddress s48 rw ip
+SubnetMask s48 rw mask
+DefaultGateway s rw
+DNSEnabled b rw
+DNSOverrideAllowed b rw
+DNSServers s48 rw ip
+MaxMTUSize u rw
+MACAddress s6 rw mac
+MACAddressOverride b rw
+ConnectionTrigger s8 rw OnDemand,AlwaysOn,Manual
+RouteProtocolRx s5 rw Off,RIPv1,RIPv2,OSPF
+PortMappingNumberOfEntries u r
+ShapingRate i rw
+ShapingBurstSize u rw
+Reset b rw
+InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANIPConnection.1.DHCPClient. so r
+SentDHCPOptionNumberOfEntries u r
+ReqDHCPOptionNumberOfEntries u r
+InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANIPConnection.1.DHCPClient.SentDHCPOption. mo rw
+Alias s64 rwj
+Enable b rw
+Tag u rw
+Value 64 rw
+InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANIPConnection.1.DHCPClient.ReqDHCPOption. mo rw
+Alias s64 rwj
+Enable b rw
+Order u rw
+Tag u rw
+Value 64 r
+InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANIPConnection.1.PortMapping. mo rw
+Alias s64 rwj
+PortMappingEnabled b rw
+PortMappingLeaseDuration u rw
+RemoteHost s rw
+ExternalPort u rw
+InternalPort u rw
+PortMappingProtocol s3 rw TCP,UDP
+InternalClient s rw
+PortMappingDescription s256 rw
+ExternalPortEndRange u rw
+InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANIPConnection.1.Stats. so r
+EthernetBytesSent u r
+EthernetBytesReceived u r
+EthernetPacketsSent u r
+EthernetPacketsReceived u r
+EthernetErrorsSent u rj
+EthernetErrorsReceived u rj
+EthernetUnicastPacketsSent u rj
+EthernetUnicastPacketsReceived u rj
+EthernetDiscardPacketsSent u rj
+EthernetDiscardPacketsReceived u rj
+EthernetMulticastPacketsSent u rj
+EthernetMulticastPacketsReceived u rj
+EthernetBroadcastPacketsSent u rj
+EthernetBroadcastPacketsReceived u rj
+EthernetUnknownProtoPacketsReceived u rj
+InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANPPPConnection. mo rw
+Alias s64 rwj
+Enable b rw
+ConnectionStatus s r Unconfigured,Connecting,Authenticating,Connected,PendingDisconnect,Disconnecting,Disconnected
+PossibleConnectionTypes s r Unconfigured,IP_Routed,DHCP_Spoofed,PPPoE_Bridged,PPPoE_Relay,PPTP_Relay,L2TP_Relay
+ConnectionType s13 rw Unconfigured,IP_Routed,DHCP_Spoofed,PPPoE_Bridged,PPPoE_Relay,PPTP_Relay,L2TP_Relay
+Name s256 rw
+Uptime u r
+LastConnectionError s r ERROR_NONE,ERROR_ISP_TIME_OUT,ERROR_COMMAND_ABORTED,ERROR_NOT_ENABLED_FOR_INTERNET,ERROR_BAD_PHONE_NUMBER,ERROR_USER_DISCONNECT,ERROR_ISP_DISCONNECT,ERROR_IDLE_DISCONNECT,ERROR_FORCED_DISCONNECT,ERROR_SERVER_OUT_OF_RESOURCES,ERROR_RESTRICTED_LOGON_HOURS,ERROR_ACCOUNT_DISABLED,ERROR_ACCOUNT_EXPIRED,ERROR_PASSWORD_EXPIRED,ERROR_AUTHENTICATION_FAILURE,ERROR_NO_DIALTONE,ERROR_NO_CARRIER,ERROR_NO_ANSWER,ERROR_LINE_BUSY,ERROR_UNSUPPORTED_BITSPERSECOND,ERROR_TOO_MANY_LINE_ERRORS,ERROR_IP_CONFIGURATION,ERROR_UNKNOWN
+AutoDisconnectTime u rw
+IdleDisconnectTime u rw
+WarnDisconnectDelay u rw
+RSIPAvailable b r
+NATEnabled b rw
+Username s64 rw
+Password s64 rw
+PPPEncryptionProtocol s r None,MPPE
+PPPCompressionProtocol s r None,Van Jacobsen,STAC LZS
+PPPAuthenticationProtocol s r PAP,CHAP,MS-CHAP
+ExternalIPAddress s48 r ip
+RemoteIPAddress s48 r ip
+MaxMRUSize u rw
+CurrentMRUSize u r
+DNSEnabled b rw
+DNSOverrideAllowed b rw
+DNSServers s48 rw ip
+MACAddress s6 rw mac
+MACAddressOverride b rw
+TransportType s r PPPoA,PPPoE,L2TP,PPTP
+PPPoEACName s256 rw
+PPPoEServiceName s256 rw
+ConnectionTrigger s8 rw OnDemand,AlwaysOn,Manual
+RouteProtocolRx s5 rw Off,RIPv1,RIPv2,OSPF
+PPPLCPEcho u r
+PPPLCPEchoRetry u r
+PortMappingNumberOfEntries u r
+ShapingRate i rw
+ShapingBurstSize u rw
+Reset b rw
+PPPoESessionID u r
+DefaultGateway s r
+InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANPPPConnection.1.PortMapping. mo rw
+Alias s64 rwj
+PortMappingEnabled b rw
+PortMappingLeaseDuration u rw
+RemoteHost s rw
+ExternalPort u rw
+InternalPort u rw
+PortMappingProtocol s3 rw TCP,UDP
+InternalClient s rw
+PortMappingDescription s256 rw
+ExternalPortEndRange u rw
+InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANPPPConnection.1.Stats. so r
+EthernetBytesSent u r
+EthernetBytesReceived u r
+EthernetPacketsSent u r
+EthernetPacketsReceived u r
+EthernetErrorsSent u rj
+EthernetErrorsReceived u rj
+EthernetUnicastPacketsSent u rj
+EthernetUnicastPacketsReceived u rj
+EthernetDiscardPacketsSent u rj
+EthernetDiscardPacketsReceived u rj
+EthernetMulticastPacketsSent u rj
+EthernetMulticastPacketsReceived u rj
+EthernetBroadcastPacketsSent u rj
+EthernetBroadcastPacketsReceived u rj
+EthernetUnknownProtoPacketsReceived u rj

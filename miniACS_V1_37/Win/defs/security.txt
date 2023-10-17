@@ -1,0 +1,274 @@
+Device.Firewall. so r roothst
+Enable b r
+Config s8 r High,Low,Off,Advanced
+AdvancedLevel s256 r
+Type s r Stateless,Stateful
+Version s16 r
+LastChange d r
+LevelNumberOfEntries u r
+ChainNumberOfEntries u r
+Device.Firewall.Level. mo3 rw u #define#end
+Alias s64 rj
+Name s64 r
+Description s256 r
+Order u r
+Chain s512 r
+PortMappingEnabled b r
+DefaultPolicy s6 r Drop,Accept,Reject
+DefaultLogPolicy b r
+Device.Firewall.Chain. mo20 rw u #define
+Enable b r
+Alias s64 rj
+Name s64 r
+Creator s r Defaults,PortMapping,WANIPv6FirewallControl,ACS,UserInterface,Other
+RuleNumberOfEntries u r
+Device.Firewall.Chain.1.Rule. mod15 rw u #end
+Enable b rw
+Status s r Disabled,Enabled,Error_Misconfigured,Error
+Order u r
+Alias s64 rwj
+Description s256 r
+Target s11 r Drop,Accept,Reject,Return,TargetChain
+TargetChain s512 r
+Log b r
+CreationDate d r
+ExpiryDate d r
+SourceInterface s256 r
+SourceInterfaceExclude b r
+SourceAllInterfaces b r
+DestInterface s256 r
+DestInterfaceExclude b r
+DestAllInterfaces b r
+IPVersion i r
+DestIP s48 r ip
+DestMask s49 r
+DestIPExclude b r
+SourceIP s48 r ip
+SourceMask s49 r
+SourceIPExclude b r
+Protocol i r
+ProtocolExclude b r
+DestPort i r
+DestPortRangeMax i r
+DestPortExclude b r
+SourcePort i r
+SourcePortRangeMax i r
+SourcePortExclude b r
+DSCP i r
+DSCPExclude b r
+/*
+Device.SoftwareModules. so r root
+ExecEnvNumberOfEntries u r
+DeploymentUnitNumberOfEntries u r
+ExecutionUnitNumberOfEntries u r
+Device.SoftwareModules.ExecEnv. mo r st #define#end
+Enable b rw
+Status s r Up,Error,Disabled
+Reset b rw
+Alias s64 rwj
+Name s32 r
+Type s64 r
+InitialRunLevel u rw
+RequestedRunLevel i rw
+CurrentRunLevel i r
+InitialExecutionUnitRunLevel i rw
+Vendor s128 r
+Version s32 r
+ParentExecEnv s r
+AllocatedDiskSpace i r
+AvailableDiskSpace i rj
+AllocatedMemory i r
+AvailableMemory i rj
+ActiveExecutionUnits s rj
+ProcessorRefList s r
+Device.SoftwareModules.DeploymentUnit. mo r st #define#end
+UUID s36 r
+DUID s64 r
+Alias s64 rwj
+Name s64 r
+Status s rj Installing,Installed,Updating,Uninstalling,Uninstalled
+Resolved b r
+URL s1024 r
+Description s256 r
+Vendor s128 r
+Version s32 r
+VendorLogList s r
+VendorConfigList s r
+ExecutionUnitList s r
+ExecutionEnvRef s r
+Device.SoftwareModules.ExecutionUnit. mo r st #define#end
+EUID s64 r
+Alias s64 rwj
+Name s32 r
+ExecEnvLabel s64 r
+Status s ra Idle,Starting,Active,Stopping
+RequestedState s6 rw Idle,Active
+ExecutionFaultCode s r NoFault,FailureOnStart,FailureOnAutoStart,FailureOnStop,FailureWhileActive,DependencyFailure,UnStartable
+ExecutionFaultMessage s256 r
+AutoStart b rw
+RunLevel u rw
+Vendor s128 r
+Version s32 r
+Description s256 r
+DiskSpaceInUse i rj
+MemoryInUse i rj
+References s r
+AssociatedProcessList s r
+VendorLogList s r
+VendorConfigList s r
+SupportedDataModelList s r
+ExecutionEnvRef s r
+Device.SoftwareModules.ExecutionUnit.1.Extensions. so r
+Device.FaultMgmt. so r roots
+SupportedAlarmNumberOfEntries u r
+MaxCurrentAlarmEntries u r
+CurrentAlarmNumberOfEntries u r
+HistoryEventNumberOfEntries u r
+ExpeditedEventNumberOfEntries u r
+QueuedEventNumberOfEntries u r
+Device.FaultMgmt.SupportedAlarm. mo r st #define#end
+EventType s64 r
+ProbableCause s64 r
+SpecificProblem s128 r
+PerceivedSeverity s r *,Cleared,Critical,Major,Minor,Warning,Indeterminate
+ReportingMechanism s11 rw 0 Expedited,1 Queued,2 Logged,3 Disabled
+Device.FaultMgmt.CurrentAlarm. mo r s #define#end
+AlarmIdentifier s64 r
+AlarmRaisedTime d r
+AlarmChangedTime d r
+ManagedObjectInstance s512 r
+EventType s64 r
+ProbableCause s64 r
+SpecificProblem s128 r
+PerceivedSeverity s r Critical,Major,Minor,Warning,Indeterminate
+AdditionalText s256 r
+AdditionalInformation s256 r
+Device.FaultMgmt.HistoryEvent. mo r s #define#end
+EventTime d r
+AlarmIdentifier s64 r
+NotificationType s r NewAlarm,ChangedAlarm,ClearedAlarm
+ManagedObjectInstance s512 r
+EventType s64 r
+ProbableCause s64 r
+SpecificProblem s128 r
+PerceivedSeverity s r Cleared,Critical,Major,Minor,Warning,Indeterminate
+AdditionalText s256 r
+AdditionalInformation s256 r
+Device.FaultMgmt.ExpeditedEvent. mo r s #define#end
+EventTime d r
+AlarmIdentifier s64 r
+NotificationType s r NewAlarm,ChangedAlarm,ClearedAlarm
+ManagedObjectInstance s512 r
+EventType s64 r
+ProbableCause s64 r
+SpecificProblem s128 r
+PerceivedSeverity s r Cleared,Critical,Major,Minor,Warning,Indeterminate
+AdditionalText s256 r
+AdditionalInformation s256 r
+Device.FaultMgmt.QueuedEvent. mo r s #define#end
+EventTime d r
+AlarmIdentifier s64 r
+NotificationType s r NewAlarm,ChangedAlarm,ClearedAlarm
+ManagedObjectInstance s512 r
+EventType s64 r
+ProbableCause s64 r
+SpecificProblem s128 r
+PerceivedSeverity s r Cleared,Critical,Major,Minor,Warning,Indeterminate
+AdditionalText s256 r
+AdditionalInformation s256 r
+*/
+Device.Security. so r rooth
+CertificateNumberOfEntries u r
+Device.Security.Certificate. mo r st #define#end
+Enable b rw
+LastModif d r
+SerialNumber s64 r
+Issuer s256 r
+NotBefore d r
+NotAfter d r
+Subject s256 r
+SubjectAlt s r
+SignatureAlgorithm s256 r
+/*
+Device.PCP. so r roothst
+SupportedVersions u r
+PreferredVersion u rw
+OptionList u r
+ClientNumberOfEntries u r
+Device.PCP.Client. mo rw
+Enable b rw
+Alias s64 rwj
+WANInterface s r
+Status s r Disabled,Enabled,Error
+MAPEnable b rw
+PEEREnable b rw
+ANNOUNCEEnable b rw
+THIRDPARTYEnable b rw
+THIRDPARTYStatus s r Disabled,Enabled,Error
+FILTEREnable b rw
+ServerNumberOfEntries u r
+Device.PCP.Client.1.PCPProxy. so r
+Enable b rw
+HighestVersion u r
+Status s r Disabled,Enabled,Error
+Device.PCP.Client.1.UPnPIWF. so r
+Enable b rw
+Status s r Disabled,Enabled,Error
+Device.PCP.Client.1.Server. mo rw
+Enable b rw
+Status s r Disabled,Enabled,Connecting,Error_Timeout,Error_HostNameNotResolved,Error_NetworkFailure,Error_NotAuthorized,Error_Unsupported,Error
+Alias s64 rwj
+Origin s r DHCPv4,DHCPv6,Static
+ServerNameOrAddress s256 rw
+ServerAddressInUse s48 r ip
+AdditionalServerAddresses s48 r ip
+ExternalIPAddress s48 r ip
+CurrentVersion u r
+MaximumFilters u rw
+PortQuota u rw
+PreferredLifetime u rw
+Capabilities s r NAT44,StatelessNAT64,StatefulNAT64,A+PPortRangeRouter,SupportsPORTSETOption,IPv4Firewall,IPv6Firewall,NPTv6,DSCPReMarkingFunction,FLOWDATAAwareFunction,ILNPTranslator
+InboundMappingNumberOfEntries u r
+OutboundMappingNumberOfEntries u r
+Device.PCP.Client.1.Server.1.InboundMapping. mo rw
+Enable b rw
+Status s r Disabled,Enabled,Error_PCPErrorCodeReceived,Error
+ErrorCode u r
+Alias s64 rwj
+Origin s r Internal,UPnP_IWF,PCP_Proxy,Static
+Lifetime u rwj
+SuggestedExternalIPAddress s48 rw ip
+SuggestedExternalPort u rw
+SuggestedExternalPortEndRange u rw
+InternalPort u rw
+ProtocolNumber i rw
+ThirdPartyAddress s48 rw ip
+Description s256 rw
+AssignedExternalIPAddress s48 r ip
+AssignedExternalPort u r
+AssignedExternalPortEndRange u r
+FilterNumberOfEntries u r
+Device.PCP.Client.1.Server.1.InboundMapping.1.Filter. mo rw
+Alias s64 rwj
+RemoteHostIPAddress s48 rw ip
+PrefixLength u rw
+RemotePort u rw
+RemotePortEndRange u r
+Device.PCP.Client.1.Server.1.OutboundMapping. mo rw
+Enable b rw
+Status s r Disabled,Enabled,Error_PCPErrorCodeReceived,Error
+ErrorCode u r
+Alias s64 rwj
+Origin s r Internal,UPnP_IWF,PCP_Proxy,Static
+Lifetime u rw
+SuggestedExternalIPAddress s48 rw ip
+SuggestedExternalPort u rw
+RemoteHostIPAddress s48 rw ip
+InternalPort u rw
+RemotePort u rw
+ProtocolNumber i rw
+ThirdPartyAddress s48 rw ip
+Description s256 rw
+AssignedExternalIPAddress s48 r ip
+AssignedExternalPort u r
+*/

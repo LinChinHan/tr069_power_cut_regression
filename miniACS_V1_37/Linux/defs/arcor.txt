@@ -1,0 +1,94 @@
+InternetGatewayDevice.Services.VoiceService.1.X_ARCOR_NET_ISDN. so r roothst        
+CountryCode s4 rw  
+AreaCode s20 rw  
+ISDNConfigAllowed b rw  
+LineNumberOfEntries u r
+InternetGatewayDevice.Services.VoiceService.1.X_ARCOR_NET_ISDN.Line. mo10 rw st #define#end
+MSN s20 rw
+InternetGatewayDevice.Services.X_ARCOR_NET_IPTV. mo rw roothst           
+Enable b rw
+MultiCastPID u rw  
+UniCastPID u rw  
+MultiCastLossToTrap u rw  
+UniCastLossToTrap u rw
+MultiCastCACNumberOfEntries u r  
+InternetGatewayDevice.Services.X_ARCOR_NET_IPTV.1.MultiCastCAC. mod16 rw hst           
+Bandwidth u rw  
+GroupMultiCastIPAddresses s18 rw ip
+InternetGatewayDevice.Services.X_ARCOR_NET_PushDaemon. so r roothst           
+Enable b rw 
+ListenPort u rw  
+UsedListenPort u r  
+AllowedSourceIP1 s18 rw ip
+AllowedSourceIP2 s18 rw ip
+AllowedSourceIP3 s18 rw ip
+AllowedSourceIP4 s18 rw ip
+AllowedSourceIP5 s18 rw ip
+LastPush d r  
+TotalPush u r
+InternetGatewayDevice.Services.X_ARCOR_NET_DynamicDNS. mo2 rw roothst #define#end       
+Enable b rw
+Status b r
+ServiceProvider s32 rw
+DomainName s64 rw
+Account s64 rw
+Password s64 rw
+HiddenOnUI b rw
+InternetGatewayDevice.DeviceInfo.X_ARCOR_NET_LEDStatus. so r roots      
+Power s r
+Internet s r
+Sprache s r
+WLAN s r
+HSPA s r
+Message s r
+LAN1 s r
+LAN2 s r
+LAN3 s r
+LAN4 s r
+Phone1 s r
+Phone2 s r
+Phone3 s r
+Status s r
+Uplink s r
+IP s r
+Aux s r
+Com s r        
+InternetGatewayDevice.Services.X_ARCOR_NET_USB. mo3 rw roots #define#end     
+ConnectedDevice s32 r  
+ConnectedDeviceClass s32 r
+InternetGatewayDevice.X_ARCOR_NET_Misc. so r roothst
+DiscardPingToWANEnable b rw
+DroppedPacketsOnFirewall u r
+SSHAuthorizedKeys s10240 rw
+SSHDaemonState s r
+InternetGatewayDevice.X_ARCOR_NET_Misc.RemoteManagement. so r st  
+Enable b rw 
+HostIPAddress s18 rw ip  
+PortNumber u rw  
+InternetGatewayDevice.WANDevice.1.X_ARCOR_NET_LTEModem. so r roothst
+Manufacturer s32 r
+ModelName s32 r
+SerialNumber s32 r
+HardwareVersion s48 r
+SoftwareVersion s128 rip
+SimIMSI s32 r
+RSRP i r
+DataAPNName s48 rw
+VoiceAPNName s48 rw
+IPType u rw
+SystemStatus i r
+SimStatus i r
+SimRetryCount u r
+NetworkStatus i r
+VoiceRSRPThreshold i rw
+SNR i r
+CellGlobalID s32 r
+CellInfoNumberOfEntries u r
+InternetGatewayDevice.WANDevice.1.X_ARCOR_NET_LTEModem.CellInfo. mo32 r u 
+CellId s16 r
+CellRsrp i r
+CellRsrq i r
+CellRssi i r
+InternetGatewayDevice.X_ARCOR_NET_RemoteDebug. so r rootst
+ExecuteCommand s256 rw
+ExecuteResult s r

@@ -1,0 +1,51 @@
+Device.X_ARC_COM. so r roothst
+LED s6 rw Off,Dim,Normal
+InternetEnabled b r
+WiFi2GHzLDPC b rw
+PauseInternetCounter u r
+WiFiChangedCounter u r
+WiFiPowerLevel s6 rw Normal,High
+Device.X_ARC_COM.Debug. so r st
+MasterRequestDelayTime i rw
+MainLoopTime i rw
+RoamingSignal i rw
+OverLoad_2GHz i rw
+OverLoad_5GHz i rw
+THRESH_2GHz i rw
+THRESH_5GHz i rw
+ACLExpireT0 i rw
+ACLExpireT1 i rw
+ACLExpireT2 i rw
+ChanLoadReportT i rw
+RssiLow i rw
+ActivePeriod i rw
+ActiveThreshCount i rw
+SteerProhibit i rw
+BlackListExpire i rw
+ActiveBlackListExpire i rw
+SteerCapability i rw
+RoamSignalBTM i rw
+RssiLowBTM i rw
+Threshdiff i rw
+ThreshdiffBTM i rw
+RssiThreshold i rw
+RssiTimeThreshold i rw
+Device.DHCPv4. so r rooth
+ClientNumberOfEntries u r
+Device.DHCPv4.Client. mo1 rw st #define
+Enable b rw
+Alias s64 rwj
+Interface s256 rw
+Status s r Disabled,Enabled,Error_Misconfigured,Error
+DHCPStatus s r Init,Selecting,Requesting,Rebinding,Bound,Renewing
+Renew b rw
+IPAddress s18 r ip
+SubnetMask s18 r mask
+IPRouters s18 r ip
+DNSServers s64 r ips
+LeaseTimeRemaining i rj
+DHCPServer s18 r ip
+PassthroughEnable b rw
+PassthroughDHCPPool s256 rw
+SentOptionNumberOfEntries u r
+ReqOptionNumberOfEntries u r

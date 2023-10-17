@@ -1,0 +1,108 @@
+Device.Ethernet. so r rooth
+InterfaceNumberOfEntries u r
+LinkNumberOfEntries u r
+VLANTerminationNumberOfEntries u r
+RMONStatsNumberOfEntries u r
+Device.Ethernet.RMONStats. mo rw st
+Enable b rw
+Status s r Disabled,Enabled,Error_Misconfigured,Error
+Alias s64 rw
+Name s64 r
+Interface s128 rw
+VLANID u rw
+Queue s256 rw
+AllQueues b rw
+DropEvents u rj
+Bytes ul rj
+Packets ul rj
+BroadcastPackets ul rj
+MulticastPackets ul rj
+CRCErroredPackets u rj
+UndersizePackets u rj
+OversizePackets u rj
+Packets64Bytes ul rj
+Packets65to127Bytes ul rj
+Packets128to255Bytes ul rj
+Packets256to511Bytes ul rj
+Packets512to1023Bytes ul rj
+Packets1024to1518Bytes ul rj
+Device.Ethernet.Interface. mo5 r st #define
+Enable b rw
+Status s r Up,Down,Unknown,Dormant,NotPresent,LowerLayerDown,Error
+Alias s64 rwj
+Name s64 r
+LastChange u rj
+LowerLayers s1024 rw
+Upstream b r
+MACAddress s6 r mac
+MaxBitRate i rw
+CurrentBitRate u rj
+DuplexMode s4 rw Half,Full,Auto
+EEECapability b r
+EEEEnable b rw
+Device.Ethernet.Interface.1.Stats. so r #end
+BytesSent ul rj
+BytesReceived ul rj
+PacketsSent ul rj
+PacketsReceived ul rj
+ErrorsSent u rj
+ErrorsReceived u rj
+UnicastPacketsSent ul rj
+UnicastPacketsReceived ul rj
+DiscardPacketsSent u rj
+DiscardPacketsReceived u rj
+MulticastPacketsSent ul rj
+MulticastPacketsReceived ul rj
+BroadcastPacketsSent ul rj
+BroadcastPacketsReceived ul rj
+UnknownProtoPacketsReceived u rj
+Device.Ethernet.Link. mo4 rw st #define
+Enable b rw
+Status s r Up,Down,Unknown,Dormant,NotPresent,LowerLayerDown,Error
+Alias s64 rwj
+Name s64 r
+LastChange u rj
+LowerLayers s1024 rw
+MACAddress s6 r mac
+PriorityTagging b rw
+Device.Ethernet.Link.1.Stats. so r #end
+BytesSent ul rj
+BytesReceived ul rj
+PacketsSent ul rj
+PacketsReceived ul rj
+ErrorsSent u rj
+ErrorsReceived u rj
+UnicastPacketsSent ul rj
+UnicastPacketsReceived ul rj
+DiscardPacketsSent u rj
+DiscardPacketsReceived u rj
+MulticastPacketsSent ul rj
+MulticastPacketsReceived ul rj
+BroadcastPacketsSent ul rj
+BroadcastPacketsReceived ul rj
+UnknownProtoPacketsReceived u rj
+Device.Ethernet.VLANTermination. mo2 rw st #define
+Enable b rw
+Status s r Up,Down,Unknown,Dormant,NotPresent,LowerLayerDown,Error
+Alias s64 rwj
+Name s64 r
+LastChange u rj
+LowerLayers s1024 rw
+VLANID u rw
+TPID u rw
+Device.Ethernet.VLANTermination.1.Stats. so r #end
+BytesSent ul rj
+BytesReceived ul rj
+PacketsSent ul rj
+PacketsReceived ul rj
+ErrorsSent u rj
+ErrorsReceived u rj
+UnicastPacketsSent ul rj
+UnicastPacketsReceived ul rj
+DiscardPacketsSent u rj
+DiscardPacketsReceived u rj
+MulticastPacketsSent ul rj
+MulticastPacketsReceived ul rj
+BroadcastPacketsSent ul rj
+BroadcastPacketsReceived ul rj
+UnknownProtoPacketsReceived u rj
