@@ -1,0 +1,486 @@
+Device.DNS. so r roothst
+SupportedRecordTypes s r A,AAAA,SRV,PTR
+X_T-ONLINE-DE_T1Interval u rw
+Device.DNS.Client. so r st
+Enable b rw
+Status s r Disabled,Enabled,Error
+ServerNumberOfEntries u r
+Device.DNS.Client.Server. mo8 rw st #define#end
+Enable b rw
+Status s r Disabled,Enabled,Error
+Alias s64 rwj
+DNSServer s48 rw ip
+Interface s256 rw
+Type s r DHCP,DHCPv4,DHCPv6,RouterAdvertisement,IPCP,Static
+Device.DNS.Relay. so r st
+Enable b rw
+Status s r Disabled,Enabled,Error
+ForwardNumberOfEntries u r
+Device.DNS.Relay.Forwarding. mo6 rw st #define#end
+Enable b rw
+Status s r Disabled,Enabled,Error
+Alias s64 rwj
+DNSServer s48 rw ip
+Interface s256 rw
+Type s r DHCP,DHCPv4,DHCPv6,RouterAdvertisement,IPCP,Static
+Device.DNS.Diagnostics. so r
+Device.DNS.Diagnostics.NSLookupDiagnostics. so r sth
+DiagnosticsState s26 rwj None,Requested,Complete,Error_DNSServerNotResolved,Error_Internal,Error_Other
+Interface s256 rw
+HostName s256 rw
+DNSServer s256 rw
+Timeout u rw
+NumberOfRepetitions u rw
+SuccessCount u rj
+ResultNumberOfEntries u rj
+Device.DNS.Diagnostics.NSLookupDiagnostics.Result. mo r
+Status s rj Success,Error_DNSServerNotAvailable,Error_HostNameNotResolved,Error_Timeout,Error_Other
+AnswerType s rj None,Authoritative,NonAuthoritative
+HostNameReturned s256 rj
+IPAddresses s256 rj
+DNSServerIP s18 rj ip
+ResponseTime u rj
+/*
+Device.DNS.SD. so r st
+Enable b rw
+ServiceNumberOfEntries u r
+Device.DNS.SD.Service. mo r
+InstanceName s63 r
+ApplicationProtocol s15 r
+TransportProtocol s r TCP,UDP
+Domain s256 r
+Port u r
+Target s256 r
+Status s r LeaseActive,GoodbyeReceived,LeaseExpired
+LastUpdate d r
+Host s1024 r
+TimeToLive u r
+Priority u r
+Weight u r
+TextRecordNumberOfEntries u r
+Device.DNS.SD.Service.1.TextRecord. mo r
+Key s255 r
+Value s255 r
+*/
+Device.NAT. so r rooth
+InterfaceSettingNumberOfEntries u r
+PortMappingNumberOfEntries u r
+Device.NAT.InterfaceSetting. mo rw st
+Enable b rw
+Status s r Disabled,Enabled,Enabled_NATForcedDisabled,Enabled_PortMappingDisabled,Error_Misconfigured,Error
+Alias s64 rwj
+Interface s256 rw
+Device.NAT.PortMapping. mo20 rw riost #define#end
+Enable b rw
+Status s r Disabled,Enabled,Error_Misconfigured,Error
+Alias s64 rwj
+Interface s256 rw
+AllInterfaces b rw
+LeaseDuration u rwj
+RemoteHost s48 rw ip
+ExternalPort u rw
+ExternalPortEndRange u rw
+InternalPort u rw
+Protocol s3 rw TCP,UDP
+InternalClient s256 rw
+Description s256 rw
+Device.DHCPv4. so r rooth
+ClientNumberOfEntries u r
+Device.DHCPv4.Client. mo3 rw st #define#end
+Enable b rw
+Alias s64 rwj
+Interface s256 rw
+Status s r Disabled,Enabled,Error_Misconfigured,Error
+DHCPStatus s r Init,Selecting,Requesting,Rebinding,Bound,Renewing
+Renew b rw
+IPAddress s18 r ip
+SubnetMask s18 r mask
+IPRouters s18 r ip
+DNSServers s64 r ips
+LeaseTimeRemaining i rj
+DHCPServer s18 r ip
+PassthroughEnable b rw
+PassthroughDHCPPool s256 rw
+SentOptionNumberOfEntries u r
+ReqOptionNumberOfEntries u r
+/*
+Device.DHCPv4.Client.1.SentOption. mo rw st
+Enable b rw
+Alias s64 rwj
+Tag u rw
+Value h255 rw
+Device.DHCPv4.Client.1.ReqOption. mo rw st
+Enable b rw
+Order u rw
+Alias s64 rwj
+Tag u rw
+Value h255 r
+*/
+Device.DHCPv4.Server. so r st
+Enable b rw
+PoolNumberOfEntries u r
+Device.DHCPv4.Server.Pool. mo rw st #define 
+Enable b rw
+Status s r Disabled,Enabled,Error_Misconfigured,Error
+Alias s64 rwj
+Order u rw
+Interface s256 rw
+VendorClassID s255 rw
+VendorClassIDExclude b rw
+VendorClassIDMode s9 rw Exact,Prefix,Suffix,Substring
+ClientID h255 rw
+ClientIDExclude b rw
+UserClassID h255 rw
+UserClassIDExclude b rw
+Chaddr s6 rw mac
+ChaddrMask s6 rw mac
+ChaddrExclude b rw
+MinAddress s18 rw ip
+MaxAddress s18 rw ip
+ReservedAddresses s18 rw ip
+SubnetMask s18 rw mask
+DNSServers s64 rw ips
+DomainName s64 rw
+IPRouters s18 rw ip
+LeaseTime i rw
+StaticAddressNumberOfEntries u r
+OptionNumberOfEntries u r
+ClientNumberOfEntries u r
+Device.DHCPv4.Server.Pool.1.StaticAddress. mo10 rw st
+Enable b rw
+Alias s64 rwj
+Chaddr s6 rw mac
+Yiaddr s18 rw ip
+/*
+Device.DHCPv4.Server.Pool.1.Option. mo rw st
+Enable b rw
+Alias s64 rwj
+Tag u rw
+Value h255 rw
+*/
+Device.DHCPv4.Server.Pool.1.Client. mo32 r u
+Alias s64 rwj
+Chaddr s6 r mac
+Active b r
+IPv4AddressNumberOfEntries u r
+OptionNumberOfEntries u r
+Device.DHCPv4.Server.Pool.1.Client.1.IPv4Address. mo r #end
+IPAddress s18 r ip
+LeaseTimeRemaining d r
+/*
+Device.DHCPv4.Server.Pool.1.Client.1.Option. mo r
+Tag u r
+Value h255 r
+*/
+/*
+Device.DHCPv4.Relay. so r st
+Enable b rw
+Status s r Disabled,Enabled,Error
+ForwardingNumberOfEntries u r
+Device.DHCPv4.Relay.Forwarding. mo rw st
+Enable b rw
+Status s r Disabled,Enabled,Error_Misconfigured,Error
+Alias s64 rwj
+Order u rw
+Interface s256 rw
+VendorClassID s255 rw
+VendorClassIDExclude b rw
+VendorClassIDMode s9 rw Exact,Prefix,Suffix,Substring
+ClientID h255 rw
+ClientIDExclude b rw
+UserClassID h255 rw
+UserClassIDExclude b rw
+Chaddr s6 rw mac
+ChaddrMask s6 rw mac
+ChaddrExclude b rw
+LocallyServed b rw
+DHCPServerIPAddress s18 rw ip
+*/
+Device.DHCPv6. so r rooth
+ClientNumberOfEntries u r
+Device.DHCPv6.Client. mo rw st #define
+Enable b rw
+Alias s64 rwj
+Interface s256 rw
+Status s r Disabled,Enabled,Error_Misconfigured,Error
+DUID h130 r
+RequestAddresses b rw
+RequestPrefixes b rw
+RapidCommit b rw
+Renew b rw
+SuggestedT1 i rw
+SuggestedT2 i rw
+SupportedOptions u r
+RequestedOptions u rw
+ServerNumberOfEntries u r
+SentOptionNumberOfEntries u r
+ReceivedOptionNumberOfEntries u r
+Device.DHCPv6.Client.1.Server. mo r st #end
+SourceAddress s48 r ip
+DUID h130 r
+InformationRefreshTime d r
+/*
+Device.DHCPv6.Client.1.SentOption. mo rw st
+Enable b rw
+Alias s64 rwj
+Tag u rw
+Value h1024 rw
+Device.DHCPv6.Client.1.ReceivedOption. mo r s
+Tag u r
+Value h1024 r
+Server s r
+*/
+Device.DHCPv6.Server. so r st
+Enable b rw
+PoolNumberOfEntries u r
+Device.DHCPv6.Server.Pool. mo rw st #define
+Enable b rw
+Status s r Disabled,Enabled,Error_Misconfigured,Error
+Alias s64 rwj
+Order u rw
+Interface s256 rw
+DUID h130 rw
+DUIDExclude b rw
+VendorClassID h1024 rw
+VendorClassIDExclude b rw
+UserClassID h1024 rw
+UserClassIDExclude b rw
+SourceAddress s48 rw ip
+SourceAddressMask s48 rw mask
+SourceAddressExclude b rw
+IANAEnable b rw
+IANAManualPrefixes s512 rw
+IANAPrefixes s r
+IAPDEnable b rw
+IAPDManualPrefixes s512 rw
+IAPDPrefixes s r
+IAPDAddLength u rw
+ClientNumberOfEntries u r
+OptionNumberOfEntries u r
+Device.DHCPv6.Server.Pool.1.Client. mo32 r u
+Alias s64 rwj
+SourceAddress s48 r ip
+Active b r
+IPv6AddressNumberOfEntries u r
+IPv6PrefixNumberOfEntries u r
+OptionNumberOfEntries u r
+Device.DHCPv6.Server.Pool.1.Client.1.IPv6Address. mo r
+IPAddress s48 r ip
+PreferredLifetime d r
+ValidLifetime d r
+Device.DHCPv6.Server.Pool.1.Client.1.IPv6Prefix. mo r #end
+Prefix s48 r ip
+PreferredLifetime d r
+ValidLifetime d r
+/*
+Device.DHCPv6.Server.Pool.1.Client.1.Option. mo r st
+Tag u r
+Value h1024 r
+Device.DHCPv6.Server.Pool.1.Option. mo rw st
+Enable b rw
+Alias s64 rwj
+Tag u rw
+Value h1024 rw
+PassthroughClient s256 rw
+*/
+/*
+Device.IEEE8021x. so r rooth
+SupplicantNumberOfEntries u r
+Device.IEEE8021x.Supplicant. mo rw st #define
+Enable b rw
+Status s r Disabled,Enabled,Error_Misconfigured,Error
+Alias s64 rwj
+Interface s256 rw
+PAEState s r Disconnected,Logoff,Connecting,Authenticating,Authenticated,Held,Restart,ForceAuth,ForceUnauth
+EAPIdentity s256 rw
+MaxStart u rw
+StartPeriod u rw
+HeldPeriod u rw
+AuthPeriod u rw
+AuthenticationCapabilities s r EAP-TLS,EAP-MD5
+StartFailurePolicy s20 rw FailAuthentication,AssumeAuthentication
+AuthenticationSuccessPolicy s15 rw NoAction,RenewConnection
+Reset b w
+Disconnect b w
+Device.IEEE8021x.Supplicant.1.Stats. so r s
+ReceivedFrames u r
+TransmittedFrames u r
+TransmittedStartFrames u r
+TransmittedLogoffFrames u r
+TransmittedResponseIdFrames u r
+TransmittedResponseFrames u r
+ReceivedRequestIdFrames u r
+ReceivedRequestFrames u r
+ReceivedInvalidFrames u r
+ReceivedLengthErrorFrames u r
+LastFrameVersion u r
+LastFrameSourceMACAddress s6 r mac
+Device.IEEE8021x.Supplicant.1.EAPMD5. so r st
+Enable b rw
+SharedSecret s256 w
+Device.IEEE8021x.Supplicant.1.EAPTLS. so r st #end
+Enable b rw
+MutualAuthenticationEnable b rw
+*/
+Device.Users. so r rooth
+UserNumberOfEntries u r
+Device.Users.User. mo rw st #define#end
+Alias s64 rwj
+Enable b rw
+RemoteAccessCapable b rw
+Username s64 rw
+Password s64 w
+Language s16 rw
+/*
+Device.UPnP. so r rooth
+Device.UPnP.Device. so r st
+Enable b rw
+UPnPMediaServer b rw
+UPnPMediaRenderer b rw
+UPnPWLANAccessPoint b rw
+UPnPQoSDevice  b rw
+UPnPQoSPolicyHolder b rw
+UPnPIGD b rw
+UPnPDMBasicMgmt b rw
+UPnPDMConfigurationMgmt b rw
+UPnPDMSoftwareMgmt b rw
+Device.UPnP.Device.Capabilities. so r s
+UPnPArchitecture u r
+UPnPArchitectureMinorVer u r
+UPnPMediaServer u r
+UPnPMediaRenderer u r
+UPnPWLANAccessPoint u r
+UPnPBasicDevice u r
+UPnPQoSDevice u r
+UPnPQoSPolicyHolder u r
+UPnPIGD u r
+UPnPDMBasicMgmt u r
+UPnPDMConfigurationMgmt u r
+UPnPDMSoftwareMgmt u r
+Device.UPnP.Discovery. so r s
+RootDeviceNumberOfEntries u r
+DeviceNumberOfEntries u r
+ServiceNumberOfEntries u r
+Device.UPnP.Discovery.RootDevice. mo3 r u
+Status s r LeaseActive,LeaseExpired,ByebyeReceived
+UUID s36 r
+USN s256 r
+LeaseTime u r
+Location s256 r
+Server s256 r
+Host s256 r
+LastUpdate d r
+Device.UPnP.Discovery.Device. mo3 r u
+Status s r LeaseActive,LeaseExpired,ByebyeReceived
+UUID s36 r
+USN s256 r
+LeaseTime u r
+Location s256 r
+Server s256 r
+Host s256 r
+LastUpdate d r
+Device.UPnP.Discovery.Service. mo8 r u
+Status s r LeaseActive,LeaseExpired,ByebyeReceived
+USN s256 r
+LeaseTime u r
+Location s256 r
+Server s256 r
+Host s256 r
+LastUpdate d r
+ParentDevice s256 r
+Device.UPnP.Description. so r
+DeviceDescriptionNumberOfEntries u r
+DeviceInstanceNumberOfEntries u r
+ServiceInstanceNumberOfEntries u r
+Device.UPnP.Description.DeviceDescription. mo r
+URLBase s256 r
+SpecVersion s256 r
+Host s1024 r
+Device.UPnP.Description.DeviceInstance. mo r
+UDN s36 r
+ParentDevice s256 r
+DiscoveryDevice s256 r
+DeviceType s256 r
+FriendlyName s128 r
+DeviceCategory s r
+Manufacturer s128 r
+ManufacturerOUI s6 r
+ManufacturerURL s256 r
+ModelDescription s256 r
+ModelName s64 r
+ModelNumber s64 r
+ModelURL s256 r
+SerialNumber s128 r
+UPC s12 r
+PresentationURL s256 r
+Device.UPnP.Description.ServiceInstance. mo r
+ParentDevice s256 r
+ServiceId s256 r
+ServiceDiscovery s256 r
+ServiceType s256 r
+SCPDURL s r
+ControlURL s r
+EventSubURL s r
+Device.DLNA. so r root
+Device.DLNA.Capabilities. so r s
+HNDDeviceClass s256 r
+DeviceCapability s256 r
+HIDDeviceClass s256 r
+ImageClassProfileID s256 r
+AudioClassProfileID s256 r
+AVClassProfileID s256 r
+MediaCollectionProfileID s256 r
+PrinterClassProfileID s256 r
+*/
+/*
+Device.SmartCardReaders. so r rooth
+SmartCardReaderNumberOfEntries u r
+Device.SmartCardReaders.SmartCardReader. mo r st #define
+Alias s64 rwj
+Enable b rw
+Status s r Disabled,Enabled,Error
+Name s256 r
+Reset b rw
+ResetTime d r
+DecryptionFailedCounter u rj
+DecryptionFailedNoKeyCounter u rj
+Device.SmartCardReaders.SmartCardReader.1.SmartCard. so r #end
+Status s r None,Running,Error
+Type s r CA,DRM,UICC
+Application s r SIM,USIM,ISIM
+SerialNumber s256 r
+ATR s1024 r
+*/
+/*
+Device.DynamicDNS. so r rooths
+ClientNumberOfEntries u r
+ServerNumberOfEntries u r
+SupportedServices s1024 r
+Device.DynamicDNS.Client. mo rw
+Enable b rw
+Status s r Connecting,Authenticating,Updated,Error_Misconfigured,Error,Disabled
+Alias s64 rwj
+LastError s r NO_ERROR,MISCONFIGURATION_ERROR,DNS_ERROR,CONNECTION_ERROR,AUTHENTICATION_ERROR,TIMEOUT_ERROR,PROTOCOL_ERROR
+Server s256 rw
+Interface s256 rw
+Username s256 rw
+Password s256 w
+HostnameNumberOfEntries u r
+Device.DynamicDNS.Client.1.Hostname. mo rw
+Enable b rw
+Status s r Registered,UpdateNeeded,Updating,Error,Disabled
+Name s256 rw
+LastUpdate d r
+Device.DynamicDNS.Server. mo rw
+Enable s64 rw
+Name s64 rw
+Alias s64 rwj
+ServiceName s256 rw
+ServerAddress s256 rw
+ServerPort u rw
+SupportedProtocols s r HTTP,HTTPS
+Protocol s rw
+CheckInterval u rw
+RetryInterval u rw
+MaxRetries u rw
+*/

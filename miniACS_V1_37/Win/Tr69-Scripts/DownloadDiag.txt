@@ -1,0 +1,19 @@
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" soap:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:cwmp="urn:dslforum-org:cwmp-1-0">
+<soap:Header>
+<cwmp:ID soap:mustUnderstand="1">2</cwmp:ID>
+</soap:Header>
+<soap:Body>
+<cwmp:SetParameterValues>
+<ParameterList soap:arrayType="cwmp:ParameterValueStruct[2]">
+<ParameterValueStruct>
+<name>InternetGatewayDevice.DownloadDiagnostics.DiagnosticsState</name>
+<value xsi:type="xsd:string">Requested</value>
+</ParameterValueStruct>
+<ParameterValueStruct>
+<name>InternetGatewayDevice.DownloadDiagnostics.DownloadURL</name>
+<value xsi:type="xsd:string">http://192.168.2.159/2.test.bin</value>
+</ParameterValueStruct>
+</ParameterList>
+</cwmp:SetParameterValues>
+</soap:Body>
+</soap:Envelope>

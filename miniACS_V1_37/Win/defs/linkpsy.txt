@@ -1,0 +1,782 @@
+Device.DSL. so r rooth
+LineNumberOfEntries u r
+ChannelNumberOfEntries u r
+BondingGroupNumberOfEntries u r
+Device.DSL.Line. mo r st #define
+Enable b rw
+EnableDataGathering b rw
+Status s r Up,Down,Unknown,Dormant,NotPresent,LowerLayerDown,Error
+Alias s64 rwj
+Name s64 r
+LastChange u rj
+LowerLayers s1024 rw
+Upstream b r
+FirmwareVersion s64 r
+LinkStatus s r Up,Initializing,EstablishingLink,NoSignal,Disabled,Error
+StandardsSupported s r G.992.1_Annex_A,G.992.1_Annex_B,G.992.1_Annex_C,T1.413,T1.413i2,ETSI_101_388,G.992.2,G.992.3_Annex_A,G.992.3_Annex_B,G.992.3_Annex_C,G.992.3_Annex_I,G.992.3_Annex_J,G.992.3_Annex_L,G.992.3_Annex_M,G.992.4,G.992.5_Annex_A,G.992.5_Annex_B,G.992.5_Annex_C,G.992.5_Annex_I,G.992.5_Annex_J,G.992.5_Annex_M,G.993.1,G.993.1_Annex_A,G.993.2_Annex_A,G.993.2_Annex_B,G.993.2_Annex_C
+XTSE h8 r
+StandardUsed s r
+XTSUsed h8 r
+LineEncoding s r DMT,CAP,2B1Q,43BT,PAM,QAM
+AllowedProfiles s r 8a,8b,8c,8d,12a,12b,17a,17b,30a
+CurrentProfile s r
+PowerManagementState s r L0,L1,L2,L3,L4
+SuccessFailureCause u r
+UPBOKLER u r
+UPBOKLEPb u r
+UPBOKLERPb u r
+RXTHRSHds i r
+ACTRAMODEds u r
+ACTRAMODEus u r
+ACTINPROCds u r
+ACTINPROCus u r
+SNRMROCds u r
+SNRMROCus u r
+LastStateTransmittedDownstream u r
+LastStateTransmittedUpstream u r
+UPBOKLE u r
+MREFPSDds 64 r
+MREFPSDus 64 r
+LIMITMASK u r
+US0MASK u r
+TRELLISds i r
+TRELLISus i r
+ACTSNRMODEds u r
+ACTSNRMODEus u r
+VirtualNoisePSDds 64 r
+VirtualNoisePSDus 64 r
+ACTUALCE u r
+LineNumber i r
+UpstreamMaxBitRate u rj
+DownstreamMaxBitRate u rj
+UpstreamNoiseMargin i rj
+DownstreamNoiseMargin i rj
+SNRMpbus s24 r
+SNRMpbds s24 r
+INMIATOds u r
+INMIATSds u r
+INMCCds u r
+INMINPEQMODEds u r
+UpstreamAttenuation i rj
+DownstreamAttenuation i rj
+UpstreamPower i rj
+DownstreamPower i rj
+XTURVendor h4 r
+XTURCountry h2 r
+XTURANSIStd u r
+XTURANSIRev u r
+XTUCVendor h4 r
+XTUCCountry h2 r
+XTUCANSIStd u r
+XTUCANSIRev u r
+Device.DSL.Line.1.DataGathering. so r
+LoggingDepthR u r
+ActLoggingDepthReportingR u r
+EventTraceBufferR s256 r
+Device.DSL.Line.1.Stats. so r
+BytesSent ul rj
+BytesReceived ul rj
+PacketsSent ul rj
+PacketsReceived ul rj
+ErrorsSent u rj
+ErrorsReceived u rj
+DiscardPacketsSent u rj
+DiscardPacketsReceived u rj
+TotalStart u rj
+ShowtimeStart u rj
+LastShowtimeStart u rj
+CurrentDayStart u rj
+QuarterHourStart u rj
+Device.DSL.Line.1.Stats.Total. so r
+ErroredSecs u rj
+SeverelyErroredSecs u rj
+Device.DSL.Line.1.Stats.Showtime. so r
+ErroredSecs u rj
+SeverelyErroredSecs u rj
+Device.DSL.Line.1.Stats.LastShowtime. so r
+ErroredSecs u rj
+SeverelyErroredSecs u rj
+Device.DSL.Line.1.Stats.CurrentDay. so r
+ErroredSecs u rj
+SeverelyErroredSecs u rj
+Device.DSL.Line.1.Stats.QuarterHour. so r
+ErroredSecs u rj
+SeverelyErroredSecs u rj
+Device.DSL.Line.1.TestParams. so r s #end
+HLOGGds u rj
+HLOGGus u rj
+HLOGpsds s1024 rj
+HLOGpsus s1024 rj
+HLOGMTds u rj
+HLOGMTus u rj
+QLNGds u rj
+QLNGus u rj
+QLNpsds s1024 rj
+QLNpsus s1024 rj
+QLNMTds u rj
+QLNMTus u rj
+SNRGds u rj
+SNRGus u rj
+SNRpsds s1024 rj
+SNRpsus s1024 rj
+SNRMTds u rj
+SNRMTus u rj
+LATNds s24 rj
+LATNus s24 rj
+SATNds s24 rj
+SATNus s24 rj
+Device.DSL.Channel. mo r st #define
+Enable b rw
+Status s r Up,Down,Unknown,Dormant,NotPresent,LowerLayerDown,Error
+Alias s64 rwj
+Name s64 r
+LastChange u rj
+LowerLayers s1024 r
+LinkEncapsulationSupported s r G.992.3_Annex_K_ATM,G.992.3_Annex_K_PTM,G.993.2_Annex_K_ATM,G.993.2_Annex_K_PTM,G.994.1
+LinkEncapsulationUsed s r G.992.3_Annex_K_ATM,G.992.3_Annex_K_PTM,G.993.2_Annex_K_ATM,G.993.2_Annex_K_PTM
+LPATH u r
+INTLVDEPTH u r
+INTLVBLOCK i r
+ActualInterleavingDelay u r
+ACTINP i r
+INPREPORT b r
+NFEC i r
+RFEC i r
+LSYMB i r
+UpstreamCurrRate u rj
+DownstreamCurrRate u rj
+ACTNDR u r
+ACTINPREIN u r
+Device.DSL.Channel.1.Stats. so r
+BytesSent ul rj
+BytesReceived ul rj
+PacketsSent ul rj
+PacketsReceived ul rj
+ErrorsSent u rj
+ErrorsReceived u rj
+DiscardPacketsSent u rj
+DiscardPacketsReceived u rj
+TotalStart u rj
+ShowtimeStart u rj
+LastShowtimeStart u rj
+CurrentDayStart u rj
+QuarterHourStart u rj
+Device.DSL.Channel.1.Stats.Total. so r
+XTURFECErrors u rj
+XTUCFECErrors u rj
+XTURHECErrors u rj
+XTUCHECErrors u rj
+XTURCRCErrors u rj
+XTUCCRCErrors u rj
+Device.DSL.Channel.1.Stats.Showtime. so r
+XTURFECErrors u rj
+XTUCFECErrors u rj
+XTURHECErrors u rj
+XTUCHECErrors u rj
+XTURCRCErrors u rj
+XTUCCRCErrors u rj
+Device.DSL.Channel.1.Stats.LastShowtime. so r
+XTURFECErrors u rj
+XTUCFECErrors u rj
+XTURHECErrors u rj
+XTUCHECErrors u rj
+XTURCRCErrors u rj
+XTUCCRCErrors u rj
+Device.DSL.Channel.1.Stats.CurrentDay. so r
+XTURFECErrors u rj
+XTUCFECErrors u rj
+XTURHECErrors u rj
+XTUCHECErrors u rj
+XTURCRCErrors u rj
+XTUCCRCErrors u rj
+Device.DSL.Channel.1.Stats.QuarterHour. so r #end
+XTURFECErrors u rj
+XTUCFECErrors u rj
+XTURHECErrors u rj
+XTUCHECErrors u rj
+XTURCRCErrors u rj
+XTUCCRCErrors u rj
+/*
+Device.DSL.BondingGroup. mo r st #define
+Enable b rw
+Status s r Up,Down,Unknown,Dormant,NotPresent,LowerLayerDown,Error
+Alias s64 rwj
+Name s64 r
+LastChange u rj
+LowerLayers s1024 r
+GroupStatus s r NoPeer,PeerPowerLoss,PeerBondSchemeMismatch,LowRate
+GroupID u r
+BondSchemesSupported s r ATM,Ethernet,TDIM
+BondScheme s r
+GroupCapacity u r
+RunningTime u rj
+TargetUpRate u r
+TargetDownRate u r
+ThreshLowUpRate u r
+ThreshLowDownRate u r
+UpstreamDifferentialDelayTolerance u r
+DownstreamDifferentialDelayTolerance u r
+BondedChannelNumberOfEntries u r
+Device.DSL.BondingGroup.1.BondedChannel. mo r st
+Alias s64 rwj
+Channel s256 r
+Device.DSL.BondingGroup.1.BondedChannel.1.Ethernet. so r
+Device.DSL.BondingGroup.1.BondedChannel.1.Ethernet.Stats. so r
+UnderflowErrorsSent u r
+CRCErrorsReceived u r
+AlignmentErrorsReceived u r
+ShortPacketsReceived u r
+LongPacketsReceived u r
+OverflowErrorsReceived u r
+PauseFramesReceived u r
+FramesDropped u r
+Device.DSL.BondingGroup.1.Stats. so r s
+BytesSent ul rj
+BytesReceived ul rj
+PacketsSent ul rj
+PacketsReceived ul rj
+ErrorsSent u rj
+ErrorsReceived u rj
+UnicastPacketsSent ul rj
+UnicastPacketsReceived ul rj
+DiscardPacketsSent u rj
+DiscardPacketsReceived u rj
+MulticastPacketsSent ul rj
+MulticastPacketsReceived ul rj
+BroadcastPacketsSent ul rj
+BroadcastPacketsReceived ul rj
+UnknownProtoPacketsReceived u rj
+TotalStart u rj
+CurrentDayStart u rj
+QuarterHourStart u rj
+Device.DSL.BondingGroup.1.Stats.Total. so r
+FailureReasons s r LowRate,ExcessiveDelay,InsufficientBuffers,Other
+UpstreamRate u r
+DownstreamRate u r
+UpstreamPacketLoss u r
+DownstreamPacketLoss u r
+UpstreamDifferentialDelay u r
+DownstreamDifferentialDelay u r
+FailureCount u r
+ErroredSeconds u r
+SeverelyErroredSeconds u r
+UnavailableSeconds u r
+Device.DSL.BondingGroup.1.Stats.CurrentDay. so r
+FailureReasons s r LowRate,ExcessiveDelay,InsufficientBuffers,Other
+UpstreamRate u r
+DownstreamRate u r
+UpstreamPacketLoss u r
+DownstreamPacketLoss u r
+UpstreamDifferentialDelay u r
+DownstreamDifferentialDelay u r
+FailureCount u r
+ErroredSeconds u r
+SeverelyErroredSeconds u r
+UnavailableSeconds u r
+Device.DSL.BondingGroup.1.Stats.QuarterHour. so r
+FailureReasons s r LowRate,ExcessiveDelay,InsufficientBuffers,Other
+UpstreamRate u r
+DownstreamRate u r
+UpstreamPacketLoss u r
+DownstreamPacketLoss u r
+UpstreamDifferentialDelay u r
+DownstreamDifferentialDelay u r
+FailureCount u r
+ErroredSeconds u r
+SeverelyErroredSeconds u r
+UnavailableSeconds u r
+Device.DSL.BondingGroup.1.Ethernet. so r s
+Device.DSL.BondingGroup.1.Ethernet.Stats. so r #end
+PAFErrors u r
+PAFSmallFragments u r
+PAFLargeFragments u r
+PAFBadFragments u r
+PAFLostFragments u r
+PAFLateFragments u r
+PAFLostStarts u r
+PAFLostEnds u r
+PAFOverflows u r
+PauseFramesSent u r
+CRCErrorsReceived u r
+AlignmentErrorsReceived u r
+ShortPacketsReceived u r
+LongPacketsReceived u r
+OverflowErrorsReceived u r
+FramesDropped u r
+*/
+Device.DSL.Diagnostics. so r h
+Device.DSL.Diagnostics.ADSLLineTest. so r st
+DiagnosticsState s14 rw None,Requested,Canceled,Complete,Error,Error_Internal,Error_Other
+Interface s256 rw
+ACTPSDds i rj
+ACTPSDus i rj
+ACTATPds i rj
+ACTATPus i rj
+HLINSCds i rj
+HLINSCus i rj
+HLINGds u rj
+HLINGus u rj
+HLOGGds u rj
+HLOGGus u rj
+HLOGpsds s1024 rj
+HLOGpsus s1024 rj
+HLOGMTds u rj
+HLOGMTus u rj
+LATNpbds s24 rj
+LATNpbus s24 rj
+SATNds s24 rj
+SATNus s24 rj
+HLINpsds s1024 rj
+HLINpsus s1024 rj
+QLNGds u rj
+QLNGus u rj
+QLNpsds s1024 rj
+QLNpsus s1024 rj
+QLNMTds u rj
+QLNMTus u rj
+SNRGds u rj
+SNRGus u rj
+SNRpsds s1024 rj
+SNRpsus s1024 rj
+SNRMTds u rj
+SNRMTus u rj
+BITSpsds s1024 rj
+BITSpsus s1024 rj
+/*
+Device.Optical. so r rooth
+InterfaceNumberOfEntries u r
+Device.Optical.Interface. mo r st #define
+Enable b rw
+Status s r Up,Down,Unknown,Dormant,NotPresent,LowerLayerDown,Error
+Alias s64 rw
+Name s64 r
+LastChange u rj
+LowerLayers s1024 rw
+Upstream b r
+OpticalSignalLevel i r
+LowerOpticalThreshold i r
+UpperOpticalThreshold i r
+TransmitOpticalLevel i r
+LowerTransmitPowerThreshold i r
+UpperTransmitPowerThreshold i r
+Device.Optical.Interface.1.Stats. so r #end
+BytesSent ul rj
+BytesReceived ul rj
+PacketsSent ul rj
+PacketsReceived ul rj
+ErrorsSent u rj
+ErrorsReceived u rj
+DiscardPacketsSent u rj
+DiscardPacketsReceived u rj
+*/
+Device.ATM. so r root
+LinkNumberOfEntries u r
+Device.ATM.Link. mo3 rw st #define
+Enable b rw
+Status s r Up,Down,Unknown,Dormant,NotPresent,LowerLayerDown,Error
+Alias s64 rwj
+Name s64 r
+LastChange u rj
+LowerLayers s1024 rw
+LinkType s12 rw EoA,IPoA,PPPoA,CIP,Unconfigured
+AutoConfig b r
+DestinationAddress s256 rw
+Encapsulation s5 rw LLC,VCMUX
+FCSPreserved b rw
+VCSearchList s128 rw
+AAL s r AAL1,AAL2,AAL3,AAL4,AAL5
+Device.ATM.Link.1.Stats. so r
+BytesSent ul rj
+BytesReceived ul rj
+PacketsSent ul rj
+PacketsReceived ul rj
+ErrorsSent u rj
+ErrorsReceived u rj
+UnicastPacketsSent ul rj
+UnicastPacketsReceived ul rj
+DiscardPacketsSent u rj
+DiscardPacketsReceived u rj
+MulticastPacketsSent ul rj
+MulticastPacketsReceived ul rj
+BroadcastPacketsSent ul rj
+BroadcastPacketsReceived ul rj
+UnknownProtoPacketsReceived u rj
+TransmittedBlocks u rj
+ReceivedBlocks u rj
+CRCErrors u rj
+HECErrors u rj
+Device.ATM.Link.1.QoS. so r #end
+QoSClass s7 rw UBR,CBR,GFR,VBR-nrt,VBR-rt,UBR+,ABR
+PeakCellRate u rw
+MaximumBurstSize u rw
+SustainableCellRate u rw
+Device.ATM.Diagnostics. so r h
+Device.ATM.Diagnostics.F5Loopback. so r st
+DiagnosticsState s14 rw None,Requested,Canceled,Complete,Error,Error_Internal,Error_Other
+Interface s256 rw
+NumberOfRepetitions u rw
+Timeout u rw
+SuccessCount u rj
+FailureCount u rj
+AverageResponseTime u rj
+MinimumResponseTime u rj
+MaximumResponseTime u rj
+Device.PTM. so r root
+LinkNumberOfEntries u r
+Device.PTM.Link. mo3 rw st #define
+Enable b rw
+Status s r Up,Down,Unknown,Dormant,NotPresent,LowerLayerDown,Error
+Alias s64 rwj
+Name s64 r
+LastChange u rj
+LowerLayers s1024 rw
+MACAddress s6 r mac
+Device.PTM.Link.1.Stats. so r #end
+BytesSent ul rj
+BytesReceived ul rj
+PacketsSent ul rj
+PacketsReceived ul rj
+ErrorsSent u rj
+ErrorsReceived u rj
+UnicastPacketsSent ul rj
+UnicastPacketsReceived ul rj
+DiscardPacketsSent u rj
+DiscardPacketsReceived u rj
+MulticastPacketsSent ul rj
+MulticastPacketsReceived ul rj
+BroadcastPacketsSent ul rj
+BroadcastPacketsReceived ul rj
+UnknownProtoPacketsReceived u rj
+/*
+Device.Cellular. so r roothst
+RoamingEnabled b rw
+RoamingStatus s r Home,Roaming
+InterfaceNumberOfEntries u r
+AccessPointNumberOfEntries u r
+Device.Cellular.Interface. mo r
+Enable b rw
+Status s rj Up,Down,Unknown,Dormant,NotPresent,LowerLayerDown,Error
+Alias s64 rw
+Name s64 r
+LastChange u rj
+LowerLayers s1024 rw
+Upstream b r
+IMEI s15 r
+SupportedAccessTechnologies s r GPRS,EDGE,UMTS,UMTSHSPA,CDMA2000OneX,CDMA2000HRPD,LTE
+PreferredAccessTechnology s rw GPRS,EDGE,UMTS,UMTSHSPA,CDMA2000OneX,CDMA2000HRPD,LTE
+CurrentAccessTechnology s r
+AvailableNetworks s64 rj
+NetworkRequested s64 rw
+NetworkInUse s64 r
+RSSI i rj
+UpstreamMaxBitRate u r
+DownstreamMaxBitRate u r
+Device.Cellular.Interface.1.USIM. so r
+Status s r None,Available,Valid,Blocked,Error
+IMSI s15 r
+ICCID s20 r
+MSISDN s15 r
+PINCheck s15 rw OnNetworkAccess,Reboot,Off
+PIN s4 w
+Device.Cellular.Interface.1.Stats. so r
+BytesSent ul rj
+BytesReceived ul rj
+PacketsSent ul rj
+PacketsReceived ul rj
+ErrorsSent ul rj
+ErrorsReceived ul rj
+UnicastPacketsSent ul rj
+UnicastPacketsReceived ul rj
+DiscardPacketsSent ul rj
+DiscardPacketsReceived ul rj
+MulticastPacketsSent ul rj
+MulticastPacketsReceived ul rj
+BroadcastPacketsSent ul rj
+BroadcastPacketsReceived ul rj
+UnknownProtoPacketsReceived ul rj
+Device.Cellular.AccessPoint. mo rw
+Enable b rw
+Alias s64 rw
+APN s64 rw
+Username s256 rw
+Password s256 w
+Proxy s48 rw ip
+ProxyPort u rw
+Interface s rw
+*/
+/*
+Device.FAP. so r rooth
+Device.FAP.GPS. so r
+ScanOnBoot b rw
+ScanPeriodically b rw
+PeriodicInterval u rw
+PeriodicTime d rw
+ContinuousGPS b rw
+ScanTimeout u rw
+ScanStatus s r Indeterminate,InProgress,Success,Error,Error_TIMEOUT
+ErrorDetails s256 r
+LastScanTime d ra
+LastSuccessfulScanTime d rj
+LockedLatitude i rj
+LockedLongitude i rj
+NumberOfSatellites u rj
+GPSReset b rw
+Device.FAP.GPS.ContinuousGPSStatus. so r
+CurrentFix b rj
+GotFix b rj
+TimingGood b rj
+Latitude i rj
+Longitude i rj
+Elevation i rj
+LastFixTime d rj
+LastFixDuration u rj
+FirstFixTimeout i rw
+SatellitesTracked u rj
+SatelliteTrackingInterval u rw
+ReceiverStatus s256 rj
+LocationType s rj Real,Reference
+LockTimeOutDuration u rw
+Device.FAP.GPS.AGPSServerConfig. so r
+Enable b rw
+ServerURL s256 rw
+ServerPort u rw
+Username s64 rw
+Password s64 w
+ReferenceLatitude i rw
+ReferenceLongitude i rw
+ServerInUse b r
+Device.FAP.PerfMgmt. so r
+ConfigNumberOfEntries u r
+Device.FAP.PerfMgmt.Config. mo rw
+Enable b rw
+Alias s64 rw
+URL s256 rw
+Username s256 rw
+Password s256 w
+PeriodicUploadInterval u rw
+PeriodicUploadTime d rw
+Device.FAP.ApplicationPlatform. so r
+Version s64 r
+Enable b rw
+Status s r Disabled,Enabled,Reset,Initializing
+MaxNumberOfApplications u r
+CurrentNumberofApplications u r
+Device.FAP.ApplicationPlatform.Capabilities. so r
+PresenceApplicationSupport b r
+FemtoAwarenessAPISupport b r
+SMSAPISupport b r
+SubscribeToNotificationsOfSMSSentToApplicationSupport b r
+QuerySMSDeliveryStatusSupport b r
+MMSAPISupport b r
+QueryMMSDeliveryStatusSupport b r
+SubscribeToNotificationsOfMMSSentToApplicationSupport b r
+TerminalLocationAPISupport b r
+AuthenticationMethodsSupported s r Basic,Digest,DigitalSignature
+AccessLevelsSupported s r Guest,Standard,Restricted,Administrator,Debug
+SendSMSTargetAddressType s r TelUri,AnonymousReference,All
+SendMMSTargetAddressType s r TelUri,AnonymousReference,All
+Device.FAP.ApplicationPlatform.Control. so r
+AuthenticationMethod s256 rw
+TunnelInst s256 rw
+Device.FAP.ApplicationPlatform.Control.FemtoAwareness. so r
+APIEnable b rw
+QueueEnable b rw
+Queueing s8 rw FiFo,Priority
+MaxAPIUsersNumber u rw
+FemtozoneID s256 rw
+NotificationsUserIdentifierMSISDN b rw
+SubscribeToNotificationsResponseCallbackData b rw
+QueryFemtocellResponseTimezone b rw
+Device.FAP.ApplicationPlatform.Control.SMS. so r
+APIEnable b rw
+QueueEnable b rw
+Queueing s8 rw FiFo,Priority
+MaxAPIUsersNumber u rw
+MinSendSMSTimeInterval u rw
+EnableQuerySMSDeliveryStatus b rw
+EnableSubscribeToNotificationsOfMessageSentToApplication b rw
+Device.FAP.ApplicationPlatform.Control.MMS. so r
+APIEnable b rw
+QueueEnable b rw
+Queueing s8 rw FiFo,Priority
+MaxAPIUsersNumber u rw
+MinSendMMSTimeInterval u rw
+EnableQueryMMSDeliveryStatus b rw
+EnableSubscribeToNotificationsOfMessageSentToApplication b rw
+Device.FAP.ApplicationPlatform.Control.TerminalLocation. so r
+APIEnable b rw
+QueueEnable b rw
+Queueing s8 rw FiFo,Priority
+MaxAPIUsersNumber u rw
+QueryMobileLocationResponseAddress s18 rw TelUri,AnonymousReference
+QueryMobileLocationResponseLongitudeLatitude b rw
+QueryMobileLocationResponseAltitude b rw
+QueryMobileLocationResponseTimestamp u rw
+Device.FAP.ApplicationPlatform.Monitoring. so r
+Enable b rw
+MonitoringInterval u rw
+AuthenticationRequestsReceived u r
+AuthenticationRequestsRejected u r
+Device.FAP.ApplicationPlatform.Monitoring.FemtoAwareness. so r
+APIAvailable b r
+APIUsers u r
+QueueState s r Disabled,Ready,Flushed
+QueueNum u r
+QueueReceived u r
+QueueDiscarded u r
+Device.FAP.ApplicationPlatform.Monitoring.SMS. so r
+APIAvailable b r
+APIUsers u r
+QueueState s r Disabled,Ready,Flushed
+QueueNum u r
+QueueReceived u r
+QueueDiscarded u r
+Device.FAP.ApplicationPlatform.Monitoring.MMS. so r
+APIAvailable b r
+APIUsers u r
+QueueState s r Disabled,Ready,Flushed
+QueueNum u r
+QueueReceived u r
+QueueDiscarded u r
+Device.FAP.ApplicationPlatform.Monitoring.TerminalLocation. so r
+APIAvailable b r
+APIUsers u r
+QueueState s r Disabled,Ready,Flushed
+QueueNum u r
+QueueReceived u r
+QueueDiscarded u r
+*/
+/*
+Device.FAST. so r root
+LineNumberOfEntries u r
+Device.FAST.Line. mo r
+Enable b rw
+Status s r Up,Down,Unknown,Dormant,NotPresent,LowerLayerDown,Error
+Alias s64 rwj
+Name s64 r
+LastChange u rj
+LowerLayers s1024 rw
+Upstream b r
+FirmwareVersion s64 r
+LinkStatus s r Up,Initializing,EstablishingLink,NoSignal,Disabled,Error
+AllowedProfiles s r 106a,212a
+CurrentProfile s r
+PowerManagementState s r L0,L2.1,L2.2,L3
+SuccessFailureCause u r
+UPBOKLER u r
+LastTransmittedDownstreamSignal u r
+LastTransmittedUpstreamSignal u r
+UPBOKLE u r
+LineNumber i r
+UpstreamMaxBitRate u rj
+DownstreamMaxBitRate u rj
+UpstreamNoiseMargin i rj
+DownstreamNoiseMargin i rj
+UpstreamAttenuation i rj
+DownstreamAttenuation i rj
+UpstreamPower i rj
+DownstreamPower i rj
+SNRMRMCds i rj
+SNRMRMCus i rj
+BITSRMCpsds s4610 rj
+BITSRMCpsus s4610 rj
+FEXTCANCELds b r
+FEXTCANCELus b r
+ETRds u rj
+ETRus u rj
+ATTETRds u rj
+ATTETRus u rj
+MINEFTR u rj
+Device.FAST.Line.1.Stats. so r
+BytesSent ul rj
+BytesReceived ul rj
+PacketsSent ul rj
+PacketsReceived ul rj
+ErrorsSent u rj
+ErrorsReceived u rj
+DiscardPacketsSent u rj
+DiscardPacketsReceived u rj
+TotalStart u rj
+ShowtimeStart u rj
+LastShowtimeStart u rj
+CurrentDayStart u rj
+QuarterHourStart u rj
+Device.FAST.Line.1.Stats.Total. so r
+ErroredSecs u rj
+SeverelyErroredSecs u rj
+LOSS u rj
+LORS u rj
+UAS u rj
+RTXUC u rj
+RTXTX u rj
+SuccessBSW u rj
+SuccessSRA u rj
+SuccessFRA u rj
+SuccessRPA u rj
+SuccessTIGA u rj
+Device.FAST.Line.1.Stats.Showtime. so r
+ErroredSecs u rj
+SeverelyErroredSecs u rj
+LOSS u rj
+LORS u rj
+UAS u rj
+RTXUC u rj
+RTXTX u rj
+SuccessBSW u rj
+SuccessSRA u rj
+SuccessFRA u rj
+SuccessRPA u rj
+SuccessTIGA u rj
+Device.FAST.Line.1.Stats.LastShowtime. so r
+ErroredSecs u rj
+SeverelyErroredSecs u rj
+LOSS u rj
+LORS u rj
+UAS u rj
+RTXUC u rj
+RTXTX u rj
+SuccessBSW u rj
+SuccessSRA u rj
+SuccessFRA u rj
+SuccessRPA u rj
+SuccessTIGA u rj
+Device.FAST.Line.1.Stats.CurrentDay. so r
+ErroredSecs u rj
+SeverelyErroredSecs u rj
+LOSS u rj
+LORS u rj
+UAS u rj
+RTXUC u rj
+RTXTX u rj
+SuccessBSW u rj
+SuccessSRA u rj
+SuccessFRA u rj
+SuccessRPA u rj
+SuccessTIGA u rj
+Device.FAST.Line.1.Stats.QuarterHour. so r
+ErroredSecs u rj
+SeverelyErroredSecs u rj
+LOSS u rj
+LORS u rj
+UAS u rj
+RTXUC u rj
+RTXTX u rj
+SuccessBSW u rj
+SuccessSRA u rj
+SuccessFRA u rj
+SuccessRPA u rj
+SuccessTIGA u rj
+Device.FAST.Line.1.TestParams. so r
+SNRGds u rj
+SNRGus u rj
+SNRpsds s2047 rj
+SNRpsus s2047 rj
+SNRMTds u rj
+SNRMTus u rj
+ACTINP u rj
+NFEC u rj
+RFEC i rj
+UpstreamCurrRate u rj
+DownstreamCurrRate u rj
+ACTINPREIN u rj
+*/

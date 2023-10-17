@@ -1,0 +1,494 @@
+Device.ETSIM2M. so r rooth
+SCLNumberOfEntries u r
+Device.ETSIM2M.SCL. mo rw st
+Enable b rw
+Alias s64 rw
+AnnouncedToSCLList s64 rw
+SAFPolicySetNumberOfEntries u r
+AreaNwkInstanceNumberOfEntries u r
+AreaNwkDeviceInfoInstanceNumberOfEntries u r
+Device.ETSIM2M.SCL.1.Discovery. so r
+MaxNumberOfDiscovRecords u rw
+MaxSizeOfDiscovAnswer u rw
+Device.ETSIM2M.SCL.1.Reregistration. so r
+RegTargetNSCLList s64 rw
+RegSearchStrings s64 rw
+RegAccessRightID s64 rw
+RegExpirationDuration i rw
+Reregistration b rw
+Device.ETSIM2M.SCL.1.Reregistration.ActionStatus. so r
+Progress u rj
+FinalStatus s r SUCCESS,FAILURE
+Device.ETSIM2M.SCL.1.SAFPolicySet. mo rw
+Enable b rw
+Alias s64 rw
+PolicyScope s64 rw
+ANPPolicyNumberOfEntries u r
+Device.ETSIM2M.SCL.1.SAFPolicySet.1.ANPPolicy. mo rw
+Enable b rw
+Alias s64 rw
+ANName s64 rw
+BlockPeriodNumberOfEntries u r
+RequestCategoryNumberOfEntries u r
+Device.ETSIM2M.SCL.1.SAFPolicySet.1.ANPPolicy.1.BlockPeriod. mo rw
+Enable b rw
+Alias s64 rw
+FailedAttempts u rw
+BlockDuration i rw
+Device.ETSIM2M.SCL.1.SAFPolicySet.1.ANPPolicy.1.RequestCategory. mo rw
+Enable b rw
+Alias s64 rw
+RCAT s32 rw
+ScheduleNumberOfEntries u r
+Device.ETSIM2M.SCL.1.SAFPolicySet.1.ANPPolicy.1.RequestCategory.1.Schedule. mo rw
+Enable b rw
+Alias s64 rw
+Schedules s64 rw
+AbsTimeSpanNumberOfEntries u r
+Device.ETSIM2M.SCL.1.SAFPolicySet.1.ANPPolicy.1.RequestCategory.1.Schedule.1.AbsTimeSpan. mo rw
+Enable b rw
+Alias s64 rw
+StartTime d rw
+EndTime d rw
+Device.ETSIM2M.SCL.1.SAFPolicySet.1.M2MSPPolicy. so r
+DefaultRCATValue s32 rw
+RequestCategoryNumberOfEntries u r
+Device.ETSIM2M.SCL.1.SAFPolicySet.1.M2MSPPolicy.RequestCategory. mo rw
+Enable b rw
+Alias s64 rw
+RCAT s32 rw
+TolerableDelay i rw
+Thresh u rw
+Mem s32 rw
+RankedANList s64 rw
+Device.ETSIM2M.SCL.1.AreaNwkInstance. mo r
+ID s r
+AreaNwkType s r
+ListOfDevices s r
+PropertyNumberOfEntries u r
+Device.ETSIM2M.SCL.1.AreaNwkInstance.1.Property. mo r
+Name s r
+Value s r
+Device.ETSIM2M.SCL.1.AreaNwkDeviceInfoInstance. mo r
+AreaNwkInstance s r
+Host s r
+ListOfDeviceNeighbors s r
+ListOfDeviceApplications s r
+SleepInterval u rw
+SleepDuration u rw
+Status s r ASLEEP,AWAKE
+Active b r
+PropertyNumberOfEntries u r
+Device.ETSIM2M.SCL.1.AreaNwkDeviceInfoInstance.1.Property. mo r
+Name s r
+Value s r
+Device.IEEE1905. so r rooths
+Version s r 1905.1,1905.1a
+Device.IEEE1905.AL. so r
+IEEE1905Id s6 r mac
+Status s r Disabled,Enabled,Error_Misconfigured,Up,Down,Unknown,Dormant,NotPresent,LowerLayerDown,Error
+LastChange u rj
+LowerLayers s1024 r
+RegistrarFreqBand s1024 r
+InterfaceNumberOfEntries u r
+Device.IEEE1905.AL.Interface. mo r
+InterfaceId s6 r mac
+Status s r Up,Down,Unknown,Dormant,NotPresent,LowerLayerDown,Error
+LastChange u rj
+LowerLayers s1024 r
+InterfaceStackReference s256 rj
+MediaType s r IEEE 802.3u,IEEE 802.3ab,IEEE 802.11b,IEEE 802.11g,IEEE 802.11a,IEEE 802.11n 2.4,IEEE 802.11n 5.0,IEEE 802.11ac,IEEE 802.11ad,IEEE 802.11af,IEEE 1901 Wavelet,IEEE 1901 FFT,MoCAv1.1,Generic PHY
+GenericPhyOUI s6 r
+GenericPhyVariant h1 r
+GenericPhyURL s1024 r
+SetIntfPowerStateEnabled b rw
+PowerState s11 rw On,Power_Save,Off,Unsupported
+VendorPropertiesNumberOfEntries u r
+LinkNumberOfEntries u r
+Device.IEEE1905.AL.Interface.1.VendorProperties. mo r
+OUI s6 r
+Information h65535 r
+Device.IEEE1905.AL.Interface.1.Link. mo r
+InterfaceId s6 r mac
+IEEE1905Id s6 r mac
+MediaType s r IEEE 802.3u,IEEE 802.3ab,IEEE 802.11b,IEEE 802.11g,IEEE 802.11a,IEEE 802.11n 2.4,IEEE 802.11n 5.0,IEEE 802.11ac,IEEE 802.11ad,IEEE 802.11af,IEEE 1901 Wavelet,IEEE 1901 FFT,MoCAv1.1,Generic PHY
+GenericPhyOUI s6 r
+GenericPhyVariant h1 r
+GenericPhyURL s1024 r
+Device.IEEE1905.AL.Interface.1.Link.1.Metric. so r
+IEEE802dot1Bridge b r
+PacketErrors u rj
+PacketErrorsReceived u rj
+TransmittedPackets u rj
+PacketsReceived u rj
+MACThroughputCapacity u rj
+LinkAvailability u rj
+PHYRate u rj
+RSSI u rj
+Device.IEEE1905.AL.ForwardingTable. so r
+SetForwardingEnabled b rw
+ForwardingRuleNumberOfEntries u r
+Device.IEEE1905.AL.ForwardingTable.ForwardingRule. mo rw
+InterfaceList s256 rw
+MACDestinationAddress s6 rw mac
+MACDestinationAddressFlag b rw
+MACSourceAddress s6 rw mac
+MACSourceAddressFlag b rw
+EtherType u rw
+EtherTypeFlag b rw
+Vid u rw
+VidFlag b rw
+PCP u rw
+PCPFlag b rw
+Device.IEEE1905.AL.NetworkTopology. so r
+Enable b rw
+Status s r Incomplete,Available,Error_Misconfigured
+MaxChangeLogEntries u rw
+LastChange s256 r
+IEEE1905DeviceNumberOfEntries u r
+ChangeLogNumberOfEntries u r
+Device.IEEE1905.AL.NetworkTopology.ChangeLog. mo r
+TimeStamp d r
+EventType s r NewNeighbor,LostNeighbor
+ReporterDeviceId s6 r mac
+ReporterInterfaceId s6 r mac
+NeighborType s r IEEE1905,Non-IEEE1905
+NeighborId s6 r mac
+Device.IEEE1905.AL.NetworkTopology.IEEE1905Device. mo r
+IEEE1905Id s6 r mac
+Version s r 1905.1,1905.1a
+RegistrarFreqBand s1024 r
+FriendlyName s128 r
+ManufacturerName s128 r
+ManufacturerModel s128 r
+ControlURL s1024 r
+VendorPropertiesNumberOfEntries u r
+IPv4AddressNumberOfEntries u r
+IPv6AddressNumberOfEntries u r
+InterfaceNumberOfEntries u r
+NonIEEE1905NeighborNumberOfEntries u r
+IEEE1905NeighborNumberOfEntries u r
+L2NeighborNumberOfEntries u r
+BridgingTupleNumberOfEntries u r
+Device.IEEE1905.AL.NetworkTopology.IEEE1905Device.1.IPv4Address. mo r
+MACAddress s6 r mac
+IPv4Address s18 r ip
+IPv4AddressType s r Unknown,DHCP,Static,Auto-IP
+DHCPServer s48 r ip
+Device.IEEE1905.AL.NetworkTopology.IEEE1905Device.1.IPv6Address. mo r
+MACAddress s6 r mac
+IPv6Address s48 r ip
+IPv6AddressType s r Unknown,LinkLocal,DHCP,Static,SLAAC
+IPv6AddressOrigin s48 r ip
+Device.IEEE1905.AL.NetworkTopology.IEEE1905Device.1.VendorProperties. mo r
+MessageType h1 r
+OUI s6 r
+Information h65535 r
+Device.IEEE1905.AL.NetworkTopology.IEEE1905Device.1.Interface. mo r
+InterfaceId s6 r mac
+MediaType s r IEEE 802.3u,IEEE 802.3ab,IEEE 802.11b,IEEE 802.11g,IEEE 802.11a,IEEE 802.11n 2.4,IEEE 802.11n 5.0,IEEE 802.11ac,IEEE 802.11ad,IEEE 802.11af,IEEE 1901 Wavelet,IEEE 1901 FFT,MoCAv1.1,Generic PHY
+PowerState s r On,Power_Save,Off,Unsupported
+GenericPhyOUI s6 r
+GenericPhyVariant h1 r
+GenericPhyURL s1024 r
+NetworkMembership s6 r mac
+Role s r AP,non-AP/non-PCP STA,Wi-Fi P2P Client,Wi-Fi P2P Group Owner,802.11adPCP
+APChannelBand h1 r
+FrequencyIndex1 h1 r
+FrequencyIndex2 h1 r
+Device.IEEE1905.AL.NetworkTopology.IEEE1905Device.1.NonIEEE1905Neighbor. mo r
+LocalInterface s256 r
+NeighborInterfaceId s6 r mac
+Device.IEEE1905.AL.NetworkTopology.IEEE1905Device.1.L2Neighbor. mo r
+LocalInterface s256 r
+NeighborInterfaceId s6 r mac
+BehindInterfaceIds s1024 r
+Device.IEEE1905.AL.NetworkTopology.IEEE1905Device.1.IEEE1905Neighbor. mo r
+LocalInterface s256 r
+NeighborDeviceId s6 r mac
+MetricNumberOfEntries u r
+Device.IEEE1905.AL.NetworkTopology.IEEE1905Device.1.IEEE1905Neighbor.1.Metric. mo r
+NeighborMACAddress s6 r mac
+IEEE802dot1Bridge b r
+PacketErrors u r
+PacketErrorsReceived u r
+TransmittedPackets u r
+PacketsReceived u r
+MACThroughputCapacity u r
+LinkAvailability u r
+PHYRate u r
+RSSI u r
+Device.IEEE1905.AL.NetworkTopology.IEEE1905Device.1.BridgingTuple. mo r
+InterfaceList s256 r
+Device.IEEE1905.AL.Security. so r
+SetupMethod s1024 rw
+Password s256 w
+Device.IEEE1905.AL.NetworkingRegistrar. so r
+Registrar2dot4 s1024 r
+Registrar5 s1024 r
+Registrar60 s1024 r
+Device.LLDP. so r rooth
+Device.LLDP.Discovery. so r
+DeviceNumberOfEntries u r
+Device.LLDP.Discovery.Device. mo r
+Interface s r
+ChassisIDSubtype u r
+ChassisID s255 r
+Host s1024 r
+PortNumberOfEntries u r
+Device.LLDP.Discovery.Device.1.Port. mo r
+PortIDSubtype u r
+PortID s255 r
+TTL u r
+PortDescription s255 r
+MACAddressList s r
+LastUpdate d r
+Device.LLDP.Discovery.Device.1.Port.1.LinkInformation. so r
+InterfaceType u r
+MACForwardingTable s r
+Device.LLDP.Discovery.Device.1.DeviceInformation. so r
+DeviceCategory s r
+ManufacturerOUI s6 r
+ModelName s31 r
+ModelNumber s31 r
+VendorSpecificNumberOfEntries u r
+Device.LLDP.Discovery.Device.1.DeviceInformation.VendorSpecific. mo r
+OrganizationCode s6 r
+InformationType u r
+Information s248 r
+Device.MQTT. so r rooth
+ClientNumberOfEntries u r
+BrokerNumberOfEntries u r
+Device.MQTT.Capabilities. so r
+ProtocolVersionsSupported s r 3.1,3.1.1
+TransportProtocolSupported s r TCP/IP,TLS,WebSocket
+MaxNumberOfClientSubscriptions u r
+MaxNumberOfBrokerBridges u r
+MaxNumberOfBrokerBridgeSubscriptions u r
+Device.MQTT.Client. mo rw
+Alias s64 rwj
+Name s64 rw
+Enable b rw
+Status s r Disabled,Connecting,Connected,Error_Misconfigured,Error_BrokerUnreachable,Error
+ClientID s23 rw
+Username s256 rw
+Password s256 w
+TransportProtocol s rw TCP/IP,TLS,WebSocket
+ProtocolVersion s rw 3.1,3.11
+CleanSession b rw
+MessageRetryTime u rw
+ConnectRetryTime u rw
+KeepAliveTime u rw
+ForceReconnect b w
+BrokerAddress s256 rw
+BrokerPort u rw
+WillEnable b rw
+WillTopic s32 rw
+WillValue s32 rw
+WillQoS u rw
+WillRetain b rw
+SubscriptionNumberOfEntries u r
+Device.MQTT.Client.1.Subscription. mo rw
+Alias s64 rwj
+Enable b rw
+Status s r Unsubscribed,Subscribed,Subscribing,Unsubscribing,Error
+Topic s65535 rw
+QoS u rw
+Device.MQTT.Client.1.Stats. so r
+BrokerConnectionEstablished d rj
+LastPublishMessageSent d rj
+LastPublishMessageReceived d rj
+PublishSent ul rj
+PublishReceived ul rj
+SubscribeSent ul rj
+UnSubscribeSent ul rj
+MQTTMessagesSent ul rj
+MQTTMessagesReceived ul rj
+ConnectionErrors u rj
+PublishErrors u r
+Device.MQTT.Broker. mo rw
+Alias s64 rwj
+Name s64 rw
+Enable b rw
+Status s r Disabled,Enabled,Error_Misconfigured,Error
+Port u rw
+Interface s256 rw
+Username s256 rw
+Password s256 w
+BridgeNumberOfEntries u r
+Device.MQTT.Broker.1.Bridge. mo rw
+Alias s64 rwj
+Name s64 rw
+Enable b rw
+Status s r Disabled,Connecting,Connected,Enabled,Error_Misconfigured,Error_BrokerUnreachable,Error
+ClientID s23 rw
+Username s256 rw
+Password s256 w
+TransportProtocol s rw TCP/IP,TLS,WebSocket
+ProtocolVersion s rw 3.1,3.11
+CleanSession b rw
+MessageRetryTime u rw
+ConnectRetryTime u rw
+KeepAliveTime u rw
+ForceReconnect b w
+ServerSelectionAlgorithm s10 rw Priority,RoundRobin,Random
+ServerConnection s r
+ServerNumberOfEntries u r
+SubscriptionNumberOfEntries u r
+Device.MQTT.Broker.1.Bridge.1.Server. mo rw
+Enable b rw
+Alias s64 rw
+Priority u rw
+Weight i rw
+Address s256 rw
+Port u rw
+Device.MQTT.Broker.1.Bridge.1.Subscription. mo rw
+Alias s64 rwj
+Enable b rw
+Status s r Enabled,Disabled,Error
+Topic s65535 rw
+Direction s4 rw out,in,both
+QoS u rw
+LocalPrefix s64 rw
+RemotePrefix s64 rw
+Device.MQTT.Broker.1.Stats. so r
+TotalNumberOfClients u r
+NumberOfActiveClients u r
+NumberOfInactiveClients u r
+Subscriptions u rj
+PublishSent ul rj
+PublishReceived ul rj
+MQTTMessagesSent ul rj
+MQTTMessagesReceived ul rj
+ConnectionErrors u rj
+PublishErrors u r
+Device.ZigBee. so r root
+InterfaceNumberOfEntries u r
+ZDONumberOfEntries u r
+Device.ZigBee.Interface. mo r
+Enable b rw
+Status s r Up,Down,Unknown,Dormant,NotPresent,LowerLayerDown,Error
+Alias s64 rwj
+Name s64 r
+LastChange u rj
+LowerLayers s1024 rw
+IEEEAddress s23 ra
+NetworkAddress s4 r
+ZDOReference s256 r
+AssociatedDeviceNumberOfEntries u r
+Device.ZigBee.Interface.1.Stats. so r
+BytesSent ul rj
+BytesReceived ul rj
+PacketsSent ul rj
+PacketsReceived ul rj
+ErrorsSent u rj
+ErrorsReceived u rj
+UnicastPacketsSent u rj
+UnicastPacketsReceived u rj
+DiscardPacketsSent u rj
+DiscardPacketsReceived u rj
+MulticastPacketsSent u rj
+MulticastPacketsReceived u rj
+BroadcastPacketsSent u rj
+BroadcastPacketsReceived u rj
+UnknownPacketsReceived u rj
+Device.ZigBee.Interface.1.AssociatedDevice. mo r
+IEEEAddress s23 r
+NetworkAddress s4 r
+Active b r
+ZDOReference s256 r
+Device.ZigBee.ZDO. mo r
+Alias s64 rwj
+IEEEAddress s23 r
+NetworkAddress s4 r
+BindingTableNumberOfEntries u r
+GroupNumberOfEntries u r
+ApplicationEndpointNumberOfEntries u r
+Device.ZigBee.ZDO.1.NodeDescriptor. so r
+LogicalType s r ZC,ZR,ZED
+ComplexDescriptorSupported b r
+UserDescriptorSupported b r
+FrequencyBand s r 868-868.6,902-928,2400-2483.5
+MACCapability s r AlternatePANCoordinator,FFD,MainsPowerSource,OnWhenIdle,SecureCommunication
+ManufactureCode u r
+MaximumBufferSize u r
+MaximumIncomingTransferSize u r
+MaximumOutgoingTransferSize u r
+ServerMask s r PrimaryTrustCenter,PrimaryBindingTableCache,BackupBindingTableCache,PrimaryDiscoveryCache,BackupDiscoveryCache,NetworkManager
+DescriptorCapability s r ExtendedActiveEndpointListAvailable,ExtendedSimpleDescriptorListAvailable
+Device.ZigBee.ZDO.1.PowerDescriptor. so r
+CurrentPowerMode s r Synchronized,Periodic,Manual
+AvailablePowerSource s r Constant,Rechargeable,Disposable
+CurrentPowerSource s r Constant,Rechargeable,Disposable
+CurrentPowerSourceLevel s r Critical,33,66,100
+Device.ZigBee.ZDO.1.UserDescriptor. so r
+DescriptorAvailable b r
+Description s16 r
+Device.ZigBee.ZDO.1.ComplexDescriptor. so r
+DescriptorAvailable b r
+Language s r
+CharacterSet s r
+ManufacturerName s r
+ModelName s r
+SerialNumber s r
+DeviceURL s r
+Icon h65535 r
+IconURL s r
+Device.ZigBee.ZDO.1.Security. so r
+TrustCenterAddress s23 r
+SecurityLevel s r None,MIC-32,MIC-64,MIC-128,ENC,ENC-MIC-32,ENC-MIC-64,ENC-MIC-128
+TimeOutPeriod u r
+Device.ZigBee.ZDO.1.Network. so r
+NeighborNumberOfEntries u r
+Device.ZigBee.ZDO.1.Network.Neighbor. mo r
+Neighbor s r
+LQI u rj
+Relationship s r Parent,Child,PrevChild,Sibling,None
+PermitJoin s r Accepting,NotAccepting,Unknown
+Depth u r
+Device.ZigBee.ZDO.1.NodeManager. so r
+RoutingTableNumberOfEntries u r
+Device.ZigBee.ZDO.1.NodeManager.RoutingTable. mo r
+DestinationAddress s4 r
+NextHopAddress s4 rj
+Status s rj Active,DiscoveryUnderway,DiscoveryFailed,Inactive,ValidationUnderway
+MemoryConstrained b r
+ManyToOne b r
+RouteRecordRequired b r
+Device.ZigBee.ZDO.1.Binding. mo rw
+Enable b rw
+Alias s64 rwj
+SourceEndpoint u rw
+SourceAddress s23 rw
+ClusterId u rw
+DestinationAddressMode s8 rw Group,Endpoint
+DestinationEndpoint u rw
+IEEEDestinationAddress s23 rw
+GroupDestinationAddress s4 rw
+Device.ZigBee.ZDO.1.Group. mo rw
+Enable b rw
+Alias s64 rwj
+GroupId s4 rw
+EndpointList s256 rw
+Device.ZigBee.ZDO.1.ApplicationEndpoint. mo rw
+Enable b rw
+Alias s64 rwj
+EndpointId u rw
+Device.ZigBee.ZDO.1.ApplicationEndpoint.1.SimpleDescriptor. so r
+ProfileId u rw
+DeviceId u r
+DeviceVersion u r
+InputClusterList u rw
+OutputClusterList u rw
+Device.ZigBee.Discovery. so r
+AreaNetworkNumberOfEntries u r
+Device.ZigBee.Discovery.AreaNetwork. mo rw
+Enable b rw
+LastUpdate d r
+Status s r Indeterminate,InProgress,Success,Error,Error_Timeout
+Alias s64 rwj
+Coordinator s256 rw
+ZDOReference s256 r
+ZDOList s256 r
+
+

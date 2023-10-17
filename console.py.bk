@@ -1,0 +1,68 @@
+import time
+import serial
+import sys
+
+"""def Check_COM_Open():
+    print ("Check COM Open")
+    global ser
+    c=ser.isOpen()
+    print (c)
+    while (ser==0):
+         ser.close()"""
+
+def Open_COM(port, rate):
+	print ("Open COM")
+	global ser
+	ser=serial.Serial(port, int(rate), timeout=5)
+	print (ser.name)
+	
+def IsOpen():
+	print ("Check IsOpen")
+	global ser
+	para=ser.isOpen()
+	return para
+	
+def Write_To_COM(string):
+	print ("Write to COM")
+	global ser
+	#ser.write(str(string)+'\r')
+	ser.write(str.encode(string+'\r'))
+	
+def Read_From_COM(read_time):
+	print ("Read From COM")
+	global ser
+	ser.timeout=(int(read_time))
+    #byte string
+	#s = str(ser.readlines())
+    #unicode string
+	#s = str.encode(ser.readlines())
+	s = str(ser.readlines())
+	return s
+    
+def Save_COM_Log(tmp, file_path):
+    print ("Save COM Log")
+    mylist = tmp.split(",")
+    mylist = [x.replace("\\r\\n\'","") for x in mylist]
+    #print ("Replace n r . . . \n")
+    #print (mylist)
+    mylist = [x.replace("b\'","") for x in mylist]
+    #print ("Replace b . . . \n")
+    #print (mylist)
+    #tmp = [x.replace("\r\n","") for x in tmp]
+    f = open(file_path, "w")
+    for line in mylist:
+        f.write(line)
+        #print(line)
+        f.write('\n')
+    f.close()
+	
+def Flush_Com():
+	print ("Flush_Com")
+	global ser
+	ser.flushOutput()
+	ser.flushInput()
+	
+def Close_COM():
+	print ("Close COM")
+	global ser
+	ser.close()

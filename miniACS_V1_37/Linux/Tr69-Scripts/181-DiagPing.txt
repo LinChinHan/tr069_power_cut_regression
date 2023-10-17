@@ -1,0 +1,31 @@
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" soap:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:cwmp="urn:dslforum-org:cwmp-1-0">
+<soap:Header>
+<cwmp:ID soap:mustUnderstand="1">2</cwmp:ID>
+</soap:Header>
+<soap:Body>
+<cwmp:SetParameterValues>
+<ParameterList soap:arrayType="cwmp:ParameterValueStruct[5]">
+<ParameterValueStruct>
+<name>Device.IP.Diagnostics.IPPing.DiagnosticsState</name>
+<value xsi:type="xsd:string">Requested</value>
+</ParameterValueStruct>
+<ParameterValueStruct>
+<name>Device.IP.Diagnostics.IPPing.Host</name>
+<value xsi:type="xsd:string">www.google.com</value>
+</ParameterValueStruct>
+<ParameterValueStruct>
+<name>Device.IP.Diagnostics.IPPing.NumberOfRepetitions</name>
+<value xsi:type="xsd:unsignedInt">30</value>
+</ParameterValueStruct>
+<ParameterValueStruct>
+<name>Device.IP.Diagnostics.IPPing.DataBlockSize</name>
+<value xsi:type="xsd:unsignedInt">200</value>
+</ParameterValueStruct>
+<ParameterValueStruct>
+<name>Device.IP.Diagnostics.IPPing.Timeout</name>
+<value xsi:type="xsd:unsignedInt">1000</value>
+</ParameterValueStruct>
+</ParameterList>
+</cwmp:SetParameterValues>
+</soap:Body>
+</soap:Envelope>

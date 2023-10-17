@@ -1,0 +1,256 @@
+Device.Services.VoiceService. mo r rootst
+VoiceProfileNumberOfEntries u r
+X_T-ONLINE-DE_IpOnly b rw
+X_ARCOR_NET_VoiceBackupEnable b rw  
+X_ARCOR_NET_VoiceBackupCheckInterval u rw  
+X_ARCOR_NET_VoiceBackupRecoveryCheckInterval u rw  
+X_ARCOR_NET_VoiceBackupMaxwait u rw
+X_ARCOR_NET_ISDN reg r
+Device.Services.VoiceService.1.Capabilities. so r s
+MaxProfileCount u r
+MaxLineCount u r
+MaxSessionsPerLine u r
+MaxSessionCount u r
+SignalingProtocols s r
+Regions s r
+RTCP b r
+SRTP b r
+SRTPKeyingMethods s r
+SRTPEncryptionKeySizes s r
+RTPRedundancy b r
+DSCPCoupled b r
+EthernetTaggingCoupled b r
+PSTNSoftSwitchOver b r
+FaxT38 b r
+FaxPassThrough b r
+ModemPassThrough b r
+ToneGeneration b r
+ToneDescriptionsEditable b r
+PatternBasedToneGeneration b r
+FileBasedToneGeneration b r
+ToneFileFormats s r
+RingGeneration b r
+RingDescriptionsEditable b r
+PatternBasedRingGeneration b r
+RingPatternEditable b r
+FileBasedRingGeneration b r
+RingFileFormats s r
+NumberingPlan b r
+ButtonMap b r
+VoicePortTests b r
+Device.Services.VoiceService.1.Capabilities.SIP. so r s
+Role s r
+Extensions s r
+Transports s r
+URISchemes s r
+EventSubscription b r
+ResponseMap b r
+TLSAuthenticationProtocols s r
+TLSAuthenticationKeySizes s r
+TLSEncryptionProtocols s r
+TLSEncryptionKeySizes s r
+TLSKeyExchangeProtocols s r
+Device.Services.VoiceService.1.Capabilities.Codecs. mo r
+EntryID u r
+Codec s64 r
+BitRate u r
+PacketizationPeriod s r
+SilenceSuppression b r
+Device.Services.VoiceService.1.VoiceProfile. mo10 rw osth #define
+Enable s9 rw Disabled,Enabled
+Reset b rw
+NumberOfLines u r
+Name s64 rw
+SignalingProtocol s16 rw SIP/2.0
+MaxSessions u rw
+DTMFMethod s9 rw InBand,RFC2833,SIPInfo
+DTMFMethodG711 s9 rw InBand,RFC2833,SIPInfo
+Region s2 rw
+DigitMap s256 rw
+DigitMapEnable b rw
+STUNEnable b rw
+STUNServer s64 rw
+NonVoiceBandwidthReservedUpstream u rw
+NonVoiceBandwidthReservedDownstream u rw
+PSTNFailOver b rw
+FaxPassThrough s9 rw Disable,Auto,Force
+ModemPassThrough s9 rw Disable,Auto,Force
+Device.Services.VoiceService.1.VoiceProfile.1.ServiceProviderInfo. so r st
+Name s64 rw
+URL s256 rw
+ContactPhoneNumber s32 rw
+EmailAddress s256 rw
+Device.Services.VoiceService.1.VoiceProfile.1.SIP. so r st
+ProxyServer s64 rw
+ProxyServerPort u rw
+ProxyServerTransport s3 rw UDP
+RegistrarServer s64 rw
+RegistrarServerPort u rw
+RegistrarServerTransport s3 rw UDP
+UserAgentDomain s64 rw
+UserAgentPort u rw
+UserAgentTransport s3 rw UDP
+OutboundProxy s64 rw
+OutboundProxyPort u rw
+Organization s64 rw
+RegistrationPeriod u rw
+TimerT1 u rw
+TimerT2 u rw
+TimerT4 u rw
+TimerA u rw
+TimerB u rw
+TimerC u rw
+TimerD u rw
+TimerE u rw
+TimerF u rw
+TimerG u rw
+TimerH u rw
+TimerI u rw
+TimerJ u rw
+TimerK u rw
+InviteExpires u rw
+RegisterExpires u rw
+RegistersMinExpires u rw
+RegisterRetryInterval u rw
+InboundAuth s7 rw None,Digest
+InboundAuthUsername s64 rw
+InboundAuthPassword s64 w
+UseCodecPriorityInSDPResponse b rw
+DSCPMark u rw
+VLANIDMark i rw
+EthernetPriorityMark i rw
+SIPEventSubscribeNumberOfElements u r
+X_ARCOR_NET_ListenVC u rw  
+X_ARCOR_NET_VCInUse u r  
+Device.Services.VoiceService.1.VoiceProfile.1.RTP. so r st
+LocalPortMin u rw
+LocalPortMax u rw
+DSCPMark u rw
+VLANIDMark i rw
+EthernetPriorityMark i rw
+TelephoneEventPayloadType u rw
+Device.Services.VoiceService.1.VoiceProfile.1.RTP.RTCP. so r
+Enable b rw
+TxRepeatInterval u rw
+LocalCName s64 rw
+Device.Services.VoiceService.1.VoiceProfile.1.RTP.Redundancy. so r
+Enable b rw
+PayloadType u rw
+BlockPayloadType u rw
+FaxAndModemRedundancy i rw
+ModemRedundancy i rw
+DTMFRedundancy i rw
+VoiceRedundancy i rw
+MaxSessionsUsingRedundancy u rw
+Device.Services.VoiceService.1.VoiceProfile.1.FaxT38. so r st
+Enable b rw
+BitRate u rw
+HighSpeedPacketRate u rw
+HighSpeedRedundancy u rw
+LowSpeedRedundancy u rw
+TCFMethod s7 rw Local,Network
+Device.Services.VoiceService.1.VoiceProfile.1.Line. regMulti20 rw #end
+Device.Services.VoiceService.1.VoiceProfile.1.Line. regMultiRoot20 rw ost #define
+Enable s9 rw Disabled,Enabled
+DirectoryNumber s32 rw
+Status s r
+CallState s r
+PhyReferenceList s16 rw
+RingMuteStatus b r
+RingVolumeStatus u r
+Device.Services.VoiceService.1.VoiceProfile.1.Line.1.SIP. so r st
+AuthUserName s64 rw
+AuthPassword s64 rw
+URI s128 rw
+SIPEventSubscribeNumberOfElements u r
+Device.Services.VoiceService.1.VoiceProfile.1.Line.1.CallingFeatures. so r st 
+CallerIDEnable b rw
+CallerIDNameEnable b rw
+CallerIDName s64 rw
+CallWaitingEnable b rw
+CallWaitingStatus s r
+MaxSessions u rw
+ConferenceCallingStatus s r
+ConferenceCallingSessionCount u r
+CallForwardUnconditionalEnable b rw
+CallForwardUnconditionalNumber s32 rw
+CallForwardOnBusyEnable b rw
+CallForwardOnBusyNumber s32 rw
+CallForwardOnNoAnswerEnable b rw
+CallForwardOnNoAnswerNumber s32 rw
+CallForwardOnNoAnswerRingCount u rw
+CallTransferEnable b rw
+MWIEnable b rw
+MessageWaiting b rw
+AnonymousCallBlockEnable b rw
+AnonymousCalEnable b rw
+DoNotDisturbEnable b rw
+CallReturnEnable b rw
+RepeatDialEnable b rw
+Device.Services.VoiceService.1.VoiceProfile.1.Line.1.VoiceProcessing. so r st
+TransmitGain i rw
+ReceiveGain i rw
+EchoCancellationEnable b rw
+EchoCancellationInUse b r
+EchoCancellationTail u r
+Device.Services.VoiceService.1.VoiceProfile.1.Line.1.Codec. so r s
+TransmitCodec s r
+ReceiveCodec s r
+TransmitBitRate u r
+ReceiveBitRate u r
+TransmitSilenceSuppression b r
+ReceiveSilenceSuppression b r
+TransmitPacketizationPeriod u r
+Device.Services.VoiceService.1.VoiceProfile.1.Line.1.Codec.List. mo8 rw st
+EntryID u r
+Codec s r
+BitRate u r
+PacketizationPeriod s64 rw
+SilenceSuppression b rw
+Enable b rw
+Priority u rw
+Device.Services.VoiceService.1.VoiceProfile.1.Line.1.Session. mo2 rw u
+SessionStartTime d r
+SessionDuration u r
+FarEndIPAddress s18 r ip
+FarEndUDPPort u r
+LocalUDPPort u r
+Device.Services.VoiceService.1.VoiceProfile.1.Line.1.Stats. so r st #end
+ResetStatistics b rw
+PacketsSent u r
+PacketsReceived u r
+BytesSent u r
+BytesReceived u r
+PacketsLost u r
+Overruns u r
+Underruns u r
+IncomingCallsReceived u r
+IncomingCallsAnswered u r
+IncomingCallsConnected u r
+IncomingCallsFailed u r
+OutgoingCallsAttempted u r
+OutgoingCallsAnswered u r
+OutgoingCallsConnected u r
+OutgoingCallsFailed u r
+CallsDropped u r
+TotalCallTime u r
+ServerDownTime u r
+ReceivePacketLossRate u r
+FarEndPacketLossRate u r
+ReceiveInterarrivalJitter u r
+FarEndInterarrivalJitter u r
+RoundTripDelay u r
+AverageReceiveInterarrivalJitter u r
+AverageFarEndInterarrivalJitter u r
+AverageRoundTripDelay u r
+Device.Services.VoiceService.1.PhyInterface. mo2 r hst #define
+PhyPort s2 r
+InterfaceID u r
+Description s17 r
+X_ARCOR_OutCallPriorityList s128 rw
+X_ARCOR_NET_AnswerAllLines b rw
+X_ARCOR_NET_AnswerLineList s128 rw
+Device.Services.VoiceService.1.PhyInterface.1.Tests. so r #end
+TestState s32 rw None,Requested
+TestSelector s64 rw
+PhoneConnectivity b r

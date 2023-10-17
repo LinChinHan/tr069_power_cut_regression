@@ -1,0 +1,447 @@
+Device. so r rooths
+DeviceSummary s ri
+RootDataModelVersion s32 ri
+InterfaceStackNumberOfEntries u r
+LAN reg r
+DSL reg r
+Optical reg r
+ATM reg r
+PTM reg r
+Ethernet reg r
+USB reg r
+USBHosts reg r
+HPNA reg r
+MoCA reg r
+Ghn reg r
+HomePlug reg r
+UPA reg r
+WiFi reg r
+Bridging reg r
+PPP reg r
+IP reg r
+Routing reg r
+QoS reg r
+NeighborDiscovery reg r
+RouterAdvertisement reg r
+IPv6rd reg r
+DSLite reg r
+X_MAPT reg r
+DNS reg r
+NAT reg r
+DHCPv4 reg r
+DHCPv6 reg r
+IEEE8021x reg r
+Users reg r
+UPnP reg r
+DLNA reg r
+SmartCardReaders reg r
+SelfTestDiagnostics reg r
+Firewall reg r
+PeriodicStatistics reg r
+SoftwareModules reg r
+FaultMgmt reg r
+Security reg r
+BulkData reg r
+X_T-ONLINE-DE_TrustedSMTPServers reg r
+X_GVT_COM_BR reg r
+X_ARC_COM reg r
+Device.Services. so r
+VoiceServiceNumberOfEntries u r
+StorageServiceNumberOfEntries u r
+VoiceService reg r
+StorageService reg r
+X_T-ONLINE-DE_Fon reg r
+Device.DeviceInfo. so r st
+DeviceCategory s r
+Manufacturer s64 r
+ManufacturerOUI s6 r
+ModelName s64 rj
+ModelNumber s64 r
+Description s256 rj
+ProductClass s64 r
+SerialNumber s64 r
+HardwareVersion s64 ri
+SoftwareVersion s64 ria
+AdditionalHardwareVersion s64 r
+AdditionalSoftwareVersion s64 r
+ProvisioningCode s64 rwia
+UpTime u rj
+FirstUseDate d rj
+DeviceLog s rj
+VendorConfigFileNumberOfEntries u r
+SupportedDataModelNumberOfEntries u r
+ProcessorNumberOfEntries u r
+VendorLogFileNumberOfEntries u r
+//LocationNumberOfEntries u r
+//DeviceImageNumberOfEntries u r
+X_T-ONLINE-DE_ConfigFile s1 rw
+X_T-ONLINE-DE_DeviceLog s r
+Device.DeviceInfo.VendorConfigFile. mo r s
+Alias s64 rwj
+Name s64 r
+Version s16 r
+Date d r
+Description s256 r
+UseForBackupRestore b r
+/*
+Device.DeviceInfo.ProxierInfo. so r s
+ManufacturerOUI s6 r
+ProductClass s64 r
+SerialNumber s64 r
+ProxyProtocol s64 r Z-Wave,ZigBee,UPnP-DM,ETSI-M2M
+*/
+Device.DeviceInfo.MemoryStatus. so r s
+Total u r
+Free u rj
+Device.DeviceInfo.ProcessStatus. so r s
+CPUUsage u rj
+ProcessNumberOfEntries u r
+Device.DeviceInfo.ProcessStatus.Process. mo256 r u
+PID u r
+Command s128 r
+Size u rj
+Priority u r
+CPUTime u rj
+State s rj Running,Sleeping,Stopped,Idle,Uninterruptible,Zombie
+/*
+Device.DeviceInfo.TemperatureStatus. so r
+TemperatureSensorNumberOfEntries u r
+Device.DeviceInfo.TemperatureStatus.TemperatureSensor. mo r
+Alias s64 rwj
+Enable b rw
+Status s r Disabled,Enabled,Error
+Reset b w
+ResetTime d r
+Name s256 r
+Value i rj
+LastUpdate d rj
+MinValue i r
+MinTime d r
+MaxValue i r
+MaxTime d r
+LowAlarmValue i rw
+LowAlarmTime d r
+HighAlarmValue i rw
+PollingInterval u rw
+HighAlarmTime d r
+*/
+/*
+Device.DeviceInfo.NetworkProperties. so r
+MaxTCPWindowSize u r
+TCPImplementation s r Tahoe,Reno,New Reno,Vegas
+*/
+Device.DeviceInfo.SupportedDataModel. mo4 r s #define#end
+Alias s64 rwj
+URL s128 r
+UUID s36 r
+URN s128 r
+Features s r
+Device.DeviceInfo.VendorLogFile. mo r s
+Alias s64 rwj
+Name s64 r
+MaximumSize u r
+Persistent b r
+Device.DeviceInfo.Processor. mo r s
+Alias s64 rwj
+Architecture s r arm,i386,m68010,m68k,mipseb,mipsel,powerpc,sh3eb,sh3el,x86_64
+/*
+Device.DeviceInfo.Location. mo rw
+Source s r GPS,AGPS,Manual,External
+AcquiredTime d r
+ExternalSource s r
+ExternalProtocol s r CWMP,OMA-DM,SNMP,UPnP,HELD,DHCPv4,DHCPv6,LLDP-MED,MLP,Other
+DataObject s1200 rw
+Device.DeviceInfo.DeviceImageFile. mo r
+Alias s64 rwj
+Location s r Front,Back,Left,Right,Top,Bottom
+Image 64 r
+*/
+Device.ManagementServer. so r st
+EnableCWMP b rw
+URL s256 rw
+Username s256 rw
+Password s256 w
+ScheduleReboot d rw
+DelayReboot i rw
+PeriodicInformEnable b rw
+PeriodicInformInterval u rw
+PeriodicInformTime d rw
+ParameterKey s32 rij
+ConnectionRequestURL s256 ria
+ConnectionRequestUsername s256 rw
+ConnectionRequestPassword s256 w
+UpgradesManaged b rw
+KickURL s256 r
+DownloadProgressURL s256 r
+DefaultActiveNotificationThrottle u rw
+CWMPRetryMinimumWaitInterval u rw
+CWMPRetryIntervalMultiplier u rw
+HTTPConnectionRequestEnable b rw
+UDPConnectionRequestAddress s256 r
+STUNEnable b rw
+STUNServerAddress s256 rw
+STUNServerPort u rw
+STUNUsername s256 rw
+STUNPassword s256 w
+STUNMaximumKeepAlivePeriod i rw
+STUNMinimumKeepAlivePeriod u rw
+NATDetected b r
+AliasBasedAddressing b ri
+InstanceMode s14 rw InstanceNumber,InstanceAlias
+AutoCreateInstances b rw
+ManageableDeviceNumberOfEntries u r
+ManageableDeviceNotificationLimit u rw
+EmbeddedDeviceNumberOfEntries u r
+VirtualDeviceNumberOfEntries u r
+SupportedConnReqMethods s r HTTP,STUN,XMPP
+/*
+ConnReqXMPPConnection s128 rw
+ConnReqAllowedJabberIDs s256 rw
+ConnReqJabberID s ra
+HTTPCompressionSupported s r GZIP,Compress,Deflate
+HTTPCompression s rw GZIP,Compress,Deflate
+LightweightNotificationProtocolsSupported s r UDP
+LightweightNotificationProtocolsUsed s rw UDP
+UDPLightweightNotificationHost s256 rw
+UDPLightweightNotificationPort u rw
+InformParameterNumberOfEntries u r
+*/
+X_T-ONLINE-DE_ACSSignalCounter i rw
+Device.ManagementServer.ManageableDevice. mo r s
+Alias s64 rw
+ManufacturerOUI s6 rj
+SerialNumber s64 rj
+ProductClass s64 rj
+Host s128 r
+/*
+Device.ManagementServer.AutonomousTransferCompletePolicy. so r st
+Enable b rw
+TransferTypeFilter s8 rw Upload,Download,Both
+ResultTypeFilter s7 rw Success,Failure,Both
+FileTypeFilter s1024 rw
+Device.ManagementServer.DUStateChangeComplPolicy. so r st
+Enable b rw
+OperationTypeFilter s9 rw Install,Update,Uninstall
+ResultTypeFilter s7 rw Success,Failure,Both
+FaultCodeFilter s4 rw 9001,9003,9012,9013,9015,9016,9017,9018,9022,9023,9024,9025,9026,9027,9028,9029,9030,9031,9032
+Device.ManagementServer.EmbeddedDevice. mo r s
+ControllerID s256 r
+ProxiedDeviceID s256 r
+Reference s r
+SupportedDataModel s r
+Host s r
+ProxyProtocol s r Z-Wave,ZigBee,UPnP-DM,ETSI-M2M
+ProxyProtocolReference s r
+DiscoveryProtocol s r Z-Wave,ZigBee,UPnP,ETSI-M2M
+DiscoveryProtocolReference s r
+CommandProcessed s r Pending,Retrying,Success,Error
+CommandProcessingErrMsg s1024 r
+LastSyncTime d r
+Device.ManagementServer.VirtualDevice. mo r s
+ManufacturerOUI s6 r
+ProductClass s64 r
+SerialNumber s64 r
+Host s r
+ProxyProtocol s r Z-Wave,ZigBee,UPnP-DM,ETSI-M2M
+ProxyProtocolReference s r
+DiscoveryProtocol s r Z-Wave,ZigBee,UPnP,ETSI-M2M
+DiscoveryProtocolReference s r
+Device.ManagementServer.DownloadAvailability. so r
+Device.ManagementServer.DownloadAvailability.Announcement. so r st
+Enable b rw
+Status s r Disabled,Enabled,Error
+GroupNumberOfEntries u r
+Device.ManagementServer.DownloadAvailability.Announcement.Group. mo rw
+Alias s64 rwj
+Enable b rw
+Status s r Disabled,Enabled,Error
+URL s256 rw
+Device.ManagementServer.DownloadAvailability.Query. so r st
+Enable b rw
+Status s r Disabled,Enabled,Error
+URL s256 rw
+*/
+/*
+Device.ManagementServer.StandbyPolicy. so r st
+CRUnawarenessMaxDuration i rw
+MaxMissedPeriodic i rw
+NotifyMissedScheduled b rw
+NetworkAwarenessCapable b r
+SelfTimerCapable b r
+CRAwarenessRequested b rw
+PeriodicAwarenessRequested b rw
+ScheduledAwarenessRequested b rw
+Device.ManagementServer.InformParameter. mo8 rw st
+Enable b rw
+Alias s64 rw
+ParameterName s256 rw
+EventList s rw
+Device.GatewayInfo. so r
+ManufacturerOUI s6 ra
+ProductClass s64 ra
+SerialNumber s64 ra
+*/
+Device.Time. so r st
+Enable b rw
+Status s r Disabled,Unsynchronized,Synchronized,Error_FailedToSynchronize,Error
+NTPServer1 s64 rw
+NTPServer2 s64 rw
+NTPServer3 s64 rw
+NTPServer4 s64 rw
+NTPServer5 s64 rw
+CurrentLocalTime d rj
+LocalTimeZone s256 rw
+Device.UserInterface. so r st
+Enable b rw
+PasswordRequired b rw
+PasswordUserSelectable b rw
+PasswordReset b w
+UpgradeAvailable b rw
+/*
+WarrantyDate d rw
+ISPName s64 rw
+ISPHelpDesk s32 rw
+ISPHomePage s256 rw
+ISPHelpPage s256 rw
+ISPLogo 64 rw
+ISPLogoSize u rw
+ISPMailServer s256 rw
+ISPNewsServer s256 rw
+TextColor h3 rw
+BackgroundColor h3 rw
+ButtonColor h3 rw
+ButtonTextColor h3 rw
+AutoUpdateServer s256 rw
+UserUpdateServer s256 rw
+AvailableLanguages s256 r
+CurrentLanguage s16 rw
+*/
+Device.UserInterface.RemoteAccess. so r st
+Enable b rw
+Port u rw
+SupportedProtocols s r HTTP,HTTPS
+Protocol s5 rw HTTP,HTTPS
+/*
+Device.UserInterface.LocalDisplay. so r
+Movable b rw
+Resizable b rw
+PosX i rwj
+PosY i rwj
+Width u rwj
+Height u rwj
+DisplayWidth u r
+DisplayHeight u r
+Device.UserInterface.Messages. so r
+Enable b rw
+Title s128 rw
+SubTitle s128 rw
+Text s rw
+IconType s13 rw None,Greeting,Information,Warning,Important,Urgent,Advertisement
+MessageColor h3 rw
+BackgroundColor h3 rw
+TitleColor h3 rw
+SubTitleColor h3 rw
+RequestedNumberOfRepetitions u rw
+ExecutedNumberOfRepetitions u r
+*/
+Device.GatewayInfo. so r s
+ManufacturerOUI s6 r
+ProductClass s64 r
+SerialNumber s64 r
+Device.InterfaceStack. mo50 r s #define#end
+Alias s64 rwj
+HigherLayer s128 r
+LowerLayer s128 r
+HigherAlias s64 r
+LowerAlias s64 r
+Device.LANConfigSecurity. so r st
+ConfigPassword s64 w
+Device.Hosts. so r
+HostNumberOfEntries u r
+Device.Hosts.Host. mo32 r s #define
+//Alias s64 rwj
+PhysAddress s64 r
+IPAddress s48 r ip
+AddressSource s r DHCP,Static,AutoIP,None
+DHCPClient s64 r
+LeaseTimeRemaining i rj
+AssociatedDevice s256 r
+Layer1Interface s256 r
+Layer3Interface s256 r
+//VendorClassID s255 r
+//ClientID h1024 r
+//UserClassID h1024 r
+HostName s64 r
+Active b r
+ActiveLastChange d r
+IPv4AddressNumberOfEntries u r
+IPv6AddressNumberOfEntries u r
+Device.Hosts.Host.1.IPv4Address. mo r
+IPAddress s18 r ip
+Device.Hosts.Host.1.IPv6Address. mo r #end
+IPAddress s48 r ip
+Device.CaptivePortal. so r st
+Enable b rw
+Status s15 r Disabled,Enabled,Error_URLEmpty,Error
+AllowedList s1024 rw
+URL s256 rw
+X_T-ONLINE-DE_Duration u rw
+/*
+Device.LEDs. so r roothst
+LEDNumberOfEntries u r
+Device.LEDs.LED. mo r
+Alias s64 rwj
+Name s rw
+Status s r Disabled,InUse,Controlled,Error
+Reason s rj
+CyclePeriodRepetitions i rj
+Location s r Front,Back,Left,Right,Top,Bottom
+RelativeXPosition u r
+RelativeYPosition u r
+CycleElementNumberOfEntries u r
+Device.LEDs.LED.1.CycleElement. mo rw
+Alias s64 rwj
+Enable b rw
+Order u rw
+Color h3 rw
+Duration u rw
+FadeInterval u rw
+Device.LEDs.LED.1.CurrentCycleElement. so r
+CycleElementReference s rj
+Color h3 rj
+Duration u rj
+*/
+Device.XMPP. so r
+ConnectionNumberOfEntries u r
+SupportedServerConnectAlgorithms s r DNS-SRV,DNS,ServerTable
+Device.XMPP.Connection. mo rw
+Enable b rw
+Alias s64 rw
+Username s256 rw
+Password s256 w
+Domain s64 rw
+Resource s64 rw
+JabberID s r
+Status s r Enabled,Disabled,Unknown,Dormant,Connecting,ServerNotPresent,Error_Misconfigured,Error_AuthenticationFailure,Error
+LastChangeDate d r
+ServerConnectAlgorithm s rw
+KeepAliveInterval l rw
+ServerConnectAttempts u rw
+ServerRetryInitialInterval u rw
+ServerRetryIntervalMultiplier u rw
+ServerRetryMaxInterval u rw
+UseTLS b rw
+TLSEstablished b r
+ServerNumberOfEntries u r
+Device.XMPP.Connection.1.Server. mo rw
+Enable b rw
+Alias s64 rw
+Priority u rw
+Weight rw
+ServerAddress s256 rw
+Port u rw
+Device.XMPP.Connection.1.Stats. so r
+ReceivedMessages u r
+TransmittedMessages u r
+ReceivedErrorMessages u r
+TransmittedErrorMessages u r

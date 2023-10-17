@@ -1,0 +1,15 @@
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" soap:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:cwmp="urn:dslforum-org:cwmp-1-0">
+<soap:Header>
+<cwmp:ID soap:mustUnderstand="1">2</cwmp:ID>
+	</soap:Header>
+	<soap:Body>
+		<cwmp:Upload>
+			<CommandKey>Upload</CommandKey>
+<FileType>2 Device Log</FileType>
+<URL>http://192.168.2.100/DeviceConfig-21.cpg</URL>
+<Username></Username>
+<Password></Password>
+<DelaySeconds>3</DelaySeconds>
+</cwmp:Upload>
+</soap:Body>
+</soap:Envelope>

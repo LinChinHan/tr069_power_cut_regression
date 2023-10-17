@@ -1,0 +1,303 @@
+InternetGatewayDevice.WANDevice. mo r roots
+WANConnectionNumberOfEntries u r
+X_ARCOR_NET_PhysicalConnection s r
+X_ARCOR_NET_ExternalModemEnabled b rw
+X_ARCOR_NET_LTEModem reg r
+InternetGatewayDevice.WANDevice.1.WANCommonInterfaceConfig. so r st
+EnabledForInternet b rw
+WANAccessType s r
+Layer1UpstreamMaxBitRate u rw
+Layer1DownstreamMaxBitRate u rw
+PhysicalLinkStatus s r
+WANAccessProvider s64 r
+TotalBytesSent u r
+TotalBytesReceived u r
+TotalPacketsSent u r
+TotalPacketsReceived u r
+#MaximumActiveConnections u r
+#NumberOfActiveConnections u r
+X_ARCOR_pppFailBackCheckPeriod u rw
+InternetGatewayDevice.WANDevice.1.WANDSLInterfaceConfig. so r st
+Enable b rw
+Status s r
+#LinkEncapsulationSupported s r
+#LinkEncapsulationRequested s24 rw
+#LinkEncapsulationUsed s r
+ModulationType s r
+StandardsSupported s r
+StandardUsed s r
+LineEncoding s r
+AllowedProfiles s r
+CurrentProfile s r
+PowerManagementState s r
+SuccessFailureCause u r
+#LastStateTransmittedDownstream u r
+#LastStateTransmittedUpstream u r
+#UPBOKLE u r
+#MREFPSDds 64 r
+#MREFPSDus 64 r
+#LIMITMASK u r
+#US0MASK u r
+DataPath s r
+InterleaveDepth u r
+#LPATH u r
+#INTLVDEPTH i r
+#INTLVBLOCK i r
+#ActualInterleavingDelay u r
+#ACTINP i r
+#INPREPORT b r
+#NFEC i r
+#RFEC i r
+#LSYMB i r
+#TRELLISds i r
+#TRELLISus i r
+#ACTSNRMODEds u r
+#ACTSNRMODEus u r
+#VirtualNoisePSDds 64 r
+#VirtualNoisePSDus 64 r
+#ACTUALCE u r
+#LineNumber i r
+UpstreamCurrRate u r
+DownstreamCurrRate u r
+UpstreamMaxRate u r
+DownstreamMaxRate u r
+UpstreamNoiseMargin i r
+DownstreamNoiseMargin i r
+#SNRMpbus s r
+#SNRMpbds s r
+#INMIATOds u r
+#INMIATSds u r
+#INMCCds u r
+#INMINPEQMODEds u r
+UpstreamAttenuation i r
+DownstreamAttenuation i r
+UpstreamPower i r
+DownstreamPower i r
+ATURVendor s8 r
+ATURCountry s4 r
+#ATURANSIStd u r
+ATURANSIRev u r
+ATUCVendor s8 r
+ATUCCountry s4 r
+#ATUCANSIStd u r
+#ATUCANSIRev u r
+TotalStart u r
+ShowtimeStart u r
+#LastShowtimeStart u r
+#CurrentDayStart u r
+#QuarterHourStart u r
+InternetGatewayDevice.WANDevice.1.WANDSLInterfaceConfig.Stats. so r
+InternetGatewayDevice.WANDevice.1.WANDSLInterfaceConfig.Stats.Total. so r
+#ReceiveBlocks u r
+#TransmitBlocks u r
+#CellDelin u r
+#LinkRetrain u r
+#InitErrors u r
+#LInit u r
+#InitTimeouts u r
+#LossOfFraming u r
+#LOF b r
+ErroredSecs u r
+#ATUCErroredSecs u r
+#SeverelyErroredSecs u r
+#ATUCSeverelyErroredSecs u r
+FECErrors u r
+ATUCFECErrors u r
+HECErrors u r
+ATUCHECErrors u r
+CRCErrors u r
+ATUCCRCErrors u r
+InternetGatewayDevice.WANDevice.1.WANDSLInterfaceConfig.Stats.Showtime. so r
+#ReceiveBlocks u r
+#TransmitBlocks u r
+#CellDelin u r
+#LinkRetrain u r
+#InitErrors u r
+#LInit u r
+#InitTimeouts u r
+#LossOfFraming u r
+#LOF b r
+ErroredSecs u r
+#ATUCErroredSecs u r
+#SeverelyErroredSecs u r
+#ATUCSeverelyErroredSecs u r
+FECErrors u r
+ATUCFECErrors u r
+HECErrors u r
+ATUCHECErrors u r
+CRCErrors u r
+ATUCCRCErrors u r
+InternetGatewayDevice.WANDevice.1.WANEthernetInterfaceConfig. so r st
+Enable b rw
+Status s r
+MACAddress s6 r mac
+MaxBitRate s8 rw 10,100,1000,10000,Auto
+DuplexMode s4 rw Half,Full,Auto
+#ShapingRate i rw
+#ShapingBurstSize u rw
+InternetGatewayDevice.WANDevice.1.WANEthernetInterfaceConfig.Stats. so r s
+BytesSent u r
+BytesReceived u r
+PacketsSent u r
+PacketsReceived u r
+InternetGatewayDevice.WANDevice.1.WANConnectionDevice. mo8 rw ohst #define
+WANIPConnectionNumberOfEntries u r
+WANPPPConnectionNumberOfEntries u r
+InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANDSLLinkConfig. so r st
+Enable b rw
+LinkStatus s r
+LinkType s16 rw EoA,IPoA,PPPoA,CIP,PPPoE,Unconfigured
+AutoConfig b r
+ModulationType s r
+DestinationAddress s32 rw
+ATMEncapsulation s6 rw LLC,VCMUX
+FCSPreserved b rw
+VCSearchList s256 rw
+ATMAAL s r
+ATMTransmittedBlocks u r
+ATMReceivedBlocks u r
+ATMQoS s8 rw UBR,CBR,GFR,VBR-nrt,VBR-rt,UBR+,ABR
+ATMPeakCellRate u rw
+ATMMaximumBurstSize u rw
+ATMSustainableCellRate u rw
+AAL5CRCErrors u r
+ATMCRCErrors u r
+ATMHECErrors u r
+InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANEthernetLinkConfig. so r st
+X_ARCOR_NET_NumberOfVLANTags u rw
+X_ARCOR_NET_VLANId_1 u rw
+X_ARCOR_NET_VLANId_2 u rw
+X_ARCOR_NET_VLANId_3 u rw
+X_ARCOR_NET_PBit_1 u rw
+X_ARCOR_NET_PBit_2 u rw
+X_ARCOR_NET_PBit_3 u rw
+EthernetLinkStatus s r
+InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANIPConnection. mo rw ohst
+Enable b rw
+Reset b rw
+ConnectionStatus s r
+PossibleConnectionTypes s r
+ConnectionType s16 rw Unconfigured,IP_Routed,IP_Bridged
+Name s32 rw
+Uptime u r
+LastConnectionError s r
+AutoDisconnectTime u rw
+IdleDisconnectTime u rw
+WarnDisconnectDelay u rw
+RSIPAvailable b r
+NATEnabled b rw
+AddressingType s8 rw DHCP,Static
+ExternalIPAddress s18 rw ip
+SubnetMask s18 rw mask
+DefaultGateway s18 rw ip
+DNSEnabled b rw
+DNSOverrideAllowed b rw
+DNSServers s64 rw
+MaxMTUSize u rw
+MACAddress s6 rw mac
+MACAddressOverride b rw
+ConnectionTrigger s10 rw OnDemand,AlwaysOn,Manual
+RouteProtocolRx s8 rw Off,RIPv1,RIPv2,OSPF
+#ShapingRate i rw
+#ShapingBurstSize u rw
+PortMappingNumberOfEntries u r
+PortMapping reg r
+InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANIPConnection.1.Stats. so r
+EthernetBytesSent u r
+EthernetBytesReceived u r
+EthernetPacketsSent u r
+EthernetPacketsReceived u r
+#EthernetErrorsSent u r
+#EthernetErrorsReceived u r
+#EthernetUnicastPacketsSent u r
+#EthernetUnicastPacketsReceived u r
+#EthernetDiscardPacketsSent u r
+#EthernetDiscardPacketsReceived u r
+#EthernetMulticastPacketsSent u r
+#EthernetMulticastPacketsReceived u r
+#EthernetBroadcastPacketsSent u r
+#EthernetBroadcastPacketsReceived u r
+#EthernetUnknownProtoPacketsReceived u r
+InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANPPPConnection. mo rw host
+Enable b rw
+Reset b rw
+ConnectionStatus s r
+PossibleConnectionTypes s r
+ConnectionType s16 rw Unconfigured,PPPoE_Bridged,IP_Routed
+PPPoESessionID u r
+DefaultGateway s18 r ip
+Name s33 rw
+Uptime u r
+LastConnectionError s r
+AutoDisconnectTime u rw
+IdleDisconnectTime u rw
+#WarnDisconnectDelay u rw
+RSIPAvailable b r
+NATEnabled b rw
+Username s64 rw
+Password s64 w
+PPPEncryptionProtocol s r
+PPPCompressionProtocol s r
+PPPAuthenticationProtocol s r
+ExternalIPAddress s18 r ip
+RemoteIPAddress s18 r ip
+MaxMRUSize u rw
+CurrentMRUSize u rw
+DNSEnabled b rw
+DNSOverrideAllowed b rw
+DNSServers s64 rw
+MACAddress s6 rw mac
+MACAddressOverride b rw
+TransportType s r
+PPPoEACName s48 rw
+PPPoEServiceName s32 rw
+ConnectionTrigger s10 rw OnDemand,AlwaysOn,Manual
+RouteProtocolRx s8 rw Off,RIPv1,RIPv2,OSPF
+PPPLCPEcho u r
+PPPLCPEchoRetry u r
+#ShapingRate i rw
+#ShapingBurstSize i rw
+PortMappingNumberOfEntries u r
+X_ARCOR_NET_AutoReconnectEnable b rw
+X_ARCOR_NET_AutoReconnectStart u rw
+X_ARCOR_NET_AutoReconnectInterval u rw
+X_ARCOR_NET_PPPLCPEchoInterval u rw
+X_ARCOR_NET_PPPLCPEchoTimeout u rw
+X_ARCOR_NET_PPPLCPEchoNumberOfRetries u rw
+PortMapping reg r
+InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANPPPConnection.1.Stats. so r #end
+EthernetBytesSent u r
+EthernetBytesReceived u r
+EthernetPacketsSent u r
+EthernetPacketsReceived u r
+#EthernetErrorsSent u r
+#EthernetErrorsReceived u r
+#EthernetUnicastPacketsSent u r
+#EthernetUnicastPacketsReceived u r
+#EthernetDiscardPacketsSent u r
+#EthernetDiscardPacketsReceived u r
+#EthernetMulticastPacketsSent u r
+#EthernetMulticastPacketsReceived u r
+#EthernetBroadcastPacketsSent u r
+#EthernetBroadcastPacketsReceived u r
+#EthernetUnknownProtoPacketsReceived u r
+InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANIPConnection.1.PortMapping. mo20 rw rootohst #define#end 
+PortMappingEnabled b rw
+PortMappingLeaseDuration u rw
+RemoteHost s18 rw ip
+ExternalPort u rw port
+ExternalPortEndRange u rw port
+InternalPort u rw port
+PortMappingProtocol s3 rw TCP,UDP
+InternalClient s64 rw
+PortMappingDescription s64 rw
+InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANPPPConnection.1.PortMapping. mo20 rw rootost #define#end 
+PortMappingEnabled b rw
+PortMappingLeaseDuration u rw
+RemoteHost s18 rw ip
+ExternalPort u rw port
+ExternalPortEndRange u rw port
+InternalPort u rw port
+PortMappingProtocol s3 rw TCP,UDP
+InternalClient s64 rw
+PortMappingDescription s64 rw

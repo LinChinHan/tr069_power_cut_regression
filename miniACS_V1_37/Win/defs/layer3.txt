@@ -1,0 +1,18 @@
+InternetGatewayDevice.Layer3Forwarding. so r root,st
+DefaultConnectionService s256 rw
+ForwardNumberOfEntries u r
+InternetGatewayDevice.Layer3Forwarding.Forwarding. mo20 rw stoh #define#end
+Enable b rw
+Status s r
+StaticRoute b r
+#Type s8 rw Default,Network,Host
+DestIPAddress s18 rw ip
+DestSubnetMask s18 rw mask
+SourceIPAddress s18 rw ip
+SourceSubnetMask s18 rw mask
+ForwardingPolicy i rw
+GatewayIPAddress s18 rw ip
+Interface s256 rw
+ForwardingMetric i rw
+MTU u rw
+

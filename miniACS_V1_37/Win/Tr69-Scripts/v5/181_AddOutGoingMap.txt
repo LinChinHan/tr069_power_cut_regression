@@ -1,0 +1,15 @@
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" soap:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:cwmp="urn:dslforum-org:cwmp-1-0">
+<soap:Header>
+<cwmp:ID soap:mustUnderstand="1">2</cwmp:ID>
+</soap:Header>
+<soap:Body>
+<AddObject xmlns="urn:dslforum-org:cwmp-1-0">
+<ObjectName xsi:type="xsd:string">
+<string>Device.Services.VoiceService.1.CallControl.OutgoingMap.</string>
+</ObjectName>
+<ParameterKey xsi:type="xsd:string">
+<string>GoodForTest</string>
+</ParameterKey>
+</AddObject>
+</soap:Body>
+</soap:Envelope>

@@ -1,0 +1,70 @@
+InternetGatewayDevice.IPPingDiagnostics. so r root,sth
+DiagnosticsState s27 rw Requested
+Interface s256 rw
+Host s256 rw
+NumberOfRepetitions u rw
+Timeout u rw
+DataBlockSize u rw port
+DSCP u rw
+SuccessCount u r
+FailureCount u r
+AverageResponseTime u r
+MinimumResponseTime u r
+MaximumResponseTime u r
+/* 
+InternetGatewayDevice.TraceRouteDiagnostics. so r root,sth
+DiagnosticsState s27 rw Requested
+Interface s256 rw
+Host s256 rw
+NumberOfTries u rw
+Timeout u rw
+DataBlockSize u rw port
+DSCP u rw
+MaxHopCount u rw
+ResponseTime u r
+RouteHopsNumberOfEntries u r
+InternetGatewayDevice.TraceRouteDiagnostics.RouteHops. mo32 rw u
+HopHost s256 r
+HopHostAddress s18 r ip
+HopErrorCode u r
+HopRTTimes s16 r
+*/
+InternetGatewayDevice.DownloadDiagnostics. so r root,sth
+DiagnosticsState s27 rw Requested
+Interface s256 rw
+DownloadURL s256 rw
+DSCP u rw
+EthernetPriority u rw
+ROMTime d r
+BOMTime d r
+EOMTime d r
+TestBytesReceived u r
+TotalBytesReceived u r
+TCPOpenRequestTime d r
+TCPOpenResponseTime d r
+InternetGatewayDevice.UploadDiagnostics. so r root,sth
+DiagnosticsState s27 rw Requested
+Interface s256 rw
+UploadURL s256 rw
+DSCP u rw
+EthernetPriority u rw
+TestFileLength u rw
+ROMTime d r
+BOMTime d r
+EOMTime d r
+TotalBytesSent u r
+TCPOpenRequestTime d r
+TCPOpenResponseTime d r
+InternetGatewayDevice.UDPEchoConfig. so r root,sth
+Enable b rw
+Interface s256 rw
+SourceIPAddress s18 rw ip
+UDPPort u rw port
+EchoPlusEnabled b rw
+EchoPlusSupported b r
+PacketsReceived u r
+PacketsResponded u r
+BytesReceived u r
+BytesResponded u r
+TimeFirstPacketReceived d r
+TimeLastPacketReceived d r

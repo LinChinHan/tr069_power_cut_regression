@@ -1,0 +1,40 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<soapenv:Header>
+<ns1:ID soapenv:actor="http://schemas.xmlsoap.org/soap/actor/next" soapenv:mustUnderstand="1" xsi:type="xsd:string" xmlns:ns1="urn:dslforum-org:cwmp-1-0">ACS_SetParameterValues_7</ns1:ID>
+</soapenv:Header>
+<soapenv:Body>
+<ns2:SetParameterValues soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:ns2="urn:dslforum-org:cwmp-1-0">
+<ParameterList soapenc:arrayType="ns2:ParameterValueStruct[7]" xsi:type="soapenc:Array" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+<ParameterValueStruct xsi:type="ns2:ParameterValueStruct">
+<Name xsi:type="xsd:string">Device.Services.VoiceService.1.NetworkProfile.3.SIPLine.1.URI</Name>
+<Value xsi:type="xsd:string">2407771323</Value>
+</ParameterValueStruct>
+<ParameterValueStruct xsi:type="ns2:ParameterValueStruct">
+<Name xsi:type="xsd:string">Device.Services.VoiceService.1.NetworkProfile.3.SIPLine.1.AuthUserName</Name>
+<Value xsi:type="xsd:string">2407771323</Value>
+</ParameterValueStruct>
+<ParameterValueStruct xsi:type="ns2:ParameterValueStruct">
+<Name xsi:type="xsd:string">Device.Services.VoiceService.1.NetworkProfile.3.SIPLine.1.AuthPassword</Name>
+<Value xsi:type="xsd:string">2407771323</Value>
+</ParameterValueStruct>
+<ParameterValueStruct xsi:type="ns2:ParameterValueStruct">
+<Name xsi:type="xsd:string">Device.Services.VoiceService.1.NetworkProfile.3.SIP.ProxyServer</Name>
+<Value xsi:type="xsd:string">as.iop1.broadworks.net</Value>
+</ParameterValueStruct>
+<ParameterValueStruct xsi:type="ns2:ParameterValueStruct">
+<Name xsi:type="xsd:string">Device.Services.VoiceService.1.NetworkProfile.3.SIP.ProxyServerPort</Name>
+<Value>5060</Value>
+</ParameterValueStruct>
+<ParameterValueStruct xsi:type="ns2:ParameterValueStruct">
+<Name xsi:type="xsd:string">Device.Services.VoiceService.1.NetworkProfile.3.STUNServer</Name>
+<Value xsi:type="xsd:string">stun.t-online.de</Value>
+</ParameterValueStruct>
+<ParameterValueStruct xsi:type="ns2:ParameterValueStruct">
+<Name xsi:type="xsd:string">Device.Services.VoiceService.1.NetworkProfile.3.Enable</Name>
+<Value xsi:type="xsd:string">Enabled</Value>
+</ParameterValueStruct>
+</ParameterList>
+<ParameterKey xsi:type="xsd:string">ACS</ParameterKey>
+</ns2:SetParameterValues>
+</soapenv:Body>
+</soapenv:Envelope>

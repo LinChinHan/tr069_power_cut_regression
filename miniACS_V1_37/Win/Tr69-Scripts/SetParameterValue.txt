@@ -1,0 +1,29 @@
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" soap:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:cwmp="urn:dslforum-org:cwmp-1-0">
+<soap:Header>
+<cwmp:ID soap:mustUnderstand="1">2</cwmp:ID>
+</soap:Header>
+<soap:Body>
+<cwmp:SetParameterValues>
+<ParameterList soap:arrayType="cwmp:ParameterValueStruct[2]">
+<ParameterValueStruct xsi:type="ns2:ParameterValueStruct">
+<Name xsi:type="xsd:string">Device.DeviceInfo.ProvisioningCode</Name>
+<Value xsi:type="xsd:string">000.500.400.200</Value>
+</ParameterValueStruct>
+<ParameterValueStruct xsi:type="ns2:ParameterValueStruct">
+<Name>Device.PPP.Interface.1.Reset</Name>
+<Value>1</Value>
+</ParameterValueStruct>
+</ParameterList>
+</cwmp:SetParameterValues>
+</soap:Body>
+</soap:Envelope>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" soap:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:cwmp="urn:dslforum-org:cwmp-1-0">
+<soap:Header>
+<cwmp:ID soap:mustUnderstand="1">2</cwmp:ID>
+</soap:Header>
+<soap:Body>
+<cwmp:Reboot>
+<CommandKey>ReBoot</CommandKey>
+</cwmp:Reboot>
+</soap:Body>
+</soap:Envelope>

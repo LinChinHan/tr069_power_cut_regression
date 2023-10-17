@@ -1,0 +1,191 @@
+Device.QoS. so r roothst
+MaxClassificationEntries u rj
+ClassificationNumberOfEntries u r
+MaxAppEntries u rj
+AppNumberOfEntries u r
+MaxFlowEntries u rj
+FlowNumberOfEntries u r
+MaxPolicerEntries u rj
+PolicerNumberOfEntries u r
+MaxQueueEntries u rj
+QueueNumberOfEntries u r
+QueueStatsNumberOfEntries u r
+MaxShaperEntries u rj
+ShaperNumberOfEntries u r
+DefaultForwardingPolicy u rw
+DefaultTrafficClass u rw
+DefaultPolicer s256 rw
+DefaultQueue s256 rw
+DefaultDSCPMark i rw
+DefaultEthernetPriorityMark i rw
+DefaultInnerEthernetPriorityMark i rw
+AvailableAppList s1024 r
+Device.QoS.Classification. mo16 rw ost #define#end
+Enable b rw
+Status s r Disabled,Enabled,Error_Misconfigured,Error
+Order u rw
+Alias s64 rwj
+Interface s256 rw
+DHCPType s6 rw DHCPv4,DHCPv6
+AllInterfaces b rw
+DestIP s48 rw ip
+DestMask s49 rw
+DestIPExclude b rw
+SourceIP s48 rw ip
+SourceMask s49 rw
+SourceIPExclude b rw
+Protocol i rw
+ProtocolExclude b rw
+DestPort i rw
+DestPortRangeMax i rw
+DestPortExclude b rw
+SourcePort i rw
+SourcePortRangeMax i rw
+SourcePortExclude b rw
+SourceMACAddress s6 rw mac
+SourceMACMask s6 rw mac
+SourceMACExclude b rw
+DestMACAddress s6 rw mac
+DestMACMask s6 rw mac
+DestMACExclude b rw
+Ethertype i rw
+EthertypeExclude b rw
+SSAP i rw
+SSAPExclude b rw
+DSAP i rw
+DSAPExclude b rw
+LLCControl i rw
+LLCControlExclude b rw
+SNAPOUI i rw
+SNAPOUIExclude b rw
+SourceVendorClassID s255 rw
+SourceVendorClassIDv6 h256 rw
+SourceVendorClassIDExclude b rw
+SourceVendorClassIDMode s9 rw Exact,Prefix,Suffix,Substring
+DestVendorClassID s255 rw
+DestVendorClassIDv6 h256 rw
+DestVendorClassIDExclude b rw
+DestVendorClassIDMode s9 rw Exact,Prefix,Suffix,Substring
+SourceClientID h256 rw
+SourceClientIDExclude b rw
+DestClientID h256 rw
+DestClientIDExclude b rw
+SourceUserClassID h256 rw
+SourceUserClassIDExclude b rw
+DestUserClassID h256 rw
+DestUserClassIDExclude b rw
+SourceVendorSpecificInfo h256 rw
+SourceVendorSpecificInfoExclude b rw
+SourceVendorSpecificInfoEnterprise u rw
+SourceVendorSpecificInfoSubOption i rw
+DestVendorSpecificInfo h256 rw
+DestVendorSpecificInfoExclude b rw
+DestVendorSpecificInfoEnterprise u rw
+DestVendorSpecificInfoSubOption i rw
+TCPACK b rw
+TCPACKExclude b rw
+IPLengthMin u rw
+IPLengthMax u rw
+IPLengthExclude b rw
+DSCPCheck i rw
+DSCPExclude b rw
+DSCPMark i rw
+EthernetPriorityCheck i rw
+EthernetPriorityExclude b rw
+EthernetPriorityMark i rw
+InnerEthernetPriorityCheck i rw
+InnerEthernetPriorityExclude b rw
+InnerEthernetPriorityMark i rw
+EthernetDEICheck i rw
+EthernetDEIExclude b rw
+VLANIDCheck i rw
+VLANIDExclude b rw
+OutOfBandInfo i rw
+ForwardingPolicy u rw
+TrafficClass i rw
+Policer s256 rw
+App s256 rw
+Device.QoS.App. mo1 rw st #define#end
+Enable b rw
+Status s r Disabled,Enabled,Error
+Alias s64 rwj
+ProtocolIdentifier s256 rw
+Name s64 rw
+DefaultForwardingPolicy u rw
+DefaultTrafficClass u rw
+DefaultPolicer s256 rw
+DefaultDSCPMark i rw
+DefaultEthernetPriorityMark i rw
+DefaultInnerEthernetPriorityMark i rw
+Device.QoS.Flow. mo1 rw st #define#end
+Enable b rw
+Status s r Disabled,Enabled,Error
+Alias s64 rwj
+Type s256 rw
+TypeParameters s256 rw
+Name s64 rw
+App s256 rw
+ForwardingPolicy u rw
+TrafficClass u rw
+Policer s256 rw
+DSCPMark i rw
+EthernetPriorityMark i rw
+InnerEthernetPriorityMark i rw
+Device.QoS.Policer. mo1 rw st #define#end
+Enable b rw
+Status s r Disabled,Enabled,Error
+Alias s64 rwj
+CommittedRate u rw
+CommittedBurstSize u rw
+ExcessBurstSize u rw
+PeakRate u rw
+PeakBurstSize u rw
+MeterType s20 rw SimpleTokenBucket,SingleRateThreeColor,TwoRateThreeColor
+PossibleMeterTypes s rj SimpleTokenBucket,SingleRateThreeColor,TwoRateThreeColor
+ConformingAction s7 rw
+PartialConformingAction s7 rw
+NonConformingAction s7 rw
+TotalCountedPackets u rj
+TotalCountedBytes u rj
+ConformingCountedPackets u rj
+ConformingCountedBytes u rj
+PartiallyConformingCountedPackets u rj
+PartiallyConformingCountedBytes u rj
+NonConformingCountedPackets u rj
+NonConformingCountedBytes u rj
+Device.QoS.Queue. mo8 rw st #define#end
+Enable b rw
+Status s r Disabled,Enabled,Error_Misconfigured,Error
+Alias s64 rwj
+TrafficClasses s256 rw
+Interface s256 rw
+AllInterfaces b rw
+HardwareAssisted b r
+BufferLength u r
+Weight u rw
+Precedence u rw
+REDThreshold u rw
+REDPercentage u rw
+DropAlgorithm s4 rw RED,DT,WRED,BLUE
+SchedulerAlgorithm s3 rw WFQ,WRR,SP
+ShapingRate i rw
+ShapingBurstSize u rw
+Device.QoS.QueueStats. mo1 rw st #define#end
+Enable b rw
+Status s r Disabled,Enabled,Error
+Alias s64 rwj
+Queue s256 rw
+Interface s256 rw
+OutputPackets u rj
+OutputBytes u rj
+DroppedPackets u rj
+DroppedBytes u rj
+QueueOccupancyPackets u rj
+QueueOccupancyPercentage u rj
+Device.QoS.Shaper. mo1 rw st #define#end
+Enable b rw
+Status s r Disabled,Enabled,Error_Misconfigured,Error
+Alias s64 rwj
+Interface s256 rw
+ShapingRate i rw
+ShapingBurstSize u rw

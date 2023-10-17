@@ -1,0 +1,743 @@
+Device.PPP. so r roots
+InterfaceNumberOfEntries u r
+SupportedNCPs s r ATCP,IPCP,IPXCP,NBFCP,IPv6CP
+X_T-ONLINE-DE_Privacy_IPv6 reg r
+Device.PPP.Interface. mo2 rw st #define
+Enable b rw
+Status s r Up,Down,Unknown,Dormant,NotPresent,LowerLayerDown,Error
+Alias s64 rwj
+Name s64 r
+LastChange u rj
+LowerLayers s1024 rw
+IPCPEnable b rw
+IPv6CPEnable b rw
+Reset b rw
+ConnectionStatus s r Unconfigured,Connecting,Authenticating,Connected,PendingDisconnect,Disconnecting,Disconnected
+LastConnectionError s r ERROR_NONE,ERROR_ISP_TIME_OUT,ERROR_COMMAND_ABORTED,ERROR_NOT_ENABLED_FOR_INTERNET,ERROR_BAD_PHONE_NUMBER,ERROR_USER_DISCONNECT,ERROR_ISP_DISCONNECT,ERROR_IDLE_DISCONNECT,ERROR_FORCED_DISCONNECT,ERROR_SERVER_OUT_OF_RESOURCES,ERROR_RESTRICTED_LOGON_HOURS,ERROR_ACCOUNT_DISABLED,ERROR_ACCOUNT_EXPIRED,ERROR_PASSWORD_EXPIRED,ERROR_AUTHENTICATION_FAILURE,ERROR_NO_DIALTONE,ERROR_NO_CARRIER,ERROR_NO_ANSWER,ERROR_LINE_BUSY,ERROR_UNSUPPORTED_BITSPERSECOND,ERROR_TOO_MANY_LINE_ERRORS,ERROR_IP_CONFIGURATION,ERROR_UNKNOWN
+AutoDisconnectTime u rw
+IdleDisconnectTime u rw
+WarnDisconnectDelay u rw
+Username s64 rw
+Password s64 w
+EncryptionProtocol s r None,MPPE
+CompressionProtocol s r None,Van Jacobson,STAC LZS
+AuthenticationProtocol s r PAP,CHAP,MS-CHAP
+MaxMRUSize u rw
+CurrentMRUSize u rj
+ConnectionTrigger s8 rw OnDemand,AlwaysOn,Manual
+LCPEcho u r
+LCPEchoRetry u r
+Device.PPP.Interface.1.PPPoA. so r
+Device.PPP.Interface.1.PPPoE. so r
+SessionID u r
+ACName s256 rw
+ServiceName s256 rw
+Device.PPP.Interface.1.IPCP. so r
+LocalIPAddress s18 r ip
+RemoteIPAddress s18 r ip
+DNSServers s64 r
+PassthroughEnable b rw
+PassthroughDHCPPool s256 rw
+Device.PPP.Interface.1.IPv6CP. so r
+LocalInterfaceIdentifier s48 r ip
+RemoteInterfaceIdentifier s48 r ip
+Device.PPP.Interface.1.Stats. so r #end
+BytesSent ul rj
+BytesReceived ul rj
+PacketsSent ul rj
+PacketsReceived ul rj
+ErrorsSent u rj
+ErrorsReceived u rj
+UnicastPacketsSent ul rj
+UnicastPacketsReceived ul rj
+DiscardPacketsSent u rj
+DiscardPacketsReceived u rj
+MulticastPacketsSent ul rj
+MulticastPacketsReceived ul rj
+BroadcastPacketsSent ul rj
+BroadcastPacketsReceived ul rj
+UnknownProtoPacketsReceived u rj
+Device.IP. so r roothst
+IPv4Capable b r
+InterfaceNumberOfEntries u r
+ActivePortNumberOfEntries u r
+IPv4Enable b rw
+IPv4Status s r Disabled,Enabled,Error
+IPv6Capable b r
+IPv6Enable b rw
+IPv6Status s r Disabled,Enabled,Error
+ULAPrefix s48 rw ipv6
+Device.IP.Interface. mo4 rw st #define
+Enable b rw
+Status s r Up,Down,Unknown,Dormant,NotPresent,LowerLayerDown,Error
+Alias s64 rwj
+Name s64 r
+LastChange u rj
+LowerLayers s1024 rw
+Router s256 rw
+IPv4Enable b rw
+IPv6Enable b rw
+ULAEnable b rw
+Reset b rw
+MaxMTUSize u rw
+Type s r Normal,Loopback,Tunnel,Tunneled
+Loopback b rw
+IPv4AddressNumberOfEntries u r
+AutoIPEnable b rw
+IPv6AddressNumberOfEntries u r
+IPv6PrefixNumberOfEntries u r
+Device.IP.Interface.1.IPv4Address. mo rw
+Enable b rw
+Status s r Disabled,Enabled,Error_Misconfigured,Error
+Alias s64 rwj
+IPAddress s18 rw ip
+SubnetMask s18 rw mask
+AddressingType s r DHCP,IKEv2,AutoIP,IPCP,Static
+Device.IP.Interface.1.IPv6Address. mo rw st
+Enable b rw
+Status s r Disabled,Enabled,Error_Misconfigured,Error
+IPAddressStatus s r Preferred,Deprecated,Invalid,Inaccessible,Unknown,Tentative,Duplicate,Optimistic
+Alias s64 rwj
+IPAddress s48 rw ip
+Origin s r AutoConfigured,DHCPv6,IKEv2,MAP,WellKnown,Static
+Prefix s256 rw
+PreferredLifetime d rw
+ValidLifetime d rw
+Anycast b rw
+Device.IP.Interface.1.IPv6Prefix. mo rw st
+Enable b rw
+Status s r Disabled,Enabled,Error
+PrefixStatus s r Preferred,Deprecated,Invalid,Inaccessible,Unknown
+Alias s64 rwj
+Prefix s48 rw ip
+Origin s r AutoConfigured,PrefixDelegation,RouterAdvertisement,WellKnown,Static,Child
+StaticType s16 rw Static,Inapplicable,PrefixDelegation,Child
+ParentPrefix s256 rw
+ChildPrefixBits s48 rw ip
+OnLink b rw
+Autonomous b rw
+PreferredLifetime d rw
+ValidLifetime d rw
+Device.IP.Interface.1.Stats. so r s #end
+BytesSent ul rj
+BytesReceived ul rj
+PacketsSent ul rj
+PacketsReceived ul rj
+ErrorsSent u rj
+ErrorsReceived u rj
+UnicastPacketsSent ul rj
+UnicastPacketsReceived ul rj
+DiscardPacketsSent u rj
+DiscardPacketsReceived u rj
+MulticastPacketsSent ul rj
+MulticastPacketsReceived ul rj
+BroadcastPacketsSent ul r
+BroadcastPacketsReceived ul r
+UnknownProtoPacketsReceived u rj
+/*
+Device.IP.ActivePort. mod32 r u
+LocalIPAddress s48 r ip
+LocalPort u r
+RemoteIPAddress s48 r ip
+RemotePort u r
+Status s r LISTEN,ESTABLISHED
+*/
+Device.IP.Diagnostics. so r s
+IPv4PingSupported b r
+IPv6PingSupported b r
+IPv4TraceRouteSupported b r
+IPv6TraceRouteSupported b r
+IPv4DownloadDiagnosticsSupported b r
+IPv6DownloadDiagnosticsSupported b r
+IPv4UploadDiagnosticsSupported b r
+IPv6UploadDiagnosticsSupported b r
+IPv4UDPEchoDiagnosticsSupported b r
+IPv6UDPEchoDiagnosticsSupported b r
+IPv4ServerSelectionDiagnosticsSupported b r
+IPv6ServerSelectionDiagnosticsSupported b r
+Device.IP.Diagnostics.IPPing. so r hst
+DiagnosticsState s27 rw None,Requested,Canceled,Complete,Error,Error_CannotResolveHostName,Error_NoRouteToHost,Error_Internal,Error_Other
+Interface s128 rw
+ProtocolVersion s4 rw Any,IPv4,IPv6
+Host s128 rw
+NumberOfRepetitions u rw
+Timeout u rw
+DataBlockSize u rw
+DSCP u rw
+IPAddressUsed s48 r ip
+SuccessCount u rj
+FailureCount u rj
+AverageResponseTime u rj
+MinimumResponseTime u rj
+MaximumResponseTime u rj
+AverageResponseTimeDetailed u rj
+MinimumResponseTimeDetailed u rj
+MaximumResponseTimeDetailed u rj
+Device.IP.Diagnostics.TraceRoute. so r hst
+DiagnosticsState s27 rw None,Requested,Canceled,Complete,Error,Error_CannotResolveHostName,Error_NoRouteToHost,Error_MaxHopCountExceeded,Error_Internal,Error_Other
+Interface s128 rw
+ProtocolVersion s4 rw Any,IPv4,IPv6
+Host s128 rw
+NumberOfTries u rw
+Timeout u rw
+DataBlockSize u rw
+DSCP u rw
+MaxHopCount u rw
+IPAddressUsed s48 r ip
+ResponseTime u rj
+RouteHopsNumberOfEntries u rj
+Device.IP.Diagnostics.TraceRoute.RouteHops. mod30 r
+Host s128 rj
+HostAddress s18 rj
+ErrorCode u rj
+RTTimes s16 r
+Device.IP.Diagnostics.DownloadDiagnostics. so r sth
+DiagnosticsState s27 rw None,Requested,Completed,Error_CannotResolveHostName,Error_NoRouteToHost,Error_InitConnectionFailed,Error_NoResponse,Error_TransferFailed,Error_PasswordRequestFailed,Error_LoginFailed,Error_NoTransferMode,Error_NoPASV,Error_IncorrectSize,Error_Timeout,Error_Internal,Error_Other
+Interface s128 rw
+DownloadURL s256 rw
+DownloadTransports s r HTTP,FTP
+DownloadDiagnosticMaxConnections u r
+DownloadDiagnosticsMaxIncrementalResult u r
+DSCP u rw
+EthernetPriority u rw
+TimeBasedTestDuration u rw
+TimeBasedTestMeasurementInterval u rw
+TimeBasedTestMeasurementOffset u rw
+ProtocolVersion s4 rw Any,IPv4,IPv6
+NumberOfConnections u rw
+IPAddressUsed s48 rj ip
+ROMTime d rj
+BOMTime d rj
+EOMTime d rj
+TestBytesReceived u r
+TotalBytesReceived u r
+TotalBytesSent u r
+TestBytesReceivedUnderFullLoading u r
+TotalBytesReceivedUnderFullLoading u r
+TotalBytesSentUnderFullLoading u r
+PeriodOfFullLoading u r
+TCPOpenRequestTime d rj
+TCPOpenResponseTime d rj
+//PerConnectionResultNumberOfEntries u r
+EnablePerConnectionResults b rwj
+//IncrementalResultNumberOfEntries u r
+/*
+Device.IP.Diagnostics.DownloadDiagnostics.PerConnectionResult. mo r
+ROMTime d rj
+BOMTime d rj
+EOMTime d rj
+TestBytesReceived u rj
+TotalBytesReceived u rj
+TotalBytesSent u rj
+TCPOpenRequestTime d rj
+TCPOpenResponseTime d rj
+Device.IP.Diagnostics.DownloadDiagnostics.IncrementalResult. mo r
+TestBytesReceived u rj
+TotalBytesReceived u r
+TotalBytesSent u r
+StartTime d rj
+EndTime d rj
+*/
+Device.IP.Diagnostics.UploadDiagnostics. so r sth
+DiagnosticsState s27 rw None,Requested,Completed,Error_CannotResolveHostName,Error_NoRouteToHost,Error_InitConnectionFailed,Error_NoResponse,Error_PasswordRequestFailed,Error_LoginFailed,Error_NoTransferMode,Error_NoPASV,Error_NoCWD,Error_NoSTOR,Error_NoTransferComplete,Error_Timeout,Error_Internal,Error_Other
+Interface s128 rw
+UploadURL s256 rw
+UploadTransports s r HTTP,FTP
+UploadDiagnosticsMaxConnections u r
+UploadDiagnosticsMaxIncrementalResult u r
+DSCP u rw
+EthernetPriority u rw
+TestFileLength u rw
+TimeBasedTestDuration u rw
+TimeBasedTestMeasurementInterval u rw
+TimeBasedTestMeasurementOffset u rw
+ProtocolVersion s4 rw Any,IPv4,IPv6
+NumberOfConnections u rw
+IPAddressUsed s48 r ip
+ROMTime d rj
+BOMTime d rj
+EOMTime d rj
+TestBytesSent u r
+TotalBytesReceived u r
+TotalBytesSent u r
+TestBytesSentUnderFullLoading u r
+TotalBytesReceivedUnderFullLoading u r
+TotalBytesSentUnderFullLoading u r
+PeriodOfFullLoading u r
+TCPOpenRequestTime d rj
+TCPOpenResponseTime d rj
+//PerConnectionResultNumberOfEntries u r
+EnablePerConnectionResults b rwj
+//IncrementalResultNumberOfEntries u r
+/*
+Device.IP.Diagnostics.UploadDiagnostics.PerConnectionResult. mo r
+ROMTime d rj
+BOMTime d rj
+EOMTime d rj
+TestBytesSent u rj
+TotalBytesReceived u rj
+TotalBytesSent u rj
+TCPOpenRequestTime d rj
+TCPOpenResponseTime d rj
+Device.IP.Diagnostics.UploadDiagnostics.IncrementalResult. mo r
+TestBytesSent u rj
+TotalBytesReceived u r
+TotalBytesSent u r
+StartTime d rj
+EndTime d rj
+*/
+Device.IP.Diagnostics.UDPEchoConfig. so r sth
+Enable b rw
+Interface s128 rw
+SourceIPAddress s48 rw ip
+UDPPort u rw port
+EchoPlusEnabled b rw
+EchoPlusSupported b r
+PacketsReceived u rj
+PacketsResponded u rj
+BytesReceived u rj
+BytesResponded u rj
+TimeFirstPacketReceived d rj
+TimeLastPacketReceived d rj
+/*
+Device.IP.Diagnostics.UDPEchoDiagnostics. so r
+DiagnosticsState s27 rwj None,Requested,Completed,Error_CannotResolveHostName,Error_Internal,Error_Other
+Interface s128 rw
+Host s256 rwj
+Port u rwj
+NumberOfRepetitions u rwj
+Timeout u rwj
+DataBlockSize u rwj
+DSCP u rwj
+InterTransmissionTime u rwj
+ProtocolVersion s4 rw Any,IPv4,IPv6
+IPAddressUsed s48 r ip
+SuccessCount u r
+FailureCount u r
+AverageResponseTime u r
+MinimumResponseTime u r
+MaximumResponseTime u r
+EnableIndividualPacketResults b rwj
+IndividualPacketResultNumberOfEntries u r
+UDPEchoDiagnosticsMaxResults u rj
+Device.IP.Diagnostics.UDPEchoDiagnostics.IndividualPacketResult. mo r
+PacketSuccess b r
+PacketSendTime d r
+PacketReceiveTime d r
+TestGenSN u r
+TestRespSN u r
+TestRespRcvTimeStamp u r
+TestRespReplyTimeStamp u r
+TestRespReplyFailureCount u r
+Device.IP.Diagnostics.ServerSelectionDiagnostics. so r
+DiagnosticsState s27 rwj None,Requested,Completed,Error_CannotResolveHostName,Error_Internal,Error_Other
+Interface s128 rw
+ProtocolVersion s4 rw Any,IPv4,IPv6
+Protocol s8 rw ICMP,UDP Echo
+HostList s256 rw
+NumberOfRepetitions u rw
+Timeout u rw
+FastestHost s rj
+MinimumResponseTime u rj
+AverageResponseTime u rj
+MaximumResponseTime u rj
+IPAddressUsed s48 r ip
+*/
+Device.Routing. so r rooth
+RouterNumberOfEntries u r
+Device.Routing.Router. mo rw st
+Enable b rw
+Status s r Disabled,Enabled,Error
+Alias s64 rwj
+IPv4ForwardingNumberOfEntries u r
+IPv6ForwardingNumberOfEntries u r
+Device.Routing.Router.1.IPv4Forwarding. mo20 rw st #define#end
+Enable b rw
+Status s r Disabled,Enabled,Error_Misconfigured,Error
+Origin s r DHCPv4,OSPF,IPCP,RIP,Static
+Alias s64 rwj
+StaticRoute b r
+DestIPAddress s18 rw ip
+DestSubnetMask s18 rw mask
+ForwardingPolicy i rw
+GatewayIPAddress s18 rw ip
+Interface s128 rw
+ForwardingMetric i rw
+Device.Routing.Router.1.IPv6Forwarding. mo20 rw st #define#end
+Enable b rw
+Status s r Disabled,Enabled,Error_Misconfigured,Error
+Alias s64 rwj
+DestIPPrefix s48 rw ip
+ForwardingPolicy i rw
+NextHop s48 rw ip
+Interface s128 rw
+Origin s r DHCPv6,OSPF,RA,RIPng,Static
+ForwardingMetric i rw
+ExpirationTime d r
+/*
+Device.Routing.RIP. so r st
+Enable b rw
+SupportedModes s r Send,Receive,Both
+InterfaceSettingNumberOfEntries u r
+Device.Routing.RIP.InterfaceSetting. mo rw st
+Enable b rw
+Status s r Disabled,Enabled,Error_Misconfigured,Error
+Alias s64 rwj
+Interface s128 rw
+AcceptRA b rw
+SendRA b rw
+*/
+Device.Routing.RouteInformation. so r st
+Enable b rw
+InterfaceSettingNumberOfEntries u r
+Device.Routing.RouteInformation.InterfaceSetting. mo r
+Status s r ForwardingEntryCreated,NoForwardingEntry,Error
+Interface s128 r
+SourceRouter s48 r ip
+PreferredRouteFlag s r High,Medium,Low
+Prefix s48 r ip
+RouteLifetime d r
+Device.NeighborDiscovery. so r rootst
+Enable b rw
+InterfaceSettingNumberOfEntries u r
+Device.NeighborDiscovery.InterfaceSetting. mo rw
+Enable b rw
+Status s r Disabled,Enabled,Error_Misconfigured,Error
+Alias s64 rwj
+Interface s128 rw
+RetransTimer u rw
+RtrSolicitationInterval u rw
+MaxRtrSolicitations u rw
+NUDEnable b rw
+RSEnable b rw
+Device.RouterAdvertisement. so r rootst
+Enable b rw
+InterfaceSettingNumberOfEntries u r
+Device.RouterAdvertisement.InterfaceSetting. mo rw
+Enable b rw
+Status s r Disabled,Enabled,Error_Misconfigured,Error
+Alias s64 rwj
+Interface s128 rw
+ManualPrefixes s512 rw
+Prefixes s r
+MaxRtrAdvInterval u rw
+MinRtrAdvInterval u rw
+AdvDefaultLifetime u rw
+AdvManagedFlag b rw
+AdvOtherConfigFlag b rw
+AdvMobileAgentFlag b rw
+AdvPreferredRouterFlag s6 rw High,Medium,Low
+AdvNDProxyFlag b rw
+AdvLinkMTU u rw
+AdvReachableTime u rw
+AdvRetransTimer u rw
+AdvCurHopLimit u rw
+OptionNumberOfEntries u r
+/*
+Device.RouterAdvertisement.InterfaceSetting.1.Option. mo rw st
+Enable b rw
+Alias s64 rwj
+Tag u rw
+Value h1024 rw
+*/
+/*
+Device.IPv6rd. so r roothst
+Enable b rw
+InterfaceSettingNumberOfEntries u r
+Device.IPv6rd.InterfaceSetting. mo r st
+Enable b rw
+Status s r Disabled,Enabled,Error
+Alias s64 rwj
+BorderRelayIPv4Addresses s18 rw ip
+AllTrafficToBorderRelay b rw
+SPIPv6Prefix s48 rw ip
+IPv4MaskLength u rw
+AddressSource s256 rw
+TunnelInterface s256 r
+TunneledInterface s256 r
+Device.DSLite. so r rootst
+Enable b rw
+InterfaceSettingNumberOfEntries u r
+Device.DSLite.InterfaceSetting. mo r st
+Enable b rw
+Status s r Disabled,Enabled,Error
+Alias s64 rwj
+EndpointAssignmentPrecedence s6 rw DHCPv6,Static
+EndpointAddressTypePrecedence s11 rw FQDN,IPv6Address
+EndpointAddressInUse s48 r ip
+EndpointName s256 rw
+EndpointAddress s48 rw ip
+Origin s r DHCPv6,Static
+TunnelInterface s256 r
+TunneledInterface s256 r
+*/
+Device.X_MAPT. so r roothst
+Enable b rw
+Status s r Disabled,Enabled,Error
+RuleIPv4Prefix s18 rw ip
+RuleIPv4PrefixLength u rw
+RuleIPv6Prefix s48 rw ipv6
+RuleIPv6PrefixLength u rw
+DMRIPv6Prefix s48 rw ipv6
+DMRIPv6PrefixLength u rw
+//PSID u rw
+PSIDLength u rw
+PSIDOffset u rw*/
+Ratio_Enable b rw
+Ratio u rw
+Adjacent u rw
+Offset_Enable b rw
+Offset u rw
+MSS_Enable b rw
+MSS u rw
+Device.LAN. so r roots
+AddressingType s r
+IPAddress s18 ri ip 
+MACAddress s6 r mac
+/*
+Device.IPsec. so r roothst
+Enable b rw
+Status s r Disabled,Enabled,Error
+AHSupported b r
+IKEv2SupportedEncryptionAlgorithms s r DES,3DES,RC5,IDEA,CAST,BLOWFISH,3IDEA,AES-CBC,AES-CTR,AES-CCM-8,AES-CCM-12,AES-CCM-16,AES-GCM-8,AES-GCM-12,AES-GCM-16,CAMELLIA-CBC
+ESPSupportedEncryptionAlgorithms s r NULL,DES-IV64,DES,3DES,RC5,IDEA,CAST,BLOWFISH,3IDEA,DES-IV32,AES-CBC,AES-CTR,AES-CCM-8,AES-CCM-12,AES-CCM-16,AES-GCM-8,AES-GCM-12,AES-GCM-16,NULL-AUTH-AES-GMAC,CAMELLIA-CBC,CAMELLIA-CTR,CAMELLIA-CCM-8,CAMELLIA-CCM-12,CAMELLIA-CCM-16
+IKEv2SupportedPseudoRandomFunctions s r HMAC-MD5,HMAC-SHA1,HMAC-TIGER,AES-128-XCBC,HMAC-SHA2-256,HMAC-SHA2-384,HMAC-SHA2-512,AES-128-CMAC
+SupportedIntegrityAlgorithms s r NONE,HMAC-MD5-96,HMAC-SHA1-96,DES-MAC,KPDK-MD5,AES-XCBC-96,HMAC-MD5-128,HMAC-SHA1-160,AES-CMAC-96,AES-128-GMAC,AES-192-GMAC,AES-256-GMAC,HMAC-SHA2-256-128,HMAC-SHA2-256-192,HMAC-SHA2-256-256
+SupportedDiffieHellmanGroupTransforms s r NONE,MODP-768,MODP-1024,MODP-1536,MODP-2048,MODP-3072,MODP-4096,MODP-6144,MODP-8192,ECP-256,ECP-384,ECP-521,MODP-1024-PRIME-160,MODP-2048-PRIME-224,MODP-2048-PRIME-256,ECP-192,ECP-224
+MaxFilterEntries u r
+MaxProfileEntries u r
+FilterNumberOfEntries u r
+ProfileNumberOfEntries u r
+TunnelNumberOfEntries u r
+IKEv2SANumberOfEntries u r
+Device.IPsec.Stats. so r
+NegotiationFailures u r
+BytesSent ul r
+BytesReceived ul r
+PacketsSent ul r
+PacketsReceived ul r
+ErrorsSent u r
+UnknownSPIErrors u r
+DecryptionErrors u r
+IntegrityErrors u r
+ReplayErrors u r
+PolicyErrors u r
+OtherReceiveErrors u r
+Device.IPsec.Filter. mo rw
+Enable b rw
+Status s r Disabled,Enabled,Error_Misconfigured,Error
+Order u rw
+Alias s64 rw
+Interface s128 rw
+AllInterfaces b rw
+DestIP s48 rw ip
+DestMask s48 rw mask
+DestIPExclude b rw
+SourceIP s48 rw ip
+SourceMask s48 rw mask
+SourceIPExclude b rw
+Protocol i rw
+ProtocolExclude b rw
+DestPort i rw
+DestPortRangeMax i rw
+DestPortExclude b rw
+SourcePort i rw
+SourcePortRangeMax i rw
+SourcePortExclude b rw
+ProcessingChoice s7 rw Discard,Bypass,Protect
+Profile s rw
+Device.IPsec.Profile. mo rw
+Alias s64 rw
+MaxChildSAs u rw
+RemoteEndpoints s rw
+ForwardingPolicy u rw
+Protocol s3 rw AH,ESP
+IKEv2AuthenticationMethod s rw
+IKEv2AllowedEncryptionAlgorithms s rw
+ESPAllowedEncryptionAlgorithms s rw
+IKEv2AllowedPseudoRandomFunctions s rw
+IKEv2AllowedIntegrityAlgorithms s rw
+AHAllowedIntegrityAlgorithms s rw
+ESPAllowedIntegrityAlgorithms s rw
+IKEv2AllowedDiffieHellmanGroupTransforms s rw
+IKEv2DeadPeerDetectionTimeout u rw
+IKEv2NATTKeepaliveTimeout u rw
+AntiReplayWindowSize u rw
+DoNotFragment s5 rw Set,Clear,Copy
+DSCPMarkPolicy i rw
+IKEv2SATrafficLimit ul rw
+IKEv2SATimeLimit u rw
+IKEv2SAExpiryAction s11 rw Renegotiate,Delete
+ChildSATrafficLimit ul rw
+ChildSATimeLimit u rw
+ChildSAExpiryAction s11 rw Renegotiate,Delete
+SentCPAttrNumberOfEntries u r
+Device.IPsec.Profile.1.SentCPAttr. mo rw
+Enable b rw
+Alias s64 rw
+Type u rw
+Value h65535 rw
+Device.IPsec.Tunnel. mo r
+Alias s64 rw
+TunnelInterface s r
+TunneledInterface s r
+Filters s r
+Device.IPsec.Tunnel.1.Stats. so r
+DecryptionErrors u r
+IntegrityErrors u r
+ReplayErrors u r
+PolicyErrors u r
+OtherReceiveErrors u r
+Device.IPsec.IKEv2SA. mo r
+Status s r Up,Down,Unknown,Dormant,Error
+Alias s64 rw
+Tunnel s r
+LocalAddress s48 r ip
+RemoteAddress s48 r ip
+EncryptionAlgorithm s64 r
+EncryptionKeyLength u r
+PseudoRandomFunction s64 r
+IntegrityAlgorithm s64 r
+DiffieHellmanGroupTransform s64 r
+CreationTime d r
+NATDetected s r None,Local,Remote,Unsupported
+ReceivedCPAttrNumberOfEntries u r
+ChildSANumberOfEntries u r
+Device.IPsec.IKEv2SA.1.Stats. so r
+BytesSent ul r
+BytesReceived ul r
+PacketsSent ul r
+PacketsReceived ul r
+ErrorsSent u r
+DecryptionErrors u r
+IntegrityErrors u r
+OtherReceiveErrors u r
+Device.IPsec.IKEv2SA.1.ReceivedCPAttr. mo rw
+Type u r
+Value h65535 r
+Device.IPsec.IKEv2SA.1.ChildSA. mo r
+Status s r Up,Down,Unknown,Dormant,Error
+Alias s64 rw
+InboundSPI u r
+OutboundSPI u r
+CreationTime d r
+Device.IPsec.IKEv2SA.1.ChildSA.1.Stats. so r
+BytesSent ul r
+BytesReceived ul r
+PacketsSent ul r
+PacketsReceived ul r
+ErrorsSent u r
+DecryptionErrors u r
+IntegrityErrors u r
+ReplayErrors u r
+PolicyErrors u r
+OtherReceiveErrors u r
+*/
+/*
+Device.GRE. so r rooth
+TunnelNumberOfEntries u r
+FilterNumberOfEntries u r
+Device.GRE.Tunnel. mo rw
+Enable b rw
+Status s r Disabled,Enabled,Error
+Alias s64 rwj
+RemoteEndpoints s rw
+KeepAlivePolicy s4 rw ICMP,None
+KeepAliveTimeout u rw
+KeepAliveThreshold u rw
+DeliveryHeaderProtocol s4 rw IPv4,IPv6
+DefaultDSCPMark u rw
+ConnectedRemoteEndpoint s256 r
+InterfaceNumberOfEntries u r
+Device.GRE.Tunnel.1.Stats. so r
+KeepAliveSent u r
+KeepAliveReceived u r
+BytesSent ul r
+BytesReceived ul r
+PacketsSent ul r
+PacketsReceived ul r
+ErrorsSent u r
+ErrorsReceived u r
+Device.GRE.Tunnel.1.Interface. mo rw
+Enable b rw
+Status s r Up,Down,Unknown,Dormant,NotPresent,LowerLayerDown,Error
+Alias s64 rwj
+Name s64 r
+LastChange u rj
+LowerLayers s1024 rw
+ProtocolIdOverride u rw
+UseChecksum b rw
+KeyIdentifierGenerationPolicy s13 rw Disabled,Provisioned,CPE_Generated
+KeyIdentifier u rw
+UseSequenceNumber b rw
+Device.GRE.Tunnel.1.Interface.1.Stats. so r
+BytesSent ul r
+BytesReceived ul r
+PacketsSent ul r
+PacketsReceived ul r
+ErrorsSent u r
+ErrorsReceived u r
+DiscardChecksumReceived u r
+DiscardSequenceNumberReceived u r
+Device.GRE.Filter. mo rw
+Enable b rw
+Status s r Disabled,Enabled,Error_Misconfigured,Error
+Order u rw
+Alias s64 rw
+Interface s128 rw
+AllInterfaces b rw
+VLANIDCheck i rw
+VLANIDExclude b rw
+DSCPMarkPolicy i rw
+*/
+/*
+Device.MAP. so r roothst
+Enable b rw
+DomainNumberOfEntries u r
+Device.MAP.Domain. mo rw
+Enable b rw
+Status s r Disabled,Enabled,Error_Misconfigured,Error
+Alias s64 rwj
+TransportMode s13 rw Encapsulation,Translation
+WANInterface s rw
+IPv6Prefix s rw
+BRIPv6Prefix s48 rw ip
+DSCPMarkPolicy i rw
+PSIDOffset u rw
+PSIDLength u rw
+PSID u rw
+IncludeSystemPorts b rw
+RuleNumberOfEntries u r
+Device.MAP.Domain.1.Rule. mo rw
+Enable b rw
+Status s r Disabled,Enabled,Error
+Alias s64 rwj
+Origin s r DHCPv6,Static
+IPv6Prefix s48 rw ip
+IPv4Prefix s18 rw ip
+EABitsLength u rw
+IsFMR b rw
+Device.MAP.Domain.1.Interface. so r
+Enable b rw
+Status s r Up,Down,Unknown,Dormant,NotPresent,LowerLayerDown,Error
+Alias s64 rwj
+Name s64 r
+LastChange u rj
+LowerLayers s1024 rw
+Device.MAP.Domain.1.Interface.Stats. so r
+BytesSent ul rj
+BytesReceived ul rj
+PacketsSent ul rj
+PacketsReceived ul rj
+ErrorsSent u rj
+ErrorsReceived u rj
+UnicastPacketsSent ul rj
+UnicastPacketsReceived ul rj
+DiscardPacketsSent u rj
+DiscardPacketsReceived u rj
+MulticastPacketsSent ul rj
+MulticastPacketsReceived ul rj
+BroadcastPacketsSent ul r
+BroadcastPacketsReceived ul r
+UnknownProtoPacketsReceived u rj
+*/

@@ -1,0 +1,33 @@
+Device.SelfTestDiagnostics. so r rootsth
+DiagnosticsState s14 rwj None,Requested,Complete,Error_Internal,Error_Other
+Results s128 rj
+Device.PeriodicStatistics. so r rootsh
+MinSampleInterval u r
+MaxReportSamples u r
+SampleSetNumberOfEntries u r
+Device.PeriodicStatistics.SampleSet. mo10 rw ost #define
+Alias s64 rwj
+Enable b rw
+Status s r Disabled,Enabled,Trigger
+Name s128 rw
+SampleInterval u rw
+ReportSamples u rw
+TimeReference d rw
+FetchSamples u rw
+ForceSample b rw
+ReportStartTime d r
+ReportEndTime d r
+SampleSeconds s rj
+ParameterNumberOfEntries u r
+Device.PeriodicStatistics.SampleSet.1.Parameter. mo12 rw ost #end
+Alias s64 rwj
+Enable b rw
+Reference s256 rw
+SampleMode s7 rw Current,Change
+CalculationMode s7 rw Latest,Minimum,Maximum,Average
+LowThreshold i rw
+HighThreshold i rw
+SampleSeconds s rj
+SuspectData s rj
+Values s rj
+Failures u r

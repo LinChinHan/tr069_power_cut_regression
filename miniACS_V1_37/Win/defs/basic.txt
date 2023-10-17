@@ -1,0 +1,146 @@
+InternetGatewayDevice. so r root
+DeviceSummary s ri
+LANDeviceNumberOfEntries u r
+WANDeviceNumberOfEntries u r
+Layer3Forwarding reg r
+Layer2Bridging reg r
+QueueManagement reg r
+IPPingDiagnostics reg r
+TraceRouteDiagnostics reg r
+DownloadDiagnostics reg r
+UploadDiagnostics reg r
+UDPEchoConfig reg r
+LANDevice reg r
+WANDevice reg r
+X_ARCOR_NET_Misc reg r
+InternetGatewayDevice.Capabilities. so r
+InternetGatewayDevice.Capabilities.PerformanceDiagnostic. so r s
+DownloadTransports s r
+UploadTransports s r
+InternetGatewayDevice.DeviceInfo. so r st
+Manufacturer s64 r
+ManufacturerOUI s7 r
+ModelName s64 r
+Description s64 r
+ProductClass s32 r
+SerialNumber s32 r
+HardwareVersion s32 ri
+SoftwareVersion s32 ri
+ModemFirmwareVersion s32 r
+#EnabledOptions s1024 r
+#AdditionalHardwareVersion s32 r
+#AdditionalSoftwareVersion s32 r
+SpecVersion s16 ri
+ProvisioningCode s64 rwia
+UpTime u rj
+FirstUseDate d r
+DeviceLog s rj
+VendorConfigFileNumberOfEntries u r
+X_ARCOR_NET_Iptv b rw
+X_ARCOR_NET_GUIStyle s20 rw
+X_ARCOR_NET_WettingCurrentEnable b rw
+X_ARCOR_NET_LEDStatus reg r
+InternetGatewayDevice.DeviceInfo.VendorConfigFile. mo r
+Name s r
+Version s r
+Date d r
+Description s r
+InternetGatewayDevice.DeviceInfo.VendorLogFile. mo r s
+Alias s64 rw
+Name s64 r
+MaximumSize u r
+Persistent b r
+InternetGatewayDevice.DeviceConfig. so r s
+PersistentData s256 rw
+ConfigFile s rw
+InternetGatewayDevice.ManagementServer. so r st
+EnableCWMP b rw
+URL s256 rw
+Username s128 rw
+Password s128 w
+PeriodicInformEnable b rw
+PeriodicInformInterval u rw
+PeriodicInformTime d rw
+ParameterKey s32 ri
+ConnectionRequestURL s256 ria
+ConnectionRequestUsername s256 rw
+ConnectionRequestPassword s256 w
+UpgradesManaged b rw
+X_ARCOR_NET_RetryDelayInitial u rw
+X_ARCOR_NET_RetryDelayIncrementFactor u rw
+X_ARCOR_NET_RetryDelayMaxIncrement u rw
+/* not support
+KickURL s256 r
+DownloadProgressURL s256 r
+DefaultActiveNotificationThrottle u rw
+UDPConnectionRequestAddress s256 r
+UDPConnectionRequestAddressNotificationLimit u rw
+STUNEnable b rw
+STUNServerAddress s64 rw
+STUNServerPort u rw
+STUNUsername s64 rw
+STUNPassword s64 rw
+STUNMaximumKeepAlivePeriod i rw
+STUNMinimumKeepAlivePeriod u rw
+NATDetected b r
+ManageableDeviceNumberOfEntries u r
+ManageableDeviceNotificationLimit u rw
+InternetGatewayDevice.ManagementServer.ManageableDevice. mo r u
+ManufacturerOUI s7 r
+SerialNumber s64 r
+ProductClass s64 r
+Host s1024 r
+*/
+InternetGatewayDevice.Time. so r st
+Enable b rw
+Status s r
+NTPServer1 s64 rw
+NTPServer2 s64 rw
+NTPServer3 s64 rw
+NTPServer4 s64 rw off
+NTPServer5 s64 rw off
+CurrentLocalTime d r
+#LocalTimeZone s6 rw
+LocalTimeZoneName s64 rw
+#DaylightSavingsUsed b rw
+#DaylightSavingsStart d rw
+#DaylightSavingsEnd d rw
+/* not support
+InternetGatewayDevice.UserInterface. so r s
+UserDatabaseSupported b r
+SharedPassword b rw
+PasswordRequired b rw
+PasswordUserSelectable b rw
+UpgradeAvailable b rw
+WarrantyDate d rw
+ISPName s64 rw
+ISPHelpDesk s32 rw
+ISPHomePage s256 rw
+ISPHelpPage s256 rw
+ISPLogo 64 rw
+ISPLogoSize u rw
+ISPMailServer s256 rw
+ISPNewsServer s256 rw
+TextColor s6 rw
+BackgroundColor s6 rw
+ButtonColor s6 rw
+ButtonTextColor s6 rw
+AutoUpdateServer s256 rw
+UserUpdateServer s256 rw
+ExampleLogin s40 rw
+ExamplePassword s30 rw
+AvailableLanguages s256 r
+CurrentLanguage s16 rw
+*/
+InternetGatewayDevice.LANConfigSecurity. so r st
+ConfigPassword s64 w
+InternetGatewayDevice.Services. so r
+VoiceServiceNumberOfEntries u r
+X_ARCOR_NET_IPTVNumberOfEntries u r
+X_ARCOR_NET_DynamicDNSNumberOfEntries u r
+X_ARCOR_NET_USBNumberOfEntries u r
+VoiceService reg r
+X_ARCOR_NET_IPTV reg r
+X_ARCOR_NET_PushDaemon reg r
+X_ARCOR_NET_DynamicDNS reg r
+X_ARCOR_NET_USB reg r

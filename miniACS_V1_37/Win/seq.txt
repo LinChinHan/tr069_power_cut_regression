@@ -1,0 +1,2 @@
+./Tr69-Scripts/GetParameterValue.txt, ./Tr69-Scripts/Verify.lua
+./Tr69-Scripts/GetRpcmethod.txt
