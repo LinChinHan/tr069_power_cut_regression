@@ -119,13 +119,13 @@ if __name__ == '__main__':
         print("#### Checking if the result . . . ####")
         Console.Flush_Com(DUT_ser)
         Console.Write_To_COM(DUT_ser, ' ')
-        tmp = Console.Read_Until(DUT_ser, "login", 2)
+        tmp = Console.Read_Until(DUT_ser, 'login', 2)
         if ("login" in tmp):
             Console.Write_To_COM(DUT_ser, 'root')
-            tmp = Console.Read_Until(DUT_ser, "Password", 2)
+            tmp = Console.Read_Until(DUT_ser, 'Password', 2)
         if ("Password" in tmp):
             Console.Write_To_COM(DUT_ser, 'pz3W72z92yf2vaMvpKqc33jxsPxu5x7h')
-            tmp = Console.Read_Until(DUT_ser, "OpenWrt", 2)
+            tmp = Console.Read_Until(DUT_ser, 'OpenWrt', 2)
         if ("OpenWrt" in tmp):
             Console.Write_To_COM(DUT_ser, ' ')
             Console.Write_To_COM(DUT_ser, 'uci show | grep glb-cfg')
