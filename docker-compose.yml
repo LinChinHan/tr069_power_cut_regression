@@ -1,0 +1,16 @@
+version: '3'
+services:
+  web:
+    image: "httpd:2.4"
+    ports:
+     - "80:80"
+    volumes:
+     - ./firmware/:/usr/local/apache2/htdocs/
+  acs:
+    build: ./Docker/ubuntu_x86/
+    ports:
+     - "8080:8080"
+    volumes: 
+     - ./miniACS_V1_37:/miniACS_V1_37
+    command: ./miniACS_V1_37/Linux/acs -s "./miniACS_V1_37/Linux/Download_New.lua"
+    #command: ./miniACS_V1_37/Linux/acs
