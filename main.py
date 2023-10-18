@@ -68,7 +68,7 @@ if __name__ == '__main__':
                 tmp = Console.Read_From_COM(DUT_ser, 1)
                 Console.Save_COM_Log(DUT_ser, tmp, "./logs/console_logs_trigger.txt")
             else:
-                print("Cannot get shell!")
+                print("#### Cannot get shell!!!, Test Failed!!!! Stop in run ", counter, " ####")
                 #Stop ACS Server and HTTP Server
                 acs_stop = threading.Thread(target=stop_Services)
                 acs_stop.start()
@@ -107,11 +107,11 @@ if __name__ == '__main__':
         acs_stop.start()
         acs_stop.join()
         acs.join()
-        print("#### FINISHED TEST ####")
+        print("#### FINISHED run ", counter, " ####")
 
         #Waiting DUT reboot and power up again
-        print("#### Waiting boot up for 200 secs ####")
-        time.sleep(200)
+        print("#### Waiting boot up for 240 secs ####")
+        time.sleep(240)
         tmp = Console.Read_From_COM(DUT_ser, 3)
         Console.Save_COM_Log(DUT_ser, tmp, "./logs/console_logs_booting.txt")
 
@@ -125,7 +125,7 @@ if __name__ == '__main__':
             tmp = Console.Read_Until(DUT_ser, 'Password', 2)
         if ("Password" in tmp):
             Console.Write_To_COM(DUT_ser, 'pz3W72z92yf2vaMvpKqc33jxsPxu5x7h')
-            tmp = Console.Read_Until(DUT_ser, 'OpenWrt', 2)
+            tmp = Console.Read_Until(DUT_ser, 'OpenWrt', 3)
         if ("OpenWrt" in tmp):
             Console.Write_To_COM(DUT_ser, ' ')
             Console.Write_To_COM(DUT_ser, 'uci show | grep glb-cfg')
@@ -133,7 +133,7 @@ if __name__ == '__main__':
             Console.Save_COM_Log(DUT_ser, tmp, "./logs/check.txt")
             #Console.Write_To_COM(DUT_ser, 'exit')
         else:
-            print("Cannot get shell!!!, Test Failed!!!!")
+            print("#### Cannot get shell!!!, Test Failed!!!! Stop in run ", counter, " ####")
             #Stop ACS Server and HTTP Server
             acs_stop = threading.Thread(target=stop_Services)
             acs_stop.start()
@@ -143,6 +143,7 @@ if __name__ == '__main__':
         if ("HB5GGW" in tmp):
             flag = 1
             print("#### Succesfully!!!!!!! ####")
+            print("#### Finished run ", counter, " ####")
         else:
             flag = 0
             print("#### FAILED!!!!!! ####")
