@@ -52,12 +52,14 @@ def IsOpen(ser):
 def Write_To_COM(ser, string):
     print ("Write to COM")
     #ser.write(str(string)+'\r')
+    #ser.write(str.encode(string+'\r'))
     ser.write(str.encode(string+'\r'))
 
 def Read_Until(ser, string, read_time):
     print ("Start to read until : ", string)
     ser.timeout=(int(read_time))
     tmp = ser.read_until(string.encode())
+    #print("Read output in b is : ", tmp)
     print("Read output is : ", tmp.decode())
-    return tmp.decode()
+    return str(tmp)
 

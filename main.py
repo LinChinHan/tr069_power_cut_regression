@@ -49,32 +49,23 @@ if __name__ == '__main__':
         counter=counter+1
         print("##### Run :", counter)
         time.sleep(5)
-
-        #Triger TR69 download. . .
         DUT_ser = Console.Open_COM(DUT_PORT, DUT_BAUD_RATES)
+        #Triger TR69 download. . .
         if(Console.IsOpen(DUT_ser)):
             Console.Flush_Com(DUT_ser)
             Console.Write_To_COM(DUT_ser, ' ')
-            tmp = Console.Read_Until(DUT_ser, "login", 2)
-            if ("login" in tmp):
+            tmp = Console.Read_From_COM(DUT_ser, 1)
+            #tmp will be string insted of list
+            print("Read from com output: ", tmp)
+            if ('login:' in tmp):
                 Console.Write_To_COM(DUT_ser, 'root')
-                tmp = Console.Read_Until(DUT_ser, "Password", 2)
-            if ("Password" in tmp):
+                tmp = Console.Read_Until(DUT_ser, 'Password:', 2)
+            if ('Password:' in tmp):
                 Console.Write_To_COM(DUT_ser, 'pz3W72z92yf2vaMvpKqc33jxsPxu5x7h')
-                tmp = Console.Read_Until(DUT_ser, "OpenWrt:", 2)
-            if ("OpenWrt:" in tmp):
-                Console.Write_To_COM(DUT_ser, ' ')
-                Console.Write_To_COM(DUT_ser, 'tr69_trigger connreq')
-                tmp = Console.Read_From_COM(DUT_ser, 1)
-                Console.Save_COM_Log(DUT_ser, tmp, "./logs/console_logs_trigger.txt")
-            else:
-                print("#### Cannot get shell!!!, Test Failed!!!! Stop in run ", counter, " ####")
-                #Stop ACS Server and HTTP Server
-                acs_stop = threading.Thread(target=stop_Services)
-                acs_stop.start()
-                acs_stop.join()
-                acs.join()
-                exit(1)
+            Console.Write_To_COM(DUT_ser, ' ')
+            Console.Write_To_COM(DUT_ser, 'tr69_trigger connreq')
+            tmp = Console.Read_From_COM(DUT_ser, 1)
+            Console.Save_COM_Log(DUT_ser, tmp, "./logs/console_logs_trigger.txt")
         if ( counter % 3 == 1 ):
             # less than 80 secs for download period.
             exec_time = random.randint(1, 80)
@@ -110,39 +101,30 @@ if __name__ == '__main__':
         print("#### FINISHED run ", counter, " ####")
 
         #Waiting DUT reboot and power up again
-        print("#### Waiting boot up for 240 secs ####")
-        time.sleep(240)
-        tmp = Console.Read_From_COM(DUT_ser, 3)
+        print("#### Waiting boot up for 200 secs ####")
+        time.sleep(200)
+        tmp = Console.Read_From_COM(DUT_ser, 2)
         Console.Save_COM_Log(DUT_ser, tmp, "./logs/console_logs_booting.txt")
 
         #Check result part
         print("#### Checking if the result . . . ####")
-        Console.Flush_Com(DUT_ser)
         Console.Write_To_COM(DUT_ser, ' ')
-        tmp = Console.Read_Until(DUT_ser, 'login', 2)
-        if ("login" in tmp):
+        #tmp = Console.Read_Until(DUT_ser, 'login:', 2)
+        tmp = Console.Read_From_COM(DUT_ser, 1)
+        if ('login:' in tmp):
             Console.Write_To_COM(DUT_ser, 'root')
-            tmp = Console.Read_Until(DUT_ser, 'Password', 2)
-        if ("Password" in tmp):
+            tmp = Console.Read_Until(DUT_ser, 'Password:', 1)
+        if ('Password:' in tmp):
             Console.Write_To_COM(DUT_ser, 'pz3W72z92yf2vaMvpKqc33jxsPxu5x7h')
-            tmp = Console.Read_Until(DUT_ser, 'OpenWrt', 3)
-        if ("OpenWrt" in tmp):
             Console.Write_To_COM(DUT_ser, ' ')
-            Console.Write_To_COM(DUT_ser, 'uci show | grep glb-cfg')
-            tmp = Console.Read_From_COM(DUT_ser, 3)
-            Console.Save_COM_Log(DUT_ser, tmp, "./logs/check.txt")
-            #Console.Write_To_COM(DUT_ser, 'exit')
-        else:
-            print("#### Cannot get shell!!!, Test Failed!!!! Stop in run ", counter, " ####")
-            #Stop ACS Server and HTTP Server
-            acs_stop = threading.Thread(target=stop_Services)
-            acs_stop.start()
-            acs_stop.join()
-            acs.join()
-            exit(1)
+        time.sleep(2)
+        Console.Write_To_COM(DUT_ser, ' ')
+        Console.Write_To_COM(DUT_ser, 'uci show | grep glb-cfg')
+        tmp = Console.Read_From_COM(DUT_ser, 1)
+        Console.Save_COM_Log(DUT_ser, tmp, "./logs/check.txt")
         if ("HB5GGW" in tmp):
             flag = 1
-            print("#### Succesfully!!!!!!! ####")
+            print("#### Test Succesfully!!!!!!! ####")
             print("#### Finished run ", counter, " ####")
         else:
             flag = 0
