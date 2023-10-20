@@ -49,23 +49,28 @@ if __name__ == '__main__':
         counter=counter+1
         print("##### Run :", counter)
         time.sleep(5)
-        DUT_ser = Console.Open_COM(DUT_PORT, DUT_BAUD_RATES)
+        if(counter==1):
+            DUT_ser = Console.Open_COM(DUT_PORT, DUT_BAUD_RATES)
+        else:
+            DUT_ser.open()
         #Triger TR69 download. . .
         if(Console.IsOpen(DUT_ser)):
-            Console.Flush_Com(DUT_ser)
             Console.Write_To_COM(DUT_ser, ' ')
             tmp = Console.Read_From_COM(DUT_ser, 1)
             #tmp will be string insted of list
             print("Read from com output: ", tmp)
             if ('login:' in tmp):
                 Console.Write_To_COM(DUT_ser, 'root')
-                tmp = Console.Read_Until(DUT_ser, 'Password:', 2)
+                tmp = Console.Read_Until(DUT_ser, 'Password:', None)
             if ('Password:' in tmp):
-                Console.Write_To_COM(DUT_ser, 'pz3W72z92yf2vaMvpKqc33jxsPxu5x7h')
-            Console.Write_To_COM(DUT_ser, ' ')
-            Console.Write_To_COM(DUT_ser, 'tr69_trigger connreq')
-            tmp = Console.Read_From_COM(DUT_ser, 1)
-            Console.Save_COM_Log(DUT_ser, tmp, "./logs/console_logs_trigger.txt")
+                Console.Write_To_COM(DUT_ser,"pz3W72z92yf2vaMvpKqc33jxsPxu5x7h")
+                tmp = Console.Read_Until(DUT_ser, 'OpenWrt:', 2)
+                print("debug: ", tmp)
+            if ('OpenWrt:' in tmp):
+                Console.Write_To_COM(DUT_ser, ' ')
+                Console.Write_To_COM(DUT_ser, 'tr69_trigger connreq')
+                tmp = Console.Read_From_COM(DUT_ser, 1)
+                Console.Save_COM_Log(DUT_ser, tmp, "./logs/console_logs_trigger.txt")
         if ( counter % 3 == 1 ):
             # less than 80 secs for download period.
             exec_time = random.randint(1, 80)
@@ -76,7 +81,6 @@ if __name__ == '__main__':
             # 200 ~ 260 secs for upgrading process(0% ~ 100%).
             exec_time = random.randint(200, 260)
 
-        Console.Flush_Com(DUT_ser)
         print("##### Upgrade test will run ", exec_time, " secs then going to power down device.")
         time.sleep(exec_time)
         tmp = Console.Read_From_COM(DUT_ser, 3)
@@ -84,13 +88,15 @@ if __name__ == '__main__':
 
         #Power down/up device
         print("#### Start to power down/up device. . . ####")
-        Relay_ser = Console.Open_COM(RELAY_PORT, RELAY_BAUD_RATES)
+        if(counter==1):
+            Relay_ser = Console.Open_COM(RELAY_PORT, RELAY_BAUD_RATES)
+        else:
+            Relay_ser.open()
         if(Console.IsOpen(Relay_ser)):
-            Console.Write_To_COM(Relay_ser, 'a')
-            Console.Write_To_COM(Relay_ser, 'relay 1 off')
+            Console.Write_To_COM_No_N(Relay_ser, 'a')
+            Console.Write_To_COM_No_N(Relay_ser, 'relay 1 off')
             time.sleep(2)
-            Console.Flush_Com(DUT_ser)
-            Console.Write_To_COM(Relay_ser, 'relay 1 on')
+            Console.Write_To_COM_No_N(Relay_ser, 'relay 1 on')
             Console.Close_COM(Relay_ser)
             
         #Stop ACS Server and HTTP Server
@@ -101,27 +107,35 @@ if __name__ == '__main__':
         print("#### FINISHED run ", counter, " ####")
 
         #Waiting DUT reboot and power up again
-        print("#### Waiting boot up for 200 secs ####")
-        time.sleep(200)
+        print("#### Waiting boot up for 230 secs ####")
+        time.sleep(230)
         tmp = Console.Read_From_COM(DUT_ser, 2)
         Console.Save_COM_Log(DUT_ser, tmp, "./logs/console_logs_booting.txt")
 
         #Check result part
         print("#### Checking if the result . . . ####")
-        Console.Write_To_COM(DUT_ser, ' ')
-        #tmp = Console.Read_Until(DUT_ser, 'login:', 2)
-        tmp = Console.Read_From_COM(DUT_ser, 1)
-        if ('login:' in tmp):
-            Console.Write_To_COM(DUT_ser, 'root')
-            tmp = Console.Read_Until(DUT_ser, 'Password:', 1)
-        if ('Password:' in tmp):
-            Console.Write_To_COM(DUT_ser, 'pz3W72z92yf2vaMvpKqc33jxsPxu5x7h')
+        DUT_ser.close()
+        DUT_ser.open()
+        tried=0
+        while(tried<=10):
             Console.Write_To_COM(DUT_ser, ' ')
-        time.sleep(2)
-        Console.Write_To_COM(DUT_ser, ' ')
-        Console.Write_To_COM(DUT_ser, 'uci show | grep glb-cfg')
-        tmp = Console.Read_From_COM(DUT_ser, 1)
-        Console.Save_COM_Log(DUT_ser, tmp, "./logs/check.txt")
+            tmp = Console.Read_Until(DUT_ser, 'login:', None)
+            if ('login:' in tmp):
+                Console.Write_To_COM(DUT_ser, 'root')
+                tmp = Console.Read_Until(DUT_ser, 'Password:', None)
+            if ('Password:' in tmp):
+                Console.Write_To_COM(DUT_ser, 'pz3W72z92yf2vaMvpKqc33jxsPxu5x7h')
+                Console.Write_To_COM(DUT_ser, ' ')
+                tmp = Console.Read_Until(DUT_ser, 'OpenWrt:', 3)
+            if('OpenWrt:' in tmp):
+                Console.Write_To_COM(DUT_ser, ' ')
+                Console.Write_To_COM(DUT_ser, 'uci show | grep glb-cfg')
+                tmp = Console.Read_From_COM(DUT_ser, 1)
+                Console.Save_COM_Log(DUT_ser, tmp, "./logs/check.txt")
+                tried=99
+            else:
+                time.sleep(5)
+            tried=tried+1
         if ("HB5GGW" in tmp):
             flag = 1
             print("#### Test Succesfully!!!!!!! ####")
