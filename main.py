@@ -5,13 +5,18 @@ import sys
 import Console
 import random
 
+
+#Initial parameters
 DUT_PORT = '/dev/ttyUSB0'
 RELAY_PORT= '/dev/ttyACM0'
 DUT_BAUD_RATES = 921600
 RELAY_BAUD_RATES = 115200
 counter = 0
+platform = None
+MR5_FW="KVD21_0.00.21_ca1e35c4eff6501f002c5980b55603207ccce286_debug.bin"
 
 
+#Functions
 def start_Services():
     os.system("make start")
 
@@ -36,7 +41,7 @@ def keep_recording(ser):
         ser.close()
         print('bye!')
 
-
+#main function
 if __name__ == '__main__':
 
     flag = 1
@@ -55,35 +60,85 @@ if __name__ == '__main__':
             DUT_ser.open()
         #Triger TR69 download. . .
         if(Console.IsOpen(DUT_ser)):
-            Console.Write_To_COM(DUT_ser, ' ')
-            tmp = Console.Read_From_COM(DUT_ser, 1)
+            #Console.Write_To_COM(DUT_ser, ' ')
+            #tmp = Console.Read_From_COM(DUT_ser, 1)
             #tmp will be string insted of list
-            print("Read from com output: ", tmp)
-            if ('login:' in tmp):
-                Console.Write_To_COM(DUT_ser, 'root')
-                tmp = Console.Read_Until(DUT_ser, 'Password:', None)
+            #print("Read from com output: ", tmp)
+            #if ('login:' in tmp):
+            #    Console.Write_To_COM(DUT_ser, 'root')
+            #    tmp = Console.Read_Until(DUT_ser, 'Password:', None)
+            Console.Write_To_COM(DUT_ser, 'root')
+            tmp = Console.Read_From_COM(DUT_ser, 2)
+            print(tmp)
             if ('Password:' in tmp):
                 Console.Write_To_COM(DUT_ser,"pz3W72z92yf2vaMvpKqc33jxsPxu5x7h")
-                tmp = Console.Read_Until(DUT_ser, 'OpenWrt:', 2)
-                print("debug: ", tmp)
+                #tmp = Console.Read_Until(DUT_ser, 'OpenWrt:', 2)
+                tmp = Console.Read_From_COM(DUT_ser, 2)
+                print(tmp)
             if ('OpenWrt:' in tmp):
+                platform='MR5'
+                print("##### Platform is : " + platform )
+                print("##### Do Upgrade!!!")
                 Console.Write_To_COM(DUT_ser, ' ')
                 Console.Write_To_COM(DUT_ser, 'tr69_trigger connreq')
                 tmp = Console.Read_From_COM(DUT_ser, 1)
                 Console.Save_COM_Log(DUT_ser, tmp, "./logs/console_logs_trigger.txt")
-        if ( counter % 3 == 1 ):
-            # less than 80 secs for download period.
-            exec_time = random.randint(1, 80)
-        elif ( counter % 3 == 2):
-            # 81 ~ 200 secs for upgrade period (keep in 0% to upgrade.
-            exec_time = random.randint(81, 200)
-        else:
-            # 200 ~ 260 secs for upgrading process(0% ~ 100%).
-            exec_time = random.randint(200, 260)
+            elif ('KVD21:' in tmp):
+                platform='MR6'
+                print("##### Platform is : " + platform )
+                print("##### Do Downgrade!!!")
+                Console.Write_To_COM(DUT_ser, ' ')
+                Console.Write_To_COM(DUT_ser, 'ls -al /data/')
+                tmp = Console.Read_From_COM(DUT_ser, 1)
+                #if firmware is not in board, do wget.
+                if (MR5_FW not in tmp):
+                    print("##### Cannot find the FW \"" + MR5_FW + "\" on board. Start to download firmware from ACS Server. . .")
+                    Console.Write_To_COM(DUT_ser, "cd /data/ ; wget http://129.16.11.217/" + MR5_FW )
+                    time.sleep(80)
+                tmp = Console.Read_From_COM(DUT_ser, 1) #Flush
+                Console.Write_To_COM(DUT_ser, 'ls -al /data/')
+                tmp = Console.Read_From_COM(DUT_ser, 1)
 
-        print("##### Upgrade test will run ", exec_time, " secs then going to power down device.")
+                if(MR5_FW in tmp):
+                    print("#### Trigger downgrade. . . ")
+                    # Since that the firmware will disapear after triggering firmwar upgrade, copy file to do it.
+                    Console.Write_To_COM(DUT_ser, 'cd /data/ && cp ' + MR5_FW + ' target_image.bin')
+                    time.sleep(5)
+                    Console.Write_To_COM(DUT_ser, 'dmcli eRT setv Device.X_TMOBILE.RESTfulAPI.UpgradeFirmware string \"/data/target_image.bin\"')
+                    time.sleep(3)
+                    Console.Write_To_COM(DUT_ser, 'dmcli eRT getv Device.X_TMOBILE.RESTfulAPI.UpgradeStatus')
+                    tmp = Console.Read_From_COM(DUT_ser, 1)
+                    print("####### Triger result ########")
+                    print(tmp)
+                    print("#############################\n")
+                    if( "Upgrading" in tmp):
+                        print("#### Trigger successfully!!!")
+                    else:
+                        print("#### Trigger Failed!!!")
+                else:
+                    print("#### [Wget] Download firmware from ACS Server failed . . .")
+                    print("#### [Wget] Please check if the server is reachable or not.")
+                    sys.exit(1) #Return error code 1
+
+                Console.Save_COM_Log(DUT_ser, tmp, "./logs/console_logs_trigger.txt")
+        if( platform == "MR5"):
+            if ( counter % 3 == 1 ):
+                # less than 60 secs for download period.
+                exec_time = random.randint(1, 60)
+            elif ( counter % 3 == 2):
+                # 61 ~ 180 secs for upgrade period (keep in 0% to upgrade).
+                exec_time = random.randint(61, 180)
+            else:
+                # 180 ~ 210 secs for upgrading process(0% ~ 100%).
+                exec_time = random.randint(180, 210)
+            print("#### Upgrading!!!!")
+        elif( platform == "MR6"):
+            exec_time = random.randint(1, 20)
+            print("#### downgrading!!!")
+
+        print("##### Test will run ", exec_time, " secs then going to power down device.")
         time.sleep(exec_time)
-        tmp = Console.Read_From_COM(DUT_ser, 3)
+        tmp = Console.Read_From_COM(DUT_ser, 2)
         Console.Save_COM_Log(DUT_ser, tmp, "./logs/console_logs_execute.txt")
 
         #Power down/up device
@@ -117,32 +172,49 @@ if __name__ == '__main__':
         DUT_ser.close()
         DUT_ser.open()
         tried=0
+        #Tried method, since that the login will meet failed sometimes. Giving retry in 10 times.
         while(tried<=10):
-            Console.Write_To_COM(DUT_ser, ' ')
-            tmp = Console.Read_Until(DUT_ser, 'login:', None)
-            if ('login:' in tmp):
-                Console.Write_To_COM(DUT_ser, 'root')
-                tmp = Console.Read_Until(DUT_ser, 'Password:', None)
+            #Console.Write_To_COM(DUT_ser, ' ')
+            #tmp = Console.Read_Until(DUT_ser, 'login:', None)
+            #if ('login:' in tmp):
+            #    Console.Write_To_COM(DUT_ser, 'root')
+            #    tmp = Console.Read_Until(DUT_ser, 'Password:', None)
+            Console.Write_To_COM(DUT_ser, 'root')
+            tmp = Console.Read_Until(DUT_ser, 'Password:', None)
             if ('Password:' in tmp):
                 Console.Write_To_COM(DUT_ser, 'pz3W72z92yf2vaMvpKqc33jxsPxu5x7h')
                 Console.Write_To_COM(DUT_ser, ' ')
-                tmp = Console.Read_Until(DUT_ser, 'OpenWrt:', 3)
+                #tmp = Console.Read_Until(DUT_ser, 'OpenWrt:', 3)
+                tmp = Console.Read_From_COM(DUT_ser, 1)
             if('OpenWrt:' in tmp):
                 Console.Write_To_COM(DUT_ser, ' ')
                 Console.Write_To_COM(DUT_ser, 'uci show | grep glb-cfg')
                 tmp = Console.Read_From_COM(DUT_ser, 1)
                 Console.Save_COM_Log(DUT_ser, tmp, "./logs/check.txt")
                 tried=99
+            elif ('KVD21' in tmp):
+                Console.Write_To_COM(DUT_ser, ' ')
+                Console.Write_To_COM(DUT_ser, 'arc-board show')
+                tmp = Console.Read_From_COM(DUT_ser, 1)
+                Console.Save_COM_Log(DUT_ser, tmp, "./logs/check.txt")
+                tried=99
             else:
                 time.sleep(5)
             tried=tried+1
+        print("################### Check ##################\n")
+        print(tmp)
+        print("############################################\n\n")
+
         if ("HB5GGW" in tmp):
             flag = 1
-            print("#### Test Succesfully!!!!!!! ####")
-            print("#### Finished run ", counter, " ####")
+            print("#### Upgrade Test Succesfully!!!!!!! ####")
+        elif("model     : KVD21" in tmp):
+            flag = 1
+            print("#### Downgrade Test Succesfully!!!!!!! ####")
         else:
             flag = 0
             print("#### FAILED!!!!!! ####")
             print("#### STOP Script in ", counter, " ####")
+        print("#### Finished run ", counter, " ####")
         if ( Console.IsOpen(DUT_ser) ):
             Console.Close_COM(DUT_ser)
