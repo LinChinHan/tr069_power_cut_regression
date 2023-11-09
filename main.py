@@ -214,10 +214,10 @@ if __name__ == '__main__':
             print(line)
         print("############################################\n\n")
 
-        if ("HB5GGW" in tmp && platform == 'MR5'):
+        if ("HB5GGW" in tmp and platform == 'MR5'):
             flag = 1
             print("#### Upgrade Test Succesfully!!!!!!! ####")
-        elif("model     : KVD21" in tmp && platform == 'MR6'):
+        elif("model     : KVD21" in tmp and platform == 'MR6'):
             flag = 1
             print("#### Downgrade Test Succesfully!!!!!!! ####")
         else:
