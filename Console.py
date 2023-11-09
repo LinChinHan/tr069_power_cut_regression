@@ -65,7 +65,7 @@ def Read_Until(ser, string, read_time):
     print ("Start to read until : ", string)
     ser.timeout=read_time
     tmp = ser.read_until(string.encode())
-    print("Read output in b is : ", tmp)
-    print("Read output is : ", tmp.decode())
+    print("[Console.py] Read output in b is : ", tmp)
+    print("[Console.py] Read output is : ", tmp.decode())
     return str(tmp)
 

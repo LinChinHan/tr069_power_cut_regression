@@ -107,9 +107,12 @@ if __name__ == '__main__':
                     Console.Write_To_COM(DUT_ser, 'dmcli eRT setv Device.X_TMOBILE.RESTfulAPI.UpgradeFirmware string \"/data/target_image.bin\"')
                     time.sleep(3)
                     Console.Write_To_COM(DUT_ser, 'dmcli eRT getv Device.X_TMOBILE.RESTfulAPI.UpgradeStatus')
-                    tmp = Console.Read_From_COM(DUT_ser, 1)
+                    tmp = Console.Read_From_COM(DUT_ser, 2)
+                    Console.Save_COM_Log(DUT_ser, tmp, "./logs/console_logs_trigger.txt")
                     print("####### Triger result ########")
-                    print(tmp)
+                    f = open("./logs/console_logs_trigger.txt",'r')
+                    for line in f.readlines():
+                        print(line)
                     print("#############################\n")
                     if( "Upgrading" in tmp):
                         print("#### Trigger successfully!!!")
@@ -120,7 +123,6 @@ if __name__ == '__main__':
                     print("#### [Wget] Please check if the server is reachable or not.")
                     sys.exit(1) #Return error code 1
 
-                Console.Save_COM_Log(DUT_ser, tmp, "./logs/console_logs_trigger.txt")
         if( platform == "MR5"):
             if ( counter % 3 == 1 ):
                 # less than 60 secs for download period.
@@ -162,13 +164,17 @@ if __name__ == '__main__':
         print("#### FINISHED run ", counter, " ####")
 
         #Waiting DUT reboot and power up again
-        print("#### Waiting boot up for 230 secs ####")
-        time.sleep(230)
+        if(platform == "MR5"):
+            print("#### Waiting boot up for 230 secs ####")
+            time.sleep(230)
+        elif(platform == "MR6"):
+            print("#### Waiting boot up for 120 secs ####")
+            time.sleep(120)
         tmp = Console.Read_From_COM(DUT_ser, 2)
         Console.Save_COM_Log(DUT_ser, tmp, "./logs/console_logs_booting.txt")
 
         #Check result part
-        print("#### Checking if the result . . . ####")
+        print("#### Checking the result . . . ####")
         DUT_ser.close()
         DUT_ser.open()
         tried=0
@@ -180,10 +186,10 @@ if __name__ == '__main__':
             #    Console.Write_To_COM(DUT_ser, 'root')
             #    tmp = Console.Read_Until(DUT_ser, 'Password:', None)
             Console.Write_To_COM(DUT_ser, 'root')
-            tmp = Console.Read_Until(DUT_ser, 'Password:', None)
+            tmp = Console.Read_Until(DUT_ser, 'Password:', 2)
             if ('Password:' in tmp):
                 Console.Write_To_COM(DUT_ser, 'pz3W72z92yf2vaMvpKqc33jxsPxu5x7h')
-                Console.Write_To_COM(DUT_ser, ' ')
+                #Console.Write_To_COM(DUT_ser, ' ')
                 #tmp = Console.Read_Until(DUT_ser, 'OpenWrt:', 3)
                 tmp = Console.Read_From_COM(DUT_ser, 1)
             if('OpenWrt:' in tmp):
@@ -192,17 +198,20 @@ if __name__ == '__main__':
                 tmp = Console.Read_From_COM(DUT_ser, 1)
                 Console.Save_COM_Log(DUT_ser, tmp, "./logs/check.txt")
                 tried=99
-            elif ('KVD21' in tmp):
+            elif ('KVD21:' in tmp):
                 Console.Write_To_COM(DUT_ser, ' ')
                 Console.Write_To_COM(DUT_ser, 'arc-board show')
                 tmp = Console.Read_From_COM(DUT_ser, 1)
                 Console.Save_COM_Log(DUT_ser, tmp, "./logs/check.txt")
                 tried=99
             else:
+                print("#### Login failed, retried. . .")
                 time.sleep(5)
             tried=tried+1
         print("################### Check ##################\n")
-        print(tmp)
+        f = open('./logs/check.txt','r')
+        for line in f.readlines():
+            print(line)
         print("############################################\n\n")
 
         if ("HB5GGW" in tmp):
