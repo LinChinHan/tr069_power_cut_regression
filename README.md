@@ -6,6 +6,9 @@ Below is repuirement package for using virtual environment.
 ```
 apt-get install python-pip
 apt-get install python3-venv
+apt-get install python3-pip
+
+pip3 install virtualenv
 apt-get install docker.io
 apt-get install docker-compose
 ```
