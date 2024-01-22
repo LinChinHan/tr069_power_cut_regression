@@ -14,6 +14,14 @@ python -m pip install pyserial
 python -m pip install paramiko
 ```
 
+## Quick start
+```
+make install
+make start
+```
+
+
+##
 ## Environment parepare
 The program will be started by python. The program will be run by using virtual environemnt.
 Below is repuirement package for using virtual environment.
