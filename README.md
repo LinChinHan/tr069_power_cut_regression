@@ -18,6 +18,7 @@ python -m pip install paramiko
 ```
 make install
 make start
+#make stop
 ```
 
 
