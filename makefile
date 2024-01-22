@@ -14,6 +14,8 @@ install:
 		docker.io \
 		docker-compose
 	pip3 install virtualenv
+	pip3 install pyserial
+	pip3 install paramiko
 
 start:
 	docker-compose up
