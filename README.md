@@ -14,11 +14,9 @@ python -m pip install pyserial
 python -m pip install paramiko
 ```
 
-## Quick start
+## Quick install
 ```
 make install
-make start
-#make stop
 ```
 
 
