@@ -23,7 +23,6 @@ def start_Services():
 def stop_Services():
     os.system("make stop")
 
-
 def keep_recording(ser):
     print("current loation is ", os.system("pwd"))
     os.system("rm ./logs/console_logs_booting.txt")
@@ -44,21 +43,27 @@ def keep_recording(ser):
 #main function
 if __name__ == '__main__':
 
+    
     flag = 1
+    #threads of acs & web daemon
 
     while(flag == 1):
-        #Start ACS Server
-        acs = threading.Thread(target=start_Services)
-        acs.start()
 
         counter=counter+1
         print("##### Run :", counter)
+
+        #Start ACS Server
+        acs = threading.Thread(target=start_Services)
+        acs.start()
+        print("##### tr069 & web daemon have been start!!!")
         time.sleep(5)
+
         if(counter==1):
             DUT_ser = Console.Open_COM(DUT_PORT, DUT_BAUD_RATES)
         else:
             DUT_ser.open()
-        #Triger TR69 download. . .
+
+        #Triger TR69 SW download. . .
         if(Console.IsOpen(DUT_ser)):
             #Console.Write_To_COM(DUT_ser, ' ')
             #tmp = Console.Read_From_COM(DUT_ser, 1)
@@ -69,6 +74,7 @@ if __name__ == '__main__':
             #    tmp = Console.Read_Until(DUT_ser, 'Password:', None)
             Console.Write_To_COM(DUT_ser, 'root')
             tmp = Console.Read_From_COM(DUT_ser, 2)
+            print("##### Start to trigger SWDL!!!")
             print(tmp)
             if ('Password:' in tmp):
                 Console.Write_To_COM(DUT_ser,"pz3W72z92yf2vaMvpKqc33jxsPxu5x7h")
@@ -137,6 +143,12 @@ if __name__ == '__main__':
         elif( platform == "MR6"):
             exec_time = random.randint(1, 20)
             print("#### downgrading!!!")
+        else:
+            print("Cannot get platform!!!")
+            sys.exit(1)
+        #Switch platfrom every 10 times.    
+        if(counter % 10 ==0):
+            exec_time = 600
 
         print("##### Test will run ", exec_time, " secs then going to power down device.")
         time.sleep(exec_time)
@@ -145,7 +157,7 @@ if __name__ == '__main__':
 
         #Power down/up device
         print("#### Start to power down/up device. . . ####")
-        if(counter==1):
+        if( counter == 1 ):
             Relay_ser = Console.Open_COM(RELAY_PORT, RELAY_BAUD_RATES)
         else:
             Relay_ser.open()
@@ -170,6 +182,9 @@ if __name__ == '__main__':
         elif(platform == "MR6"):
             print("#### Waiting boot up for 120 secs ####")
             time.sleep(120)
+            #wait longer if platform switch from MR6 to MR5)
+            if(counter%10 ==0):
+                time.sleep(110)
         tmp = Console.Read_From_COM(DUT_ser, 2)
         Console.Save_COM_Log(DUT_ser, tmp, "./logs/console_logs_booting.txt")
 
@@ -206,7 +221,7 @@ if __name__ == '__main__':
                 tried=99
             else:
                 print("#### Login failed, retried. . .")
-                time.sleep(5)
+                time.sleep(6)
             tried=tried+1
         print("################### Check ##################\n")
         f = open('./logs/check.txt','r')
@@ -214,16 +229,25 @@ if __name__ == '__main__':
             print(line)
         print("############################################\n\n")
 
-        if ("HB5GGW" in tmp and platform == 'MR5'):
+        if ("HB5GGW" in tmp and platform == 'MR5' and counter % 10 != 0 ):
             flag = 1
             print("#### Upgrade Test Succesfully!!!!!!! ####")
-        elif("model     : KVD21" in tmp and platform == 'MR6'):
+        elif("model     : KVD21" in tmp and platform == 'MR6' and counter % 10 != 0 ):
             flag = 1
             print("#### Downgrade Test Succesfully!!!!!!! ####")
         else:
-            flag = 0
-            print("#### FAILED!!!!!! ####")
-            print("#### STOP Script in ", counter, " ####")
+            #Switching platform every 10 times.
+            if( counter%10 == 0 ):
+                if ("HB5GGW" in tmp or "model     : KVD21" in tmp):
+                    print("########### Transfer platform succesfully!!!!!!!!")
+                else:
+                    print("Cannot get platform name in output!!! Failed!")
+                    sys.exit(1)
+            else:
+                flag = 0
+                print("#### FAILED!!!!!! ####")
+                print("#### STOP Script in ", counter, " ####")
+
         print("#### Finished run ", counter, " ####")
         if ( Console.IsOpen(DUT_ser) ):
             Console.Close_COM(DUT_ser)
