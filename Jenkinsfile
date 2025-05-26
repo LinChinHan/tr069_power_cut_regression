@@ -1,41 +1,20 @@
 pipeline {
-  agent any
-  stages {
-    stage('test') {
-      parallel {
-        stage('test') {
-          steps {
-            sh '''echo "Hello pipeline"
-'''
-          }
+    agent any
+    stages {
+        stage('Build') {
+            steps {
+                sh 'echo "Build OK!"'
+            }
         }
-
-        stage('test2') {
-          steps {
-            sh 'echo "Hello pipeline 2"'
-          }
+        stage('Test') {
+            steps {
+                sh 'echo "Test NONONO"'
+            }
         }
-
-      }
+        stage('Deploy') {
+            steps {
+                sh 'echo " Deploy nok..."'
+            }
+        }
     }
-
-    stage('check') {
-      steps {
-        echo 'finished!!!!!!!!!'
-      }
-    }
-
-    stage('check 2') {
-      steps {
-        echo 'testcheck 2'
-      }
-    }
-
-    stage('aaaaa') {
-      steps {
-        sleep 5
-      }
-    }
-
-  }
 }
